@@ -10,6 +10,7 @@
 	<title>Project</title>
 
 	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/grid.css">
 </head>
 
 <body>
