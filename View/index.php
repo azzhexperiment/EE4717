@@ -5,8 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-	<meta name="keywords" content="Oakley">
+	<meta name="keywords" content="EE4717 Project">
 	<meta name="description" content="our project">
 	<title>Project</title>
 
@@ -16,7 +15,7 @@
 <body>
 	<!-- Nav bar -->
 	<header>
-		<h1><?php mytitle ?></h1>
+		<h1><?php print('mytitle') ?></h1>
 	</header>
 
 	<nav>
