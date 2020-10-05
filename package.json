@@ -4,7 +4,8 @@
 	"description": "Group project for EE4717 Web Application Design",
 	"main": "index.php",
 	"dependencies": {
-		"standard": "^14.3.4"
+		"standard": "^14.3.4",
+		"webpack": "^4.44.2"
 	},
 	"devDependencies": {},
 	"scripts": {
