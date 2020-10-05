@@ -2,7 +2,7 @@
 	"name": "ee4717-project",
 	"version": "1.0.0",
 	"description": "Group project for EE4717 Web Application Design",
-	"main": "index.js",
+	"main": "index.php",
 	"dependencies": {
 		"standard": "^14.3.4"
 	},
