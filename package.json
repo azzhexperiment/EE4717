@@ -4,10 +4,12 @@
 	"description": "Group project for EE4717 Web Application Design",
 	"main": "index.php",
 	"dependencies": {
-		"standard": "^14.3.4",
+		"standard": "^14.3.4"
+	},
+	"devDependencies": {
+		"sass": "^1.26.11",
 		"webpack": "^4.44.2"
 	},
-	"devDependencies": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

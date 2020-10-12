@@ -11,42 +11,46 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="/assets/css/grid.css">
+
+	<!-- Scripts -->
 </head>
 
 <body>
-	<!-- Nav bar -->
-	<header>
-		<h1><?php print('mytitle') ?></h1>
-	</header>
+	<div class="container">
 
-	<nav>
-		<b>
-			<a href="index.html">Home</a>
-			<a href="services.html">Serices</a>
-			<a href="contact.html">Contact</a>
-		</b>
-	</nav>
+		<!-- Header -->
+		<header>
+			<div class="row">
+				<div class="col-12">img here</div>
+			</div>
+		</header>
 
-	<div>
-		<h2>New Media and Web Design</h2>
-		<p>Trillium Media Design will bring pain to your fingers and wrists
-			because this chunk of text has no main purpose besides filling up
-			space. I prefer lorem ipsum generator.</p>
+		<!-- Navigation -->
+		<nav>
+			<div class="row">
+				<div class="col-12">
+					<a href="index.html">Home</a>
+					<a href="services.html">Services</a>
+					<a href="contact.html">Contact</a>
+				</div>
+			</div>
+		</nav>
 
-		<h2>Meeting Your GPA Needs</h2>
-		<p>Our expert prof are here to help you cruise through the course and
-			get A+! Terms & Conditions apply.</p>
+		<!-- Main content -->
+		<div class="row">
+			<div class="col-12" id="main"></div>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-12">
+					<small><i>Copyright &copy; 2020 Zhu Zihao</i></small>
+				</div>
+			</div>
+		</footer>
+
 	</div>
-
-	<!-- Footer -->
-	<footer>
-		<small><i>Copyright &copy; 2020 Zhu Zihao</i></small>
-	</footer>
-
-	<!-- Scripts -->
-	<script>
-
-	</script>
 </body>
 
 </html>
