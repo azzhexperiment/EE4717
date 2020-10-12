@@ -5,6 +5,11 @@
   clear: both;
 }
 
+/**
+ * Grid layout for templating
+ *
+ * @author Zhu Zihao
+ */
 .container {
   display: flex;
   flex-wrap: wrap;
