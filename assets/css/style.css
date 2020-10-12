@@ -1,3 +1,19 @@
+/**
+ * Override some browser defaults for more consistent styling.
+ */
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
 .row:before,
 .row:after {
   content: "";
@@ -7,8 +23,6 @@
 
 /**
  * Grid layout for templating
- *
- * @author Zhu Zihao
  */
 .container {
   display: flex;
