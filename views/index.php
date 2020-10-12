@@ -10,7 +10,7 @@
 	<title>Project</title>
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="/assets/css/grid.css">
+	<link rel="stylesheet" href="/project/assets/css/style.css">
 
 	<!-- Scripts -->
 </head>
