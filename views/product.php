@@ -1,4 +1,4 @@
-<?php include('common/header.php') ?>
+<?php include('layouts/common/header.php') ?>
 
 <!-- Main content -->
 <div class="container">
@@ -6,4 +6,4 @@
 	</div>
 </div>
 
-<?php include('common/footer.php') ?>
+<?php include('layouts/common/footer.php') ?>
