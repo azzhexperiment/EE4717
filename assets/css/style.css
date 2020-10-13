@@ -21,9 +21,11 @@ h1 {
   clear: both;
 }
 
-/**
- * Grid layout for templating
- */
+/******************************************************************************\
+	GRID
+
+	Grid layout for templating
+\******************************************************************************/
 .container {
   display: flex;
   flex-wrap: wrap;
