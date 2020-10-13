@@ -8,7 +8,7 @@
 	<title>$title</title>
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="../../assets/css/style.css">
 
 	<!-- Scripts -->
 </head>
@@ -21,7 +21,7 @@
 		<header>
 			<div class="row">
 				<div class="col-12">
-					<img src="../assets/img/logo.png" alt="">
+					<img src="../../assets/img/logo.png" alt="">
 				</div>
 			</div>
 		</header>
