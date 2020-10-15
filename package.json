@@ -4,6 +4,7 @@
 	"description": "Group project for EE4717 Web Application Design",
 	"main": "index.php",
 	"dependencies": {
+		"bootstrap": "^4.5.3",
 		"standard": "^14.3.4"
 	},
 	"devDependencies": {
