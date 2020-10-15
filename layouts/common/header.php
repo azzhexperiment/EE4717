@@ -29,18 +29,14 @@
         <!-- Navigation -->
         <nav class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="index.html">Home</a>
-                        </div>
-                        <div class="col-3">
-                            <a href="services.html">Services</a>
-                        </div>
-                        <div class="col-3">
-                            <a href="contact.html">Contact</a>
-                        </div>
-                    </div>
+                <div class="col-3">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="col-3">
+                    <a href="services.html">Services</a>
+                </div>
+                <div class="col-3">
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </nav>
