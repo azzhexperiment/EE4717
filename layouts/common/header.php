@@ -20,8 +20,14 @@
         <!-- Header -->
         <header>
             <div class="row">
-                <div class="col-12">
+                <div class="col-1">
+                    <a href="contact.html">For Him</a>
+                </div>
+                <div class="col-10 text-center">
                     <img src="../../assets/img/logo.png" alt="">
+                </div>
+                <div class="col-1">
+                    <a href="contact.html">For Him</a>
                 </div>
             </div>
         </header>
@@ -30,13 +36,16 @@
         <nav class="container">
             <div class="row">
                 <div class="col-3">
-                    <a href="index.html">Home</a>
+                    <a href="contact.html">For Him</a>
                 </div>
                 <div class="col-3">
-                    <a href="services.html">Services</a>
+                    <a href="contact.html">For Her</a>
                 </div>
                 <div class="col-3">
-                    <a href="contact.html">Contact</a>
+                    <a href="index.html">Featured</a>
+                </div>
+                <div class="col-3">
+                    <a href="services.html">New Arrival</a>
                 </div>
             </div>
         </nav>

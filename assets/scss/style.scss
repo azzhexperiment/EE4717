@@ -1,3 +1,5 @@
-@use 'global';
-@use 'grid';
-@use 'footer';
+@import 'variables';
+
+@import 'global';
+@import 'grid';
+@import 'footer';
