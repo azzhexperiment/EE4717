@@ -3,9 +3,19 @@
     <div class="row">
         <div class="col-9 links">
             <div class="row">
-                <div class="col-4">LINKS</div>
-                <div class="col-4">LINKS</div>
-                <div class="col-4">LINKS</div>
+                <div class="col-4">
+                    Find out More
+                    <ul class="text-uppercase">
+                        <li>who are we?</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    Join Us
+                    <ul>
+                        <li>Jobs</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
