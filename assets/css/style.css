@@ -93,6 +93,10 @@ body {
 
 	Global colours
 \******************************************************************************/
+.header {
+  background-image: url("../img/index/splash.jpg") center center;
+}
+
 .row:before,
 .row:after {
   content: "";
