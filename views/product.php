@@ -1,9 +1,8 @@
-<?php include('layouts/common/header.php') ?>
+<?php
 
-<!-- Main content -->
-<div class="container">
-	<div class="row">
-	</div>
-</div>
+include('layouts/common/header.php');
 
-<?php include('layouts/common/footer.php') ?>
+include('layouts/product/side-menu.php');
+include('layouts/product/listings.php');
+
+include('layouts/common/footer.php');
