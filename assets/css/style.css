@@ -1,167 +1,19 @@
-/******************************************************************************\
-	NORMALISE
+/* Error: Undefined variable.
+ *    ,
+ * 16 |     margin-bottom: $headings-margin-bottom;
+ *    |                    ^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   assets\scss\global\normalise.scss 16:17  @use
+ *   assets\scss\global\_index.scss 1:1       @use
+ *   assets\scss\style.scss 1:1               root stylesheet */
 
-	Override some browser defaults for more consistent styling.
-\******************************************************************************/
-body {
-  margin: 0;
-}
-
-main {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 16 \2502      margin-bottom: $headings-margin-bottom;\d\a    \2502                     ^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   assets\\scss\\global\\normalise.scss 16:17  @use\a   assets\\scss\\global\\_index.scss 1:1       @use\a   assets\\scss\\style.scss 1:1               root stylesheet";
 }
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.wrapper {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.page {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 1200px;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/******************************************************************************\
-	COLOURS
-
-	Global colours
-\******************************************************************************/
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/******************************************************************************\
-	GRID
-
-	Grid layout for templating
-\******************************************************************************/
-.col-1 {
-  flex-basis: 8.3333333333%;
-}
-
-.col-2 {
-  flex-basis: 16.6666666667%;
-}
-
-.col-3 {
-  flex-basis: 25%;
-}
-
-.col-4 {
-  flex-basis: 33.3333333333%;
-}
-
-.col-5 {
-  flex-basis: 41.6666666667%;
-}
-
-.col-6 {
-  flex-basis: 50%;
-}
-
-.col-7 {
-  flex-basis: 58.3333333333%;
-}
-
-.col-8 {
-  flex-basis: 66.6666666667%;
-}
-
-.col-9 {
-  flex-basis: 75%;
-}
-
-.col-10 {
-  flex-basis: 83.3333333333%;
-}
-
-.col-11 {
-  flex-basis: 91.6666666667%;
-}
-
-.col-12 {
-  flex-basis: 100%;
-}
-
-[class*=col-] {
-  background-color: #FFDCDC;
-  float: left;
-  min-height: 1px;
-  padding: 12px;
-}
-
-[class*=col-] > p {
-  background-color: #FFC2C2;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  color: white;
-}
-
-.outline, .outline * {
-  outline: 1px solid #F6A1A1;
-}
-
-/******************************************************************************\
-	FOOTER
-
-	Footer links
-\******************************************************************************/
-/******************************************************************************\
-	FOOTER
-
-	Social media icons
-\******************************************************************************/
-footer {
-  background-color: #343434;
-  color: #afafaf;
-}
-footer hr {
-  width: 90%;
-  margin: auto;
-  color: #afafaf;
-}
-
-/*# sourceMappingURL=style.css.map */
