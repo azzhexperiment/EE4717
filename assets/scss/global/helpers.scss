@@ -1,8 +1,21 @@
-// Helper classes
+//
+// HELPER CLASSES
+//
 
-.left        { float: left; }
-.right       { float: right; }
+// Alignment
+.left  { float: left !important; }
+.right { float: right !important; }
 
-.text-left   { text-align: left; }
-.text-right  { text-align: right; }
-.text-center { text-align: center; }
+// Text alignment
+.text-left   { text-align: left !important; }
+.text-right  { text-align: right !important; }
+.text-center { text-align: center !important; }
+
+// Text transform
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Visibility
+.show { visibility: visible !important; }
+.hide { visibility: hidden !important; }
