@@ -1,0 +1,16 @@
+// FOOTER
+
+@use 'links';
+@use 'social';
+
+// General footer styles
+footer {
+	background-color: #343434;
+	color: #afafaf;
+
+	hr {
+		width: 90%;
+		margin: auto;
+		color: #afafaf;
+	}
+}

@@ -1,8 +1,4 @@
-/******************************************************************************\
-	WRAPPER
-
-	Main block element
-\******************************************************************************/
+// WRAPPER
 
 .wrapper {
 	position: relative;
@@ -14,4 +10,12 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
+}
+
+.page {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 1200px;
 }
