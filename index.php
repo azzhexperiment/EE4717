@@ -1,5 +1,9 @@
 <?php
 
+include('lang/header.php');
+include('lang/footer.php');
+
+
 include('layouts/common/header.php');
 
 include('layouts/index/banner.php');

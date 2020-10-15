@@ -1,6 +1,8 @@
-/**
- * Override some browser defaults for more consistent styling.
- */
+/******************************************************************************\
+	NORMALISE
+
+	Override some browser defaults for more consistent styling.
+\******************************************************************************/
 body {
   margin: 0;
 }
@@ -14,6 +16,40 @@ h1 {
   margin: 0.67em 0;
 }
 
+/******************************************************************************\
+	WRAPPER
+
+	Main block element
+\******************************************************************************/
+.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/******************************************************************************\
+	TYPOGRAPHY
+
+	Global typography
+\******************************************************************************/
+/******************************************************************************\
+	COLOURS
+
+	Global colours
+\******************************************************************************/
 .row:before,
 .row:after {
   content: "";
@@ -26,13 +62,6 @@ h1 {
 
 	Grid layout for templating
 \******************************************************************************/
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
 .col-1 {
   flex-basis: 8.3333333333%;
 }

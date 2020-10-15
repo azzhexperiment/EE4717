@@ -8,13 +8,6 @@
 
 $columns: 12; // Number of columns in the grid system
 
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	max-width: 1200px;
-}
-
 @for $width from 1 through $columns {
 	.col-#{$width} {
 		flex-basis: $width / $columns * 100%;
