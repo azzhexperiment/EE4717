@@ -1,48 +1,7 @@
-<!-- Main content -->
-<div class="container outline">
+<!-- Super big splash woosh! -->
+<div class="container">
 	<div class="row">
-		<div class="col-1">
-			<p>col-1</p>
-		</div>
-		<div class="col-1">
-			<p>col-1</p>
-		</div>
-		<div class="col-1">
-			<p>col-1</p>
-		</div>
-		<div class="col-1">
-			<p>col-1</p>
-		</div>
-		<div class="col-1">
-			<p>col-1</p>
-		</div>
-		<div class="col-1">
-			<p>col-1</p>
+		<div class="col-12 header">
+			hi
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col-2">
-			<p>col-2</p>
-		</div>
-		<div class="row">
-			<div class="col-4">
-				hi
-			</div>
-		</div>
-		<div class="col-2">
-			<p>col-2</p>
-		</div>
-		<div class="col-2">
-			<p>col-2</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-3">
-			<p>col-3</p>
-		</div>
-		<div class="col-3">
-			<p>col-3</p>
-		</div>
-	</div>
-</div>
