@@ -287,6 +287,8 @@ CREATE TABLE IF NOT EXISTS products
 	sizing_type         TINYINT      UNSIGNED DEFAULT 1    NOT NULL               ,
 	product_price       DECIMAL(9,2) UNSIGNED DEFAULT 1000 NOT NULL               ,
 	active_for_sale     BOOLEAN               DEFAULT 0    NOT NULL               ,
+	is_featured         BOOLEAN               DEFAULT 0    NOT NULL               ,
+	is_new              BOOLEAN               DEFAULT 0    NOT NULL               ,
 
 	created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
 	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
