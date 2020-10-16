@@ -9,6 +9,10 @@
             <div class="col-12">
                 <img class="img-fit" src="../assets/img/index/featured-1.jpg" alt="">
             </div>
+
+            <div class="col-12">
+                <button>Shop</button>
+            </div>
         </div>
     </div>
 
@@ -20,6 +24,10 @@
 
             <div class="col-12">
                 <img class="img-fit" src="../assets/img/index/featured-2.jpg" alt="">
+            </div>
+
+            <div class="col-12">
+                <button>Shop</button>
             </div>
         </div>
     </div>

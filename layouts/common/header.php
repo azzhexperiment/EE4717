@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <a href="../index.php">
-                            <img src="../../assets/img/common/logo.png" alt="Cleo &  AZZH">
+                            <img src="../../assets/img/common/logo.png" alt="Cleo & AZZH">
                         </a>
                     </div>
                 </div>
@@ -33,16 +33,16 @@
             <nav>
                 <div class="row">
                     <div class="col-3">
-                        <a href="../categories.php?type=forhim">For Him</a>
+                        <a href="../categories.php?sex=m">For Him</a>
                     </div>
                     <div class="col-3">
-                        <a href="../categories.php?type=forher">For Her</a>
+                        <a href="../categories.php?sex=f">For Her</a>
                     </div>
                     <div class="col-3">
-                        <a href="../categories.php?type=featured">Featured</a>
+                        <a href="../categories.php?cat=featured">Featured</a>
                     </div>
                     <div class="col-3">
-                        <a href="../categories.php?type=new">New Arrival</a>
+                        <a href="../categories.php?cat=new">New Arrival</a>
                     </div>
                 </div>
             </nav>
