@@ -1,41 +1,50 @@
 <!-- Footer -->
-<footer class="container">
-	<div class="row text-uppercase">
-		<div class="col-9 links">
-			<div class="row">
-				<div class="col-4">
-					Find out More
-					<ul>
+<footer>
+	<div class="container">
+
+		<div class="footer-content">
+			<div class="link text--uppercase">
+				<div class="link__col">
+					<p class="col__header">Find out More</p>
+					<ul class="col__link">
 						<li>who are we?</li>
 						<li>Contact Us</li>
 					</ul>
 				</div>
-				<div class="col-4">
-					<span class="header__footer">
-						join the family
-					</span>
-					<ul>
+
+				<div class="link__col">
+					<p class="col__header">join the family</p>
+					<ul class="col__link">
 						<li><a href="mailto:jobs@cleoandazzh.com">Jobs</a></li>
 					</ul>
+				</div>
+
+				<div class="link__col">
+					<p class="col__header">legals</p>
+					<ul class="col__link">
+						<li><a href="mailto:jobs@cleoandazzh.com">Terms of Use</a></li>
+						<li><a href="mailto:jobs@cleoandazzh.com">Privacy Policy</a></li>
+					</ul>
+				</div>
+
+				<div class="link__col">
+					<div class="col__social">
+						<ul>
+							<li>icon 1</li>
+							<li>icon 2</li>
+							<li>icon 3</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-3 social">
-			<div class="row">
-				<div class="col-4">SOCIAL 1</div>
-				<div class="col-4">SOCIAL 2</div>
-				<div class="col-4">SOCIAL 3</div>
-			</div>
-		</div>
-	</div>
+		<hr>
 
-	<hr>
-
-	<div class="row">
-		<div class="text-center">
+		<div class="text--center">
 			<p><?= $copyright ?></p>
 		</div>
+
 	</div>
 </footer>
 

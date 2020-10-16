@@ -4,11 +4,9 @@
 
 @use '../snippets/clearfix';
 
-
-.container {
-	width: $wrapper-width - $gutter;
-	padding-right: $gutter / 2;
-	padding-left: $gutter / 2;
+.grid {
+	display: grid;
+	grid-gap: $gutter;
 	margin: auto;
 }
 
@@ -19,16 +17,11 @@
 	margin-left: -$gutter / 2;
 }
 
-$row-width: $wrapper-width - $gutter;
-
 @for $width from 1 through $columns {
 	.col-#{$width} {
 		position: relative;
-		// $flex-basis: $width / $columns * 100%;
-		// $max-width: $width / $columns * 100%;
-		$flex-basis: $width / $columns * $row-width;
-		$max-width: $width / $columns * $row-width;
-		position: relative;
+		flex-basis: $width / $columns * 100%;
+		max-width: $width / $columns * 100%;
 		padding-right: $gutter / 2;
 		padding-left: $gutter / 2;
 	}
@@ -44,8 +37,8 @@ $row-width: $wrapper-width - $gutter;
 	background-color: #FFC2C2; // todo: remove after testing
 	padding: 0;
 	margin: 0;
-	text-align: center;
-	color: white;
+	// text-align: center;
+	// color: white;
 }
 
 .no-gutters {
@@ -57,9 +50,4 @@ $row-width: $wrapper-width - $gutter;
 		padding-right: 0;
 		padding-left: 0;
 	}
-}
-
-// Demo only
-.outline, .outline * {
-	outline: 1px solid #F6A1A1;
 }
