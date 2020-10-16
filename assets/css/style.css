@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
 .float-left {
   float: left !important;
 }
@@ -104,96 +109,84 @@ body {
 
 .col-1 {
   position: relative;
-  flex-basis: 8.3333333333%;
-  max-width: 8.3333333333%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-2 {
   position: relative;
-  flex-basis: 16.6666666667%;
-  max-width: 16.6666666667%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-3 {
   position: relative;
-  flex-basis: 25%;
-  max-width: 25%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-4 {
   position: relative;
-  flex-basis: 33.3333333333%;
-  max-width: 33.3333333333%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-5 {
   position: relative;
-  flex-basis: 41.6666666667%;
-  max-width: 41.6666666667%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-6 {
   position: relative;
-  flex-basis: 50%;
-  max-width: 50%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-7 {
   position: relative;
-  flex-basis: 58.3333333333%;
-  max-width: 58.3333333333%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-8 {
   position: relative;
-  flex-basis: 66.6666666667%;
-  max-width: 66.6666666667%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-9 {
   position: relative;
-  flex-basis: 75%;
-  max-width: 75%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-10 {
   position: relative;
-  flex-basis: 83.3333333333%;
-  max-width: 83.3333333333%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-11 {
   position: relative;
-  flex-basis: 91.6666666667%;
-  max-width: 91.6666666667%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
 
 .col-12 {
   position: relative;
-  flex-basis: 100%;
-  max-width: 100%;
+  position: relative;
   padding-right: 12px;
   padding-left: 12px;
 }
@@ -246,16 +239,6 @@ header img {
   width: 100%;
 }
 
-/******************************************************************************\
-	FOOTER
-
-	Footer links
-\******************************************************************************/
-/******************************************************************************\
-	FOOTER
-
-	Social media icons
-\******************************************************************************/
 footer {
   background-color: #343434;
   color: #afafaf;
@@ -264,6 +247,10 @@ footer hr {
   width: 90%;
   margin: auto;
   color: #afafaf;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

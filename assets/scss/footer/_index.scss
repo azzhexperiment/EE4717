@@ -1,12 +1,10 @@
-//
+//============================================================================//
 // FOOTER
-//
+//============================================================================//
 
-@use 'links';
-@use 'social';
-
-// General footer styles
 footer {
+
+	// General footer styles
 	background-color: #343434;
 	color: #afafaf;
 
@@ -15,4 +13,20 @@ footer {
 		margin: auto;
 		color: #afafaf;
 	}
+
+	// Links
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.links {
+
+	}
+
+	// Social media icons
+	.social {
+
+	}
+
 }
