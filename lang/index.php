@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Context for index page
+ */
+
 // Splash
 
 // For Him
