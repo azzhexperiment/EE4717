@@ -144,7 +144,7 @@ nav ul li {
   margin: auto;
 }
 
-.listigns__grid {
+.listings__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
