@@ -82,141 +82,16 @@ img {
   margin: auto;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .container {
   width: 1176px;
   padding-right: 12px;
   padding-left: 12px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -12px;
-  margin-left: -12px;
-}
-
-.col-1 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-2 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-3 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-4 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-5 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-6 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-7 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-8 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-9 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-10 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-11 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-.col-12 {
-  position: relative;
-  position: relative;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-[class*=col-] {
-  background-color: #FFDCDC;
-  float: left;
-  min-height: 1px;
-}
-
-[class*=col-] > p {
-  background-color: #FFC2C2;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  color: white;
-}
-
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-}
-.no-gutters > .col,
-.no-gutters > [class*=col-] {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.outline, .outline * {
-  outline: 1px solid #F6A1A1;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .img-fit {
@@ -242,6 +117,7 @@ header img {
 footer {
   background-color: #343434;
   color: #afafaf;
+  margin-top: 5em;
 }
 footer hr {
   width: 90%;
@@ -251,6 +127,13 @@ footer hr {
 footer ul {
   list-style: none;
   padding-left: 0;
+}
+footer .links {
+  width: 70%;
+  max-width: 800px;
+}
+footer .social ul li {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

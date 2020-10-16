@@ -4,7 +4,6 @@
 
 @use '../snippets/clearfix';
 
-
 .container {
 	width: $wrapper-width - $gutter;
 	padding-right: $gutter / 2;
@@ -19,16 +18,11 @@
 	margin-left: -$gutter / 2;
 }
 
-$row-width: $wrapper-width - $gutter;
-
 @for $width from 1 through $columns {
 	.col-#{$width} {
 		position: relative;
-		// $flex-basis: $width / $columns * 100%;
-		// $max-width: $width / $columns * 100%;
-		$flex-basis: $width / $columns * $row-width;
-		$max-width: $width / $columns * $row-width;
-		position: relative;
+		flex-basis: $width / $columns * 100%;
+		max-width: $width / $columns * 100%;
 		padding-right: $gutter / 2;
 		padding-left: $gutter / 2;
 	}
@@ -44,8 +38,8 @@ $row-width: $wrapper-width - $gutter;
 	background-color: #FFC2C2; // todo: remove after testing
 	padding: 0;
 	margin: 0;
-	text-align: center;
-	color: white;
+	// text-align: center;
+	// color: white;
 }
 
 .no-gutters {

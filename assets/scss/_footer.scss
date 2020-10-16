@@ -8,6 +8,8 @@ footer {
 	background-color: #343434;
 	color: #afafaf;
 
+	margin-top: 5em;
+
 	hr {
 		width: 90%;
 		margin: auto;
@@ -21,12 +23,15 @@ footer {
 	}
 
 	.links {
-
+		width: 70%; // todo: need calc
+		max-width: 800px; // todo: need calc
 	}
 
 	// Social media icons
 	.social {
-
+		ul li {
+			display: inline-block;
+		}
 	}
 
 }
