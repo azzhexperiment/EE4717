@@ -42,7 +42,7 @@
         <hr>
 
         <div class="text--center">
-            <p><?= $copyright ?></p>
+            <p>&copy; CLEO & AZZH 2020</p>
         </div>
 
     </div>

@@ -1,4 +1,4 @@
 <!-- Header splash img -->
 <section class="splash">
-	hi
+    hi
 </section>

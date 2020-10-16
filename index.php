@@ -1,24 +1,30 @@
 <?php
 
+$root = __DIR__;
+
+$title = 'CLEO & AZZH Collection: Neue Urban Fashion';
+
 /**
- * Scripts
+ * Models
  */
 
-include('model/auth.php');
+include_once($root . '/models/auth.php');
+
+// TODO: may not need depending on implementation
+// include_once($root . '/models/connect-db.php');
 
 /**
  * Variables
  */
 
-include('lang/header.php');
-include('lang/index.php');
-include('lang/footer.php');
-
+include_once($root . '/lang/index.php');
 
 /**
  * Layouts
  */
 
-include('layouts/common/header.php');
-include('layouts/index/main.php');
-include('layouts/common/footer.php');
+include_once($root . '/layouts/common/header.php');
+include_once($root . '/layouts/index/main.php');
+include_once($root . '/layouts/common/footer.php');
+
+// include_once($root . '/models/disconnect-db.php');
