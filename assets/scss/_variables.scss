@@ -1,6 +1,6 @@
-//
+//============================================================================//
 // COLOURS
-//
+//============================================================================//
 
 // Grays
 $white:    #fff !default;
@@ -35,9 +35,9 @@ $body-bg:    $white !default;
 $body-color: $gray-900 !default;
 
 
-//
+//============================================================================//
 // TYPOGRAPHY
-//
+//============================================================================//
 
 // Font family
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !default;
@@ -69,3 +69,14 @@ $headings-margin-bottom: 0.5rem !default;
 
 // Paragraphs
 $paragraph-margin-bottom: 1rem !default;
+
+
+//============================================================================//
+// GRID
+//============================================================================//
+
+$wrapper-width: 1200px;
+
+$gutter: 24px;
+
+$columns: 12;

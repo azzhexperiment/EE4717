@@ -1,9 +1,8 @@
 //============================================================================//
-// SPLASH
+// IMAGES
 //============================================================================//
 
-.splash {
-	background: url('../img/index/splash.jpg') center no-repeat;
-	height: 500px;
-	width: 100%;
+.img-fit {
+	max-width: 100%;
+	height: auto;
 }

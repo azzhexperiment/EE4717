@@ -1,9 +1,12 @@
 //============================================================================//
-// SPLASH
+// GLOBAL HEADER
 //============================================================================//
 
-.splash {
-	background: url('../img/index/splash.jpg') center no-repeat;
-	height: 500px;
-	width: 100%;
+header {
+	height: 100px;
+
+	img {
+		max-width: auto;
+		height: 90px;
+	}
 }
