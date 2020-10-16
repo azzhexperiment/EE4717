@@ -1,7 +1,6 @@
-<!-- Super big splash woosh! -->
-<div class="container">
-	<div class="row">
-		<div class="col-12 header">
-			hi
-		</div>
-	</div>
+<!-- Header splash img -->
+<div class="row">
+    <div class="col-12 splash">
+        hi
+    </div>
+</div>

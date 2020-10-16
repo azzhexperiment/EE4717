@@ -20,7 +20,5 @@ include('lang/footer.php');
  */
 
 include('layouts/common/header.php');
-include('layouts/index/banner.php');
-include('layouts/index/featured.php');
-include('layouts/index/more.php');
+include('layouts/index/main.php');
 include('layouts/common/footer.php');
