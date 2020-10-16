@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body, header, main, footer {
   margin: 0;
   padding: 0;
@@ -23,40 +27,40 @@ img {
   border-style: none;
 }
 
-.float-left {
+.float--left {
   float: left !important;
 }
 
-.float-right {
+.float--right {
   float: right !important;
 }
 
-.center {
+.align--center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.text-left {
+.text--left {
   text-align: left !important;
 }
 
-.text-right {
+.text--right {
   text-align: right !important;
 }
 
-.text-center {
+.text--center {
   text-align: center !important;
 }
 
-.text-lowercase {
+.text--lowercase {
   text-transform: lowercase !important;
 }
 
-.text-uppercase {
+.text--uppercase {
   text-transform: uppercase !important;
 }
 
-.text-capitalize {
+.text--capitalize {
   text-transform: capitalize !important;
 }
 
@@ -78,16 +82,9 @@ img {
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
+  max-width: 90%;
   width: 1200px;
   margin: auto;
-}
-
-.container {
-  width: 1176px;
-  padding-right: 12px;
-  padding-left: 12px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 body {
@@ -104,7 +101,7 @@ p {
   padding-bottom: 1em;
 }
 
-.img-fit {
+.img--fit {
   max-width: 100%;
   height: auto;
 }
@@ -118,19 +115,33 @@ header img {
   height: 90px;
 }
 
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 2em;
+}
+
 .splash {
   background: url("../img/index/splash.jpg") center no-repeat;
   height: 500px;
   width: 100%;
 }
 
-.categories .category__left {
-  width: 40%;
-  float: left;
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  margin: auto;
 }
-.categories .category__right {
-  width: 40%;
-  float: right;
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  margin: auto;
 }
 
 footer {
@@ -138,7 +149,18 @@ footer {
   color: #afafaf;
   width: 100%;
   margin-top: 5em;
-  margin-bottom: 0;
+}
+footer .container {
+  padding: 3em 1em;
+}
+footer .link__col .col__header {
+  font-weight: 700;
+}
+footer .link__col .col__social {
+  display: inline-block;
+}
+footer .link__col .col__social ul li {
+  display: inline-block;
 }
 footer hr {
   width: 90%;
@@ -148,17 +170,6 @@ footer hr {
 footer ul {
   list-style: none;
   padding-left: 0;
-}
-footer .links {
-  display: inline-block;
-  width: 70%;
-  max-width: 800px;
-}
-footer .social {
-  display: inline-block;
-}
-footer .social ul li {
-  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

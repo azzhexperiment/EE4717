@@ -10,7 +10,31 @@ footer {
 	width: 100%;
 
 	margin-top: 5em;
-	margin-bottom: 0;
+	// TODO: remove
+	// margin-bottom: 0;
+
+	.container {
+		padding: 3em 1em;
+	}
+
+	.link__col{
+
+		.col__header {
+			font-weight: 700;
+		}
+
+		// Social media icons
+		.col__social {
+			// FIXME: alignment is currrent to bottom cuz of inline block
+			display: inline-block;
+			// TODO: align right
+
+			ul li {
+				display: inline-block;
+			}
+		}
+	}
+
 
 	hr {
 		width: 90%;
@@ -22,23 +46,6 @@ footer {
 	ul {
 		list-style: none;
 		padding-left: 0;
-	}
-
-	.links {
-		display: inline-block;
-		width: 70%; // todo: need calc
-		max-width: 800px; // todo: need calc
-	}
-
-	// Social media icons
-	.social {
-		// FIXME: alignment is currrent to bottom cuz of inline block
-		display: inline-block;
-		// TODO: align right
-
-		ul li {
-			display: inline-block;
-		}
 	}
 
 }

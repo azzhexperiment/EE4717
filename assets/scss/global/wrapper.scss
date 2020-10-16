@@ -12,14 +12,7 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
+	max-width: 90%;
 	width: $wrapper-width;
 	margin: auto;
-}
-
-.container {
-	width: $wrapper-width - $gutter;
-	padding-right: $gutter / 2;
-	padding-left: $gutter / 2;
-	margin-left: auto;
-	margin-right: auto;
 }

@@ -2,16 +2,16 @@
 // CATEGORIES
 //============================================================================//
 
-.categories {
-
-
-	.category__left {
-		width: 40%;
-		float: left;
-	}
-
-	.category__right {
-		width: 40%;
-		float: right;
-	}
+.categories__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: $gutter;
+	margin: auto;
 }
+
+// .category__left {
+// }
+
+// .category__right {
+
+// }
