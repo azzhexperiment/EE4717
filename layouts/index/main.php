@@ -7,9 +7,9 @@
      * Main pages for index.php
      */
 
-    include('banner.php');
-    include('featured.php');
-    include('categories.php');
+    include_once('banner.php');
+    include_once('featured.php');
+    include_once('categories.php');
 
     ?>
 
