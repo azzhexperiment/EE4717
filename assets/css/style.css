@@ -94,6 +94,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .img-fit {
   max-width: 100%;
   height: auto;
@@ -101,8 +111,8 @@ body {
 
 header {
   height: 100px;
+  width: 100%;
 }
-
 header img {
   max-width: auto;
   height: 90px;
@@ -114,10 +124,21 @@ header img {
   width: 100%;
 }
 
+.categories .category__left {
+  width: 40%;
+  float: left;
+}
+.categories .category__right {
+  width: 40%;
+  float: right;
+}
+
 footer {
   background-color: #343434;
   color: #afafaf;
+  width: 100%;
   margin-top: 5em;
+  margin-bottom: 0;
 }
 footer hr {
   width: 90%;
@@ -129,8 +150,12 @@ footer ul {
   padding-left: 0;
 }
 footer .links {
+  display: inline-block;
   width: 70%;
   max-width: 800px;
+}
+footer .social {
+  display: inline-block;
 }
 footer .social ul li {
   display: inline-block;

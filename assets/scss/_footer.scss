@@ -7,8 +7,10 @@ footer {
 	// General footer styles
 	background-color: #343434;
 	color: #afafaf;
+	width: 100%;
 
 	margin-top: 5em;
+	margin-bottom: 0;
 
 	hr {
 		width: 90%;
@@ -23,12 +25,17 @@ footer {
 	}
 
 	.links {
+		display: inline-block;
 		width: 70%; // todo: need calc
 		max-width: 800px; // todo: need calc
 	}
 
 	// Social media icons
 	.social {
+		// FIXME: alignment is currrent to bottom cuz of inline block
+		display: inline-block;
+		// TODO: align right
+
 		ul li {
 			display: inline-block;
 		}
