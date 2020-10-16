@@ -1,34 +1,20 @@
 <!-- Categores -->
-<div class="row categories">
-    <div class="col-6">
-        <div class="row">
-            <div class="col-12">
-                <h1>For Him</h1>
-            </div>
+<section class="categories">
+	<div class="categories__grid">
+		<div class="category__left">
+			<h1>For Him</h1>
 
-            <div class="col-12">
-                <img class="img-fit" src="../assets/img/index/featured-1.jpg" alt="">
-            </div>
+			<img class="img--fit" src="../assets/img/index/featured-1.jpg" alt="">
 
-            <div class="col-12">
-                <button>Shop</button>
-            </div>
-        </div>
-    </div>
+			<button>Shop</button>
+		</div>
 
-    <div class="col-6">
-        <div class="row">
-            <div class="col-12">
-                <h1>For Her</h1>
-            </div>
+		<div class="category__right">
+			<h1>For Her</h1>
 
-            <div class="col-12">
-                <img class="img-fit" src="../assets/img/index/featured-2.jpg" alt="">
-            </div>
+			<img class="img--fit" src="../assets/img/index/featured-2.jpg" alt="">
 
-            <div class="col-12">
-                <button>Shop</button>
-            </div>
-        </div>
-    </div>
-</div>
+			<button>Shop</button>
+		</div>
+	</div>
+</section>

@@ -20,29 +20,21 @@
         <div class="container">
             <!-- Header -->
             <header>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <a href="../index.php">
-                            <img src="../../assets/img/common/logo.png" alt="Cleo & AZZH">
-                        </a>
-                    </div>
+                <div class="header text--center">
+                    <a href="../index.php">
+                        <img src="../../assets/img/common/logo.png" alt="Cleo & AZZH">
+                    </a>
                 </div>
             </header>
 
             <!-- Navigation -->
             <nav>
-                <div class="row">
-                    <div class="col-3">
-                        <a href="../categories.php?sex=m">For Him</a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../categories.php?sex=f">For Her</a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../categories.php?cat=featured">Featured</a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../categories.php?cat=new">New Arrival</a>
-                    </div>
+                <div class="nav text--uppercase">
+                    <ul>
+                        <li><a href="../categories.php?sex=m">For Him</a></li>
+                        <li><a href="../categories.php?sex=f">For Her</a></li>
+                        <li><a href="../categories.php?cat=featured">Featured</a></li>
+                        <li><a href="../categories.php?cat=new">New Arrival</a></li>
+                    </ul>
                 </div>
             </nav>

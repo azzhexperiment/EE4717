@@ -1,4 +1,4 @@
 <?php
 
 // Common
-$copyright = 'Copyright &copy; CLEO & AZZH 2020';
+$copyright = '&copy; CLEO & AZZH 2020';
