@@ -6,7 +6,7 @@
 
 include_once('models/auth.php');
 // include('model/connect-db.php');
-
+$listingNum = 10;
 
 /**
  * Variables
