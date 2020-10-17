@@ -194,6 +194,19 @@ nav ul li {
   grid-gap: 24px;
   margin: auto;
 }
+.career .career__listings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+.career .job__opening {
+  padding: 2em;
+}
+.career a.job--apply {
+  text-decoration: none;
+  color: #000;
+}
+
 footer {
   background-color: #343434;
   color: #afafaf;
