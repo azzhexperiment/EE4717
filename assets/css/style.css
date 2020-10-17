@@ -218,12 +218,22 @@ footer ul {
 }
 footer .link__col .col__header {
   font-weight: 700;
+  text-transform: uppercase;
 }
 footer .link__col .col__link {
   font-size: small;
+  text-transform: capitalize;
+}
+footer .link__col .col__social {
+  text-transform: capitalize;
 }
 footer .link__col .col__social ul li {
   display: inline-block;
+  margin-right: 24px;
+}
+footer .social__icon {
+  width: 20px;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,8 +10,6 @@ footer {
 	width: 100%;
 
 	margin-top: 5em;
-	// TODO: remove
-	// margin-bottom: 0;
 
 	.container {
 		padding: 3em 0;
@@ -38,22 +36,28 @@ footer {
 
 		.col__header {
 			font-weight: 700;
+			text-transform: uppercase;
 		}
 
 		.col__link {
 			font-size: small;
+			text-transform: capitalize;
 		}
 
 		// Social media icons
 		.col__social {
-			// FIXME: alignment is currrent to bottom cuz of inline block
-			// display: inline-block;
-			// TODO: align right
+			text-transform: capitalize;
 
 			ul li {
 				display: inline-block;
+				margin-right: $gutter;
 			}
 		}
+	}
+
+	.social__icon {
+		width: 20px;
+		height: auto;
 	}
 
 }
