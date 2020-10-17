@@ -1,7 +1,5 @@
 <?php
 
-$title = 'Shop category - CLEO & AZZH Collection: Neue Urban Fashion';
-
 /**
  * Models
  */
@@ -9,11 +7,15 @@ $title = 'Shop category - CLEO & AZZH Collection: Neue Urban Fashion';
 include_once('models/auth.php');
 // include('model/connect-db.php');
 
+
 /**
  * Variables
  */
 
+$title = 'Shop category - CLEO & AZZH Collection: Neue Urban Fashion';
+
 include_once('lang/listings.php');
+
 
 /**
  * Layouts

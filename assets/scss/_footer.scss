@@ -14,7 +14,24 @@ footer {
 	// margin-bottom: 0;
 
 	.container {
-		padding: 3em 1em;
+		padding: 3em 0;
+	}
+
+	.footer__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: $gutter;
+		// margin: auto;
+	}
+
+	hr {
+		margin: auto;
+		color: #afafaf;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0;
 	}
 
 	.link__col{
@@ -23,22 +40,20 @@ footer {
 			font-weight: 700;
 		}
 
+		.col__link {
+			font-size: small;
+		}
+
 		// Social media icons
 		.col__social {
 			// FIXME: alignment is currrent to bottom cuz of inline block
-			display: inline-block;
+			// display: inline-block;
 			// TODO: align right
 
 			ul li {
 				display: inline-block;
 			}
 		}
-	}
-
-	hr {
-		width: 90%;
-		margin: auto;
-		color: #afafaf;
 	}
 
 }

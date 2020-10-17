@@ -1,21 +1,22 @@
 <?php
 
-$title = 'CLEO & AZZH Collection: Neue Urban Fashion';
-
 /**
  * Models
  */
 
 include_once('models/auth.php');
-
 // TODO: may not need depending on implementation
 // include_once($root . '/models/connect-db.php');
+
 
 /**
  * Variables
  */
 
+$title = 'CLEO & AZZH Collection: Neue Urban Fashion';
+
 include_once('lang/index.php');
+
 
 /**
  * Layouts

@@ -1,27 +1,25 @@
 //============================================================================//
-// LISTINGS
+// PRODUCT
 //============================================================================//
 
-.listings {
-	&__menu {
-		height: 100%;
-		width: $side-nav-width;
+.product {
+	&__gallery {
+		width: $product-img-width;
 		position: fixed;
-
-		ul {
-			list-style: none;
-			padding-left: 0;
-		}
 	}
 
 	&__main {
-		margin-left: $side-nav-width;
+		margin-left: $product-img-width + $gutter;
 	}
 
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		grid-gap: $gutter;
 		margin: auto;
+	}
+
+	&__img {
+		//
 	}
 }
