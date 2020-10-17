@@ -21,6 +21,8 @@ include_once('lang/listings.php');
  * Layouts
  */
 
+include_once('layouts/common/head.php');
+include_once('layouts/scripts/listings.php');
 include_once('layouts/common/header.php');
 
 // START OF MAIN CONTENT
