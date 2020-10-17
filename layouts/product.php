@@ -16,15 +16,21 @@
 
         <p class="product__description"><?= $productDescription ?></p>
 
-        <form action="../models/addToCart.php" class="form__product">
-            <!-- TODO: add price -->
-            <p>
+        <!-- TODO: review form classes -->
+        <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form" id="form__product">
+            <div class="product__price">
                 Price: $<?= $productPrice ?>
-            </p>
+            </div>
 
-            <!-- TODO: add numbers -->
+            <!-- FIXME: allow number selection by spinner only -->
+            <div class="product__qty">
+                Qty:
+                <button id="product__qty--less">-</button>
+                <input type="number" name="product__qty-input" id="product__qty-input" value="0" min="0">
+                <button id="product__qty--more">+</button>
+            </div>
 
-            <button class="cart--add">Add to Cart</button>
+            <button class="cart--add" type="submit">Add to Cart</button>
         </form>
     </div>
 </section>

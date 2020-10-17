@@ -6,6 +6,7 @@
 
 include_once('models/auth.php');
 // include('model/connect-db.php');
+include_once('models/addToCart.php');
 $imageNum = 4;
 
 /**
@@ -29,11 +30,14 @@ include_once('lang/listings.php');
  * Layouts
  */
 
+include_once('layouts/common/head.php');
+include_once('layouts/scripts/product.php');
 include_once('layouts/common/header.php');
 
 // START OF MAIN CONTENT
 
 echo '<main>';
+
 
 include_once('layouts/product.php');
 // include_once('layouts/recommendation.php');
