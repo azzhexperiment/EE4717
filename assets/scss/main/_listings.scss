@@ -2,6 +2,17 @@
 // LISTINGS
 //============================================================================//
 
+.menu__listings {
+	height: 100%;
+	width: $side-nav-width;
+	position: fixed;
+	float: left;
+}
+
+.main__listings {
+	margin-left: $side-nav-width;
+}
+
 .listings__grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

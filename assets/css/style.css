@@ -144,6 +144,17 @@ nav ul li {
   margin: auto;
 }
 
+.menu__listings {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  float: left;
+}
+
+.main__listings {
+  margin-left: 200px;
+}
+
 .listings__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -173,10 +184,6 @@ footer hr {
   width: 90%;
   margin: auto;
   color: #afafaf;
-}
-footer ul {
-  list-style: none;
-  padding-left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
