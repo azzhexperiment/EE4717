@@ -29,7 +29,7 @@
 
 			<!-- Navigation -->
 			<nav>
-				<div class="nav text--uppercase">
+				<div class="nav text--center style--none text--uppercase">
 					<ul>
 						<li><a href="../listings.php?cat=m">For Him</a></li>
 						<li><a href="../listings.php?cat=f">For Her</a></li>
