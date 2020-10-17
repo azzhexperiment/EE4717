@@ -18,12 +18,11 @@ header {
 //============================================================================//
 
 nav {
-
-	// Links
 	ul {
 		list-style: none;
 		padding-left: 0;
 
+		// TODO: remove margin for last child
 		li {
 			display: inline-block;
 			margin-right: 2em;
