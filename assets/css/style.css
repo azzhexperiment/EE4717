@@ -61,6 +61,16 @@ p {
   height: auto;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 ul.style--none {
   list-style: none;
   padding-left: 0;
@@ -184,6 +194,19 @@ nav ul li {
   grid-gap: 24px;
   margin: auto;
 }
+.career .career__listings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+.career .job__opening {
+  padding: 2em;
+}
+.career a.job--apply {
+  text-decoration: none;
+  color: #000;
+}
+
 footer {
   background-color: #343434;
   color: #afafaf;
@@ -208,12 +231,22 @@ footer ul {
 }
 footer .link__col .col__header {
   font-weight: 700;
+  text-transform: uppercase;
 }
 footer .link__col .col__link {
   font-size: small;
+  text-transform: capitalize;
+}
+footer .link__col .col__social {
+  text-transform: capitalize;
 }
 footer .link__col .col__social ul li {
   display: inline-block;
+  margin-right: 24px;
+}
+footer .social__icon {
+  width: 20px;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

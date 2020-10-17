@@ -1,0 +1,21 @@
+//============================================================================//
+// CAREER
+//============================================================================//
+
+.career {
+
+    .career__listings {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $gutter;
+    }
+
+    .job__opening {
+        padding: 2em;
+    }
+
+    a.job--apply {
+        text-decoration: none;
+        color: $black;
+    }
+}
