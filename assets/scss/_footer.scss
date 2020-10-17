@@ -1,0 +1,44 @@
+//============================================================================//
+// FOOTER
+//============================================================================//
+
+footer {
+
+	// General footer styles
+	background-color: #343434;
+	color: #afafaf;
+	width: 100%;
+
+	margin-top: 5em;
+	// TODO: remove
+	// margin-bottom: 0;
+
+	.container {
+		padding: 3em 1em;
+	}
+
+	.link__col{
+
+		.col__header {
+			font-weight: 700;
+		}
+
+		// Social media icons
+		.col__social {
+			// FIXME: alignment is currrent to bottom cuz of inline block
+			display: inline-block;
+			// TODO: align right
+
+			ul li {
+				display: inline-block;
+			}
+		}
+	}
+
+	hr {
+		width: 90%;
+		margin: auto;
+		color: #afafaf;
+	}
+
+}

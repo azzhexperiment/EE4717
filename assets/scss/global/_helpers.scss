@@ -1,0 +1,23 @@
+//============================================================================//
+// HELPER CLASSES
+//============================================================================//
+
+// Alignment
+.float--left   { float: left !important; }
+.float--right  { float: right !important; }
+
+.align--center { margin-left: auto; margin-right: auto; }
+
+// Text alignment
+.text--left   { text-align: left !important; }
+.text--right  { text-align: right !important; }
+.text--center { text-align: center !important; }
+
+// Text transform
+.text--lowercase  { text-transform: lowercase !important; }
+.text--uppercase  { text-transform: uppercase !important; }
+.text--capitalize { text-transform: capitalize !important; }
+
+// Visibility
+.show { visibility: visible !important; }
+.hide { visibility: hidden !important; }

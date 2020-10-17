@@ -1,0 +1,19 @@
+//============================================================================//
+// CATEGORIES
+//============================================================================//
+
+.categories__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: $gutter;
+	margin: auto;
+}
+
+.category__left {
+
+}
+
+.category__right {
+
+
+}

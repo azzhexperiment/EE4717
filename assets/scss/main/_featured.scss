@@ -1,9 +1,14 @@
 //============================================================================//
-// SPLASH
+// FEATURED
 //============================================================================//
 
-.splash {
-	background: url('../img/index/splash.jpg') center no-repeat;
-	height: 500px;
-	width: 100%;
+.featured__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: $gutter;
+	margin: auto;
+}
+
+.featured__item {
+
 }

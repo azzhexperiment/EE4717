@@ -1,0 +1,22 @@
+//============================================================================//
+// LISTINGS
+//============================================================================//
+
+.listings {
+	&__menu {
+		height: 100%;
+		width: $side-nav-width;
+		position: fixed;
+	}
+
+	&__main {
+		margin-left: $side-nav-width;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: $gutter;
+		margin: auto;
+	}
+}
