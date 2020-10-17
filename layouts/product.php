@@ -22,7 +22,6 @@
                 Price: $<?= $productPrice ?>
             </div>
 
-            <!-- FIXME: allow number selection by spinner only -->
             <div class="product__qty">
                 Qty:
                 <button id="product__qty--less">-</button>
@@ -30,6 +29,7 @@
                 <button id="product__qty--more">+</button>
             </div>
 
+            <!-- TODO: add modal for order confirmation -->
             <button class="cart--add" type="submit">Add to Cart</button>
         </form>
     </div>
