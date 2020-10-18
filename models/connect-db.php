@@ -11,6 +11,6 @@ $db = new mysqli('localhost', 'f37ee', 'f37ee', 'f37ee');
 
 // Check connection
 if ($db->connect_errno) {
-    echo 'Error: Could not connect to database. Please try again later.';
+    echo 'Connection failed: ' . $db->connect_error;
     exit();
 }

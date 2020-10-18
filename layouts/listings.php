@@ -14,7 +14,7 @@
             <?php for ($i = 0; $i < $listingNum; $i++) { ?>
                 <div class="card listing__item">
                     <!-- TODO: generate URLs from DB -->
-                    <img class="img--fit" src="../assets/img/index/featured-1.jpg" alt="">
+                    <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
 
                     <button class="cart--add">Add to Cart</button>
                 </div>
