@@ -1,0 +1,39 @@
+//============================================================================//
+// CONTACT
+//============================================================================//
+
+.contact {
+
+    .contact__title {
+        padding-top: 3em;
+    }
+
+    .form__contact {
+
+        width: 70%;
+        margin: auto;
+
+        .contact__field-name {
+            vertical-align: top;
+            padding-top: 1.5em;
+        }
+
+        .contact__input-field {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            height: 40px;
+        }
+
+        textarea.contact__input-field {
+            height: 200px;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 70%;
+        }
+
+    }
+
+}
