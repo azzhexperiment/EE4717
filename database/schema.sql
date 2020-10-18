@@ -96,6 +96,31 @@ INSERT INTO auth_customers
 
 
 /******************************************************************************\
+	CUSTOMER FEEDBACK
+\******************************************************************************/
+
+DROP   TABLE IF     EXISTS feedbacks;
+CREATE TABLE IF NOT EXISTS feedbacks
+(
+	feedback_id      INT UNSIGNED            NOT NULL AUTO_INCREMENT,
+	feedback_name    CHAR(128)    DEFAULT '' NOT NULL               ,
+	feedback_email   VARCHAR(256) DEFAULT '' NOT NULL               ,
+	feedback_type    CHAR(128)    DEFAULT '' NOT NULL               ,
+	feedback_message TEXT         DEFAULT '' NOT NULL               ,
+
+	created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
+	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
+
+	PRIMARY KEY (feedback_id),
+);
+
+-- Test feedback entry
+INSERT INTO customer_feedbacks
+	VALUES
+		(DEFAULT, 'Test', 'test@customer.com', 'general', 'message', CURRENT_TIMESTAMP, NULL);
+
+
+/******************************************************************************\
 	SALES
 \******************************************************************************/
 
