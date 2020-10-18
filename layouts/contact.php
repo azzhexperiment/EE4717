@@ -1,8 +1,3 @@
-<!-- TODO: remove after testing -->
-<!-- TODO: clean data for special symbols -->
-<!-- TODO: write to DB -->
-<?php var_dump($_POST) ?>
-
 <!-- Featured items -->
 <section class="contact">
 
