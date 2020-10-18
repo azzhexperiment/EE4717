@@ -6,16 +6,15 @@
 
 include_once('models/auth.php');
 // include('model/connect-db.php');
-$listingNum = 10;
 
 
 //============================================================================//
 // VARIABLES
 //============================================================================//
 
-$title = 'Shop category - CLEO & AZZH Collection: Neue Urban Fashion';
+$title = 'Contact Us - CLEO & AZZH Collection: Neue Urban Fashion';
 
-include_once('lang/listings.php');
+include_once('lang/contact.php');
 
 
 //============================================================================//
@@ -23,14 +22,14 @@ include_once('lang/listings.php');
 //============================================================================//
 
 include_once('layouts/common/head.php');
-include_once('layouts/js/listings.php');
+include_once('layouts/js/contact.php');
 include_once('layouts/common/header.php');
 
 // START OF MAIN CONTENT
 
 echo '<main>';
 
-include_once('layouts/listings.php');
+include_once('layouts/contact.php');
 
 echo '</main>';
 

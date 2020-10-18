@@ -2,12 +2,16 @@
 <section class="product">
     <aside class="product__gallery">
         <div class="product__grid">
+
             <?php for ($i = 0; $i < $imageNum; $i++) { ?>
+
                 <div class="product__img">
                     <!-- TODO: generate images from DB -->
                     <img class="img--fit" src="../assets/img/index/featured-1.jpg" alt="">
                 </div>
+
             <?php } ?>
+
         </div>
     </aside>
 

@@ -1,17 +1,18 @@
 <?php
 
-/**
- * Models
- */
+//============================================================================//
+// MODELS
+//============================================================================//
 
 include_once('models/auth.php');
 // include('model/connect-db.php');
 include_once('models/addToCart.php');
 $imageNum = 4;
 
-/**
- * Variables
- */
+
+//============================================================================//
+// VARIABLES
+//============================================================================//
 
 $productName = 'Product Name';
 
@@ -26,12 +27,12 @@ $productPrice = 10;
 include_once('lang/listings.php');
 
 
-/**
- * Layouts
- */
+//============================================================================//
+// LAYOUTS
+//============================================================================//
 
 include_once('layouts/common/head.php');
-include_once('layouts/scripts/product.php');
+include_once('layouts/js/product.php');
 include_once('layouts/common/header.php');
 
 // START OF MAIN CONTENT
@@ -47,3 +48,5 @@ echo '</main>';
 // START OF MAIN CONTENT
 
 include_once('layouts/common/footer.php');
+
+// include_once($root . '/models/disconnect-db.php');
