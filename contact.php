@@ -5,7 +5,9 @@
 //============================================================================//
 
 include_once('models/auth.php');
-// include('model/connect-db.php');
+// include_once('models/connect-db.php');
+// include_once('models/submit-feedback.php');
+// include_once('models/disconnect-db.php');
 
 
 //============================================================================//
@@ -13,8 +15,6 @@ include_once('models/auth.php');
 //============================================================================//
 
 $title = 'Contact Us - CLEO & AZZH Collection: Neue Urban Fashion';
-
-include_once('lang/contact.php');
 
 
 //============================================================================//
@@ -36,5 +36,3 @@ echo '</main>';
 // START OF MAIN CONTENT
 
 include_once('layouts/common/footer.php');
-
-// include_once($root . '/models/disconnect-db.php');
