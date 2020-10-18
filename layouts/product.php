@@ -2,12 +2,16 @@
 <section class="product">
     <aside class="product__gallery">
         <div class="product__grid">
+
             <?php for ($i = 0; $i < $imageNum; $i++) { ?>
+
                 <div class="product__img">
                     <!-- TODO: generate images from DB -->
                     <img class="img--fit" src="../assets/img/index/featured-1.jpg" alt="">
                 </div>
+
             <?php } ?>
+
         </div>
     </aside>
 
@@ -22,7 +26,6 @@
                 Price: $<?= $productPrice ?>
             </div>
 
-            <!-- FIXME: allow number selection by spinner only -->
             <div class="product__qty">
                 Qty:
                 <button id="product__qty--less">-</button>
@@ -30,6 +33,7 @@
                 <button id="product__qty--more">+</button>
             </div>
 
+            <!-- TODO: add modal for order confirmation -->
             <button class="cart--add" type="submit">Add to Cart</button>
         </form>
     </div>

@@ -1,27 +1,27 @@
 <?php
 
-/**
- * Models
- */
+//============================================================================//
+// MODELS
+//============================================================================//
 
 include_once('models/auth.php');
-// include('model/connect-db.php');
 
-/**
- * Variables
- */
+
+//============================================================================//
+// VARIABLES
+//============================================================================//
 
 $title = 'Career - CLEO & AZZH Collection: Neue Urban Fashion';
 
 include_once('lang/career.php');
 
 
-/**
- * Layouts
- */
+//============================================================================//
+// LAYOUTS
+//============================================================================//
 
 include_once('layouts/common/head.php');
-include_once('layouts/scripts/career.php');
+include_once('layouts/js/career.php');
 include_once('layouts/common/header.php');
 
 // START OF MAIN CONTENT
