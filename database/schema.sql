@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS feedbacks
 (
 	feedback_id      INT UNSIGNED            NOT NULL AUTO_INCREMENT,
 	feedback_name    CHAR(128)    DEFAULT '' NOT NULL               ,
-	feedback_email   VARCHAR(256) DEFAULT '' NOT NULL               ,
+	feedback_email   VARCHAR(128) DEFAULT '' NOT NULL               ,
 	feedback_type    CHAR(128)    DEFAULT '' NOT NULL               ,
 	feedback_message TEXT         DEFAULT '' NOT NULL               ,
 
