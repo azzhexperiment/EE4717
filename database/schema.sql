@@ -1,3 +1,5 @@
+SET FOREIGN_KEY_CHECKS=0;
+
 /******************************************************************************\
 	ADMIN
 \******************************************************************************/
@@ -111,11 +113,11 @@ CREATE TABLE IF NOT EXISTS feedbacks
 	created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
 	updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
 
-	PRIMARY KEY (feedback_id),
+	PRIMARY KEY (feedback_id)
 );
 
 -- Test feedback entry
-INSERT INTO customer_feedbacks
+INSERT INTO feedbacks
 	VALUES
 		(DEFAULT, 'Test', 'test@customer.com', 'general', 'message', CURRENT_TIMESTAMP, NULL);
 
@@ -414,3 +416,6 @@ CREATE TABLE IF NOT EXISTS product_sales
 
 -- 	PRIMARY KEY (customer_id)
 -- );
+
+
+SET FOREIGN_KEY_CHECKS=1;
