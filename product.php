@@ -4,9 +4,9 @@
 // MODELS
 //============================================================================//
 
-include_once('models/auth.php');
-// include('model/connect-db.php');
-include_once('models/addToCart.php');
+include_once('models/Auth.php');
+// include_once('models/connect-db.php');
+include_once('models/Cart.php');
 $imageNum = 4;
 
 

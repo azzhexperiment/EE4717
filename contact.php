@@ -4,7 +4,7 @@
 // MODELS
 //============================================================================//
 
-include_once('models/auth.php');
+include_once('models/Auth.php');
 // include_once('models/connect-db.php');
 // include_once('models/Feedback.php');
 // include_once('models/disconnect-db.php');
