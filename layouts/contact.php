@@ -1,6 +1,5 @@
 <!-- Featured items -->
 <section class="contact">
-
     <!-- TODO: review form classes -->
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__contact" id="form__contact">
 
