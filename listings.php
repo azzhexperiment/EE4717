@@ -4,9 +4,10 @@
 // MODELS
 //============================================================================//
 
-include_once('models/auth.php');
-// include('model/connect-db.php');
-$listingNum = 10;
+include_once('models/Auth.php');
+include_once('models/connect-db.php');
+include_once('models/Listings.php');
+include_once('models/disconnect-db.php');
 
 
 //============================================================================//
@@ -37,5 +38,3 @@ echo '</main>';
 // START OF MAIN CONTENT
 
 include_once('layouts/common/footer.php');
-
-// include_once($root . '/models/disconnect-db.php');

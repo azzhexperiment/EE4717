@@ -11,12 +11,17 @@
 
     <div class="listings__main">
         <div class="listings__grid">
-            <?php for ($i = 0; $i < $listingNum; $i++) { ?>
+            <?php foreach ($listings as $listing) { ?>
                 <div class="card listing__item">
-                    <!-- TODO: generate URLs from DB -->
-                    <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
+                    <a href="product.php?id=<?= $listing->product_id ?>">
+                        <!-- TODO: generate URLs from DB -->
+                        <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
 
-                    <button class="cart--add">Add to Cart</button>
+                        <div class="listing__name"><?= $listing->product_name ?></div>
+
+                        <!-- TODO: consider removing this since cannot choose details -->
+                        <!-- <button class="cart--add">Add to Cart</button> -->
+                    </a>
                 </div>
             <?php } ?>
         </div>
