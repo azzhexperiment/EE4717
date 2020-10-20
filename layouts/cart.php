@@ -1,41 +1,56 @@
 <?php
 
 use Cart\Cart;
-use Cart\Sales;
+// use Sales\Sales;
 
-$_SESSION['cart']['id']  = [123, 132, 222];
-$_SESSION['cart']['qty'] = [1, 2, 3];
+$_SESSION['cart']['productId']       = [123, 132, 222];
+$_SESSION['cart']['productName']     = ['A', 'B', 'C'];
+$_SESSION['cart']['productSize']     = ['S', 'S', 'US 8'];
+$_SESSION['cart']['productOrderQty'] = [1, 2, 3];
+
+// $_SESSION['cart'] = [
+//     [123, 'A', 'S', 1],
+//     [132, 'B', 'XS', 2],
+//     [222, 'C', 'US 8', 1],
+//     [12123, 'S', 'S', 1],
+// ];
 
 // TODO: get cart from DB if logged in, else get from session
 // Init fresh cart at every new page visit
 $cart = new Cart();
-$sales = new Sales();
 
-$itemIds = implode(',', $cart->id);
+echo 'Printing cart';
+echo '<pre>';
+echo print_r($cart);
+echo '</pre>';
 
-if (isset($_POST)) {
-    // TODO: this goes to product page, not cart page
-    // Add item to cart
-    if (isset($_POST['buy'])) {
-        $cart->addToCart(
-            $_POST['buy']['productId'],
-            $_POST['buy']['productOrderQty'],
-            $_POST['buy']['productName']
-        );
-    }
+// $sales = new Sales();
 
-    // Remove an item from cart
-    if (isset($_POST['remove'])) {
-        $cart->removeItem($_POST['remove']);
-    }
+// $itemIds = implode(',', $cart->productId);
 
-    // Empty the cart
-    if (isset($_POST['empty'])) {
-        $cart->emptyCart();
-    }
+// if (isset($_POST)) {
+//     // TODO: this goes to product page, not cart page
+//     // Add item to cart
+//     if (isset($_POST['buy'])) {
+//         $cart->addToCart(
+//             $_POST['buy']['productId'],
+//             $_POST['buy']['productOrderQty'],
+//             $_POST['buy']['productName']
+//         );
+//     }
 
-    unset($_POST);
-}
+//     // Remove an item from cart
+//     if (isset($_POST['remove'])) {
+//         $cart->removeItem($_POST['remove']);
+//     }
+
+//     // Empty the cart
+//     if (isset($_POST['empty'])) {
+//         $cart->emptyCart();
+//     }
+
+//     unset($_POST);
+// }
 
 // TODO: Get products
 
@@ -49,22 +64,26 @@ if (isset($_POST)) {
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__cart">
 
         <table class="cart__content">
-            <?php foreach ($products as $product) { ?>
+            <?php for ($i = 0; $i < count($cart->productId); $i++) { ?>
                 <!-- TODO: padding space etc, refer to docs -->
                 <tr class="cart__item">
-                    <td><input type="checkbox"></td>
-                    <td>img</td>
+                    <!-- TODO: consider removing -->
+                    <td><input type="checkbox">DO i really need this</td>
+                    <td>__IMG HERE__</td>
                     <td>
-                        <?= $product['name'] ?>
+                        <?= $cart->productName[$i] ?>
                         <br>
                         <!-- TODO: make dropdown -->
-                        <?= $product['size'] ?>
+                        <?= $cart->productSize[$i] ?>
                         <br>
-                        <?= $product['qty'] ?>
+                        <?= $cart->productOrderQty[$i] ?>
                     </td>
-                    <td>subtotal from js</td>
+                    <td>__SUBTOTAL__</td>
                 </tr>
             <?php } ?>
+            <tr class="cart__total">
+                <td>total</td>
+            </tr>
         </table>
 
         <!-- TODO: add modal for order confirmation -->
