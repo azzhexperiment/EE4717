@@ -4,9 +4,11 @@
 // MODELS
 //============================================================================//
 
+// include_once('models/Session.php');
 include_once('models/Auth.php');
-// include_once('models/connect-db.php');
-include_once('models/Cart.php');
+include_once('models/connect-db.php');
+// include_once('models/Cart.php');
+include_once('models/disconnect-db.php');
 $imageNum = 4;
 
 
@@ -48,5 +50,3 @@ echo '</main>';
 // START OF MAIN CONTENT
 
 include_once('layouts/common/footer.php');
-
-// include_once($root . '/models/disconnect-db.php');

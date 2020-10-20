@@ -4,6 +4,7 @@
 // MODELS
 //============================================================================//
 
+include_once('models/Session.php');
 include_once('models/Auth.php');
 
 
