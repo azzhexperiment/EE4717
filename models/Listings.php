@@ -25,8 +25,8 @@ if ($categoryId > 0) {
     $getListings = 'SELECT * FROM products';
 }
 
-$results = $db->query($getListings);
+$result = $db->query($getListings);
 
-while ($listing = $results->fetch_object()) {
+while ($listing = $result->fetch_object()) {
     $listings[] = $listing;
 }
