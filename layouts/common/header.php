@@ -22,6 +22,7 @@
                         <li><a href="listings.php?sex=f">For Her</a></li>
                         <li><a href="listings.php?cat=featured">Featured</a></li>
                         <li><a href="listings.php?cat=new">New Arrival</a></li>
+                        <li><a href="cart.php">Cart</a></li>
                     </ul>
                 </div>
             </nav>

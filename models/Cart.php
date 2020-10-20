@@ -9,81 +9,60 @@
 
 namespace Cart;
 
-use Actions\CartActions;
-
-class Cart implements CartActions
+/**
+ * Customer cart
+ *
+ * @property array $productId
+ * @property array $productName
+ * @property array $productSize
+ * @property array $productOrderQty
+ */
+class Cart
 {
     public $productId;
     public $productName;
+    public $productSize;
     public $productOrderQty;
 
     /**
      * Construct cart object.
      *
-     * @param int    $productId
-     * @param int    $productOrderQty
-     * @param string $productName
-     *
-     * @return void
+     * @return object
      */
     public function __construct()
     {
         $this->productId       = $_SESSION['cart']['productId'];
         $this->productName     = $_SESSION['cart']['productName'];
+        $this->productSize     = $_SESSION['cart']['productSize'];
         $this->productOrderQty = $_SESSION['cart']['productOrderQty'];
     }
 
+    // TODO: update param types
     /**
      * Add item to cart.
      *
-     * Pushes new item into existing cart array stored in $_SESSION.
+     * Pushes new item into Cart object and $_SESSION alike.
      *
-     * @param int    $productId
-     * @param int    $productOrderQty
-     * @param string $productName
+     * @param array $productId
+     * @param array $productName
+     * @param array $productSize
+     * @param array $productOrderQty
      *
      * @return void
      */
-    public function addToCart($productId, $productOrderQty, $productName)
+    public function addToCart($productId, $productName, $productSize, $productOrderQty)
     {
-        // Type safety
-        $productId       = (int) $productId;
-        $productName     = (string) $productName;
-        $productOrderQty = (int) $productOrderQty;
+        // Update object
+        array_push($this->productId, $productId);
+        array_push($this->productName, $productName);
+        array_push($this->productSize, $productSize);
+        array_push($this->productOrderQty, $productOrderQty);
 
-        $_SESSION['cart']['productId']       = array_push($productId);
-        $_SESSION['cart']['productName']     = array_push($productName);
-        $_SESSION['cart']['productOrderQty'] = array_push($productOrderQty);
-    }
-
-    /**
-     * Get all items in cart.
-     *
-     * @return array
-     */
-    public function getCartContent()
-    {
-        return $_SESSION['cart'];
-    }
-
-    /**
-     * Get id from all items in cart.
-     *
-     * @return array
-     */
-    public function getCartContentIds()
-    {
-        return $_SESSION['cart']['id'];
-    }
-
-    /**
-     * Get names from all items in cart.
-     *
-     * @return array
-     */
-    public function getCartContentNames()
-    {
-        return $_SESSION['cart']['name'];
+        // Update $_SESSION
+        $_SESSION['cart']['productId']       = $this->productId;
+        $_SESSION['cart']['productName']     = $this->productName;
+        $_SESSION['cart']['productSize']     = $this->productSize;
+        $_SESSION['cart']['productOrderQty'] = $this->productOrderQty;
     }
 
     /**
@@ -93,16 +72,24 @@ class Cart implements CartActions
      *
      * @return void
      */
-    public function removeItem($productId)
+    public function removeItem($id)
     {
-        $key = array_search($productId, array_column($_SESSION['cart'], 'productId'));
+        if (($key = array_search($id, $this->productId)) !== false) {
+            // Update object
+            unset($this->productId[$key]);
+            unset($this->productName[$key]);
+            unset($this->productSize[$key]);
+            unset($this->productOrderQty[$key]);
 
-        unset($_SESSION['cart']['productId'][$key]);
-        unset($_SESSION['cart']['productName'][$key]);
-        unset($_SESSION['cart']['productOrderQty'][$key]);
+            // Update $_SESSION
+            unset($_SESSION['cart']['productId'][$key]);
+            unset($_SESSION['cart']['productName'][$key]);
+            unset($_SESSION['cart']['productSize'][$key]);
+            unset($_SESSION['cart']['productOrderQty'][$key]);
 
-        // TODO: double check where this tag will be stored
-        unset($_POST['remove']);
+            // TODO: double check where this tag will be stored
+            unset($_POST['remove']);
+        }
     }
 
     /**
@@ -126,6 +113,6 @@ class Cart implements CartActions
      */
     public function __destruct()
     {
-        // TODO: check for login status before sending to DB
+        // TODO: check for login status before sending to DB, if using login
     }
 }
