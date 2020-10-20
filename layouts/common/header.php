@@ -18,8 +18,8 @@
             <nav>
                 <div class="nav text--center style--none text--uppercase">
                     <ul>
-                        <li><a href="listings.php?cat=m">For Him</a></li>
-                        <li><a href="listings.php?cat=f">For Her</a></li>
+                        <li><a href="listings.php?sex=m">For Him</a></li>
+                        <li><a href="listings.php?sex=f">For Her</a></li>
                         <li><a href="listings.php?cat=featured">Featured</a></li>
                         <li><a href="listings.php?cat=new">New Arrival</a></li>
                     </ul>

@@ -9,10 +9,10 @@
 
 if (isset($_POST)) {
     // Data cleaning
-    $name = $db->real_escape_string($_POST['contact__input-name']);
-    $email = $db->real_escape_string($_POST['contact__input-email']);
+    $name      = $db->real_escape_string($_POST['contact__input-name']);
+    $email     = $db->real_escape_string($_POST['contact__input-email']);
     $queryType = $db->real_escape_string($_POST['contact__input-type']);
-    $message = $db->real_escape_string($_POST['contact__input-message']);
+    $message   = $db->real_escape_string($_POST['contact__input-message']);
 
     $newFeedback = 'INSERT INTO feedbacks
         (feedback_name, feedback_email, feedback_type, feedback_message)
