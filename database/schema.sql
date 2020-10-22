@@ -24,6 +24,7 @@ INSERT INTO admins
         (DEFAULT, 'Admin', 'AZZH', 'zhuz0010@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL),
         (DEFAULT, 'Admin', 'Cleo', 'cleo0002@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL);
 
+
 DROP   TABLE IF     EXISTS auth_admin;
 CREATE TABLE IF NOT EXISTS auth_admin
 (
@@ -46,6 +47,7 @@ INSERT INTO auth_admin
         (DEFAULT, 1, 'a8bca5419b2a21ba18a8233019c170ec', '7c6a180b36896a0a8c02787eeafb0e4c', CURRENT_TIMESTAMP, NULL),
         -- cleo0002@e.ntu.edu.sg || password2
         (DEFAULT, 2, 'ef4a3460902f386f89050450493bebcf', '6cb75f652a9b52798eb6cf2201057c73', CURRENT_TIMESTAMP, NULL);
+
 
 
 /******************************************************************************\
@@ -76,6 +78,7 @@ INSERT INTO customers
     VALUES
         (DEFAULT, 'Customer', 'Test', 'customer@test.com', 'Address 1', 'Address 2', 'SG', 'SG', 111111, CURRENT_TIMESTAMP, NULL);
 
+
 DROP   TABLE IF     EXISTS auth_customers;
 CREATE TABLE IF NOT EXISTS auth_customers
 (
@@ -95,6 +98,7 @@ CREATE TABLE IF NOT EXISTS auth_customers
 INSERT INTO auth_customers
     VALUES
         (DEFAULT, 1, '5b27f0c7078f0861d364ccb34094ba44', '5f4dcc3b5aa765d61d8327deb882cf99', CURRENT_TIMESTAMP, NULL);
+
 
 
 /******************************************************************************\
@@ -122,6 +126,7 @@ INSERT INTO feedbacks
         (DEFAULT, 'Test', 'test@customer.com', 'general', 'message', CURRENT_TIMESTAMP, NULL);
 
 
+
 /******************************************************************************\
     SALES
 \******************************************************************************/
@@ -144,6 +149,7 @@ INSERT INTO sale_statuses (sale_status)
         ('Shipping')            ,
         ('Completed')           ;
 
+
 DROP   TABLE IF     EXISTS sales;
 CREATE TABLE IF NOT EXISTS sales
 (
@@ -160,16 +166,6 @@ CREATE TABLE IF NOT EXISTS sales
     FOREIGN KEY (sale_status_id) REFERENCES sale_statuses(sale_status_id)
 );
 
--- Sample sales
-INSERT INTO sales
-    VALUES
-        (DEFAULT, 1, 0,     0,     CURRENT_TIMESTAMP, NULL, NULL),
-        (DEFAULT, 1, 1.11,  1.11,  CURRENT_TIMESTAMP, NULL, NULL),
-        -- TEST IF CAN ACCEPT NEGATIVE
-        (DEFAULT, 1, -1.11,  -1.11,  CURRENT_TIMESTAMP, NULL, NULL),
-        (DEFAULT, 1, 2.22,  1.11,  CURRENT_TIMESTAMP, NULL, NULL),
-        (DEFAULT, 1, 3.33,  1.55,  CURRENT_TIMESTAMP, NULL, NULL),
-        (DEFAULT, 1, 9.999, 5.555, CURRENT_TIMESTAMP, NULL, NULL);
 
 
 /******************************************************************************\
@@ -221,26 +217,6 @@ INSERT INTO categories
         (242, "f", "accessories", "rings");
 
 
-DROP   TABLE IF     EXISTS brands;
-CREATE TABLE IF NOT EXISTS brands
-(
-    brand_id    INT          UNSIGNED   NOT NULL AUTO_INCREMENT,
-    brand_name  VARCHAR(256) DEFAULT '' NOT NULL               ,
-
-    PRIMARY KEY (brand_id)
-);
-
--- Sample brands
-INSERT INTO brands
-    VALUES
-        (DEFAULT, 'OEM'),
-        (DEFAULT, 'Nike'),
-        (DEFAULT, 'Adidas'),
-        (DEFAULT, 'Puma'),
-        (DEFAULT, 'Zara'),
-        (DEFAULT, 'H&M'),
-        (DEFAULT, 'Charles & Keith');
-
 DROP   TABLE IF     EXISTS sizing_types;
 CREATE TABLE IF NOT EXISTS sizing_types
 (
@@ -257,6 +233,7 @@ INSERT INTO sizing_types
         (DEFAULT, 'top_sizes'),
         (DEFAULT, 'bottom_sizes'),
         (DEFAULT, 'shoe_sizes');
+
 
 DROP   TABLE IF     EXISTS top_sizes;
 CREATE TABLE IF NOT EXISTS top_sizes
@@ -278,6 +255,7 @@ INSERT INTO top_sizes
         (DEFAULT, 'XL'),
         (DEFAULT, 'XXL');
 
+
 DROP   TABLE IF     EXISTS bottom_sizes;
 CREATE TABLE IF NOT EXISTS bottom_sizes
 (
@@ -297,6 +275,7 @@ INSERT INTO bottom_sizes
         (DEFAULT, 'L'),
         (DEFAULT, 'XL'),
         (DEFAULT, 'XXL');
+
 
 DROP   TABLE IF     EXISTS shoe_sizes;
 CREATE TABLE IF NOT EXISTS shoe_sizes
@@ -321,6 +300,7 @@ INSERT INTO shoe_sizes
         (DEFAULT, 'US 12');
 
 
+
 /******************************************************************************\
     PRODUCT
 \******************************************************************************/
@@ -329,8 +309,8 @@ DROP   TABLE IF     EXISTS products;
 CREATE TABLE IF NOT EXISTS products
 (
     product_id          INT          UNSIGNED              NOT NULL AUTO_INCREMENT,
-    product_brand       INT          UNSIGNED DEFAULT 1    NOT NULL               ,
     product_category    SMALLINT     UNSIGNED              NOT NULL               ,
+    product_brand       VARCHAR(256)          DEFAULT ''   NOT NULL               ,
     product_name        VARCHAR(256)          DEFAULT ''   NOT NULL               ,
     product_description TEXT                  DEFAULT ''   NOT NULL               ,
     sizing_type         TINYINT      UNSIGNED DEFAULT 1    NOT NULL               ,
@@ -343,19 +323,20 @@ CREATE TABLE IF NOT EXISTS products
     updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
 
     PRIMARY KEY (product_id),
-    FOREIGN KEY (product_brand)    REFERENCES brands(brand_id),
     FOREIGN KEY (product_category) REFERENCES categories(category_id),
     FOREIGN KEY (sizing_type)      REFERENCES sizing_types(sizing_type_id)
 );
 
+
 -- Sample products
 INSERT INTO products
     VALUES
-        (DEFAULT, 2, 111, 'Nike DryFit Classic Tee',         'lorem ipsum', 2, 35, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 2, 123, 'Nike DryFit Classic Sweat Pants', 'lorem ipsum', 3, 55, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 2, 132, 'Nike Lunar Run',                  'lorem ipsum', 4, 125, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 1, 141, 'Seiko SKX007',                    'lorem ipsum', 1, 250, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 1, 222, 'Lululemon',                       'lorem ipsum', 3, 150, 1, 1, 1, CURRENT_TIMESTAMP, NULL);
+        (11101, 111, 'Nike','Nike DryFit Classic Tee', 'Timeless classic', 2, 35, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (12301, 123, 'Nike', 'Nike DryFit Classic Sweat Pants', 'Best lounge wear for the streets', 3, 55, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (13201, 132, 'Nike', 'Nike Lunar Run', 'Tread on air', 4, 125, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (14101, 141, 'Seiko', 'Seiko SKX007', 'Perfect entry mechanical watch', 1, 250, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (22201, 222, 'Lululemon', 'Lululemon yoga pants', 'Hugged by air', 3, 150, 1, 1, 1, CURRENT_TIMESTAMP, NULL);
+
 
 DROP   TABLE IF     EXISTS stocks;
 CREATE TABLE IF NOT EXISTS stocks
@@ -369,6 +350,16 @@ CREATE TABLE IF NOT EXISTS stocks
     PRIMARY KEY (product_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
 );
+
+-- Sample product stocks
+INSERT INTO stocks
+    VALUES
+        (11101, 200, CURRENT_TIMESTAMP, NULL),
+        (12301, 200, CURRENT_TIMESTAMP, NULL),
+        (13201, 200, CURRENT_TIMESTAMP, NULL),
+        (14101, 200, CURRENT_TIMESTAMP, NULL),
+        (22201, 200, CURRENT_TIMESTAMP, NULL);
+
 
 DROP   TABLE IF     EXISTS product_sales;
 CREATE TABLE IF NOT EXISTS product_sales
