@@ -4,10 +4,10 @@
  * Write user feedback into DB table.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.0.0
+ * @version 1.1.0
  */
 
-if (isset($_POST)) {
+if (!empty($_POST)) {
     // Data cleaning
     $name      = $db->real_escape_string($_POST['contact__input-name']);
     $email     = $db->real_escape_string($_POST['contact__input-email']);
@@ -27,4 +27,6 @@ if (isset($_POST)) {
     if (!$result = $db->query($newFeedback)) {
         die('Error: ' . $db->error);
     }
+
+    $_POST = [];
 }
