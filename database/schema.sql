@@ -28,10 +28,10 @@ INSERT INTO admins
 DROP   TABLE IF     EXISTS auth_admin;
 CREATE TABLE IF NOT EXISTS auth_admin
 (
-    auth_id       INT      UNSIGNED NOT NULL AUTO_INCREMENT,
-    admin_id      INT      UNSIGNED NOT NULL               ,
-    auth_email    CHAR(32)          NOT NULL               ,
-    auth_password CHAR(32)          NOT NULL               ,
+    auth_id       INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    admin_id      INT UNSIGNED NOT NULL               ,
+    auth_email    CHAR(32)     NOT NULL               ,
+    auth_password CHAR(32)     NOT NULL               ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
     updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
@@ -82,10 +82,10 @@ INSERT INTO customers
 DROP   TABLE IF     EXISTS auth_customers;
 CREATE TABLE IF NOT EXISTS auth_customers
 (
-    auth_id       INT      UNSIGNED NOT NULL AUTO_INCREMENT,
-    customer_id   INT      UNSIGNED NOT NULL               ,
-    auth_email    CHAR(32)          NOT NULL               ,
-    auth_password CHAR(32)          NOT NULL               ,
+    auth_id       INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    customer_id   INT UNSIGNED NOT NULL               ,
+    auth_email    CHAR(32)     NOT NULL               ,
+    auth_password CHAR(32)     NOT NULL               ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
     updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
@@ -120,11 +120,6 @@ CREATE TABLE IF NOT EXISTS feedbacks
     PRIMARY KEY (feedback_id)
 );
 
--- Test feedback entry
-INSERT INTO feedbacks
-    VALUES
-        (DEFAULT, 'Test', 'test@customer.com', 'general', 'message', CURRENT_TIMESTAMP, NULL);
-
 
 
 /******************************************************************************\
@@ -134,8 +129,8 @@ INSERT INTO feedbacks
 DROP   TABLE IF     EXISTS sale_statuses;
 CREATE TABLE IF NOT EXISTS sale_statuses
 (
-    sale_status_id TINYINT     UNSIGNED NOT NULL AUTO_INCREMENT,
-    sale_status    VARCHAR(64)          NOT NULL               ,
+    sale_status_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    sale_status    VARCHAR(64)      NOT NULL               ,
 
     PRIMARY KEY (sale_status_id)
 );
@@ -280,7 +275,7 @@ INSERT INTO bottom_sizes
 DROP   TABLE IF     EXISTS shoe_sizes;
 CREATE TABLE IF NOT EXISTS shoe_sizes
 (
-    size_id    INT        UNSIGNED   NOT NULL AUTO_INCREMENT,
+    size_id    INT         UNSIGNED   NOT NULL AUTO_INCREMENT,
     size_value VARCHAR(16) DEFAULT '' NOT NULL               ,
 
     PRIMARY KEY (size_id)
@@ -331,11 +326,11 @@ CREATE TABLE IF NOT EXISTS products
 -- Sample products
 INSERT INTO products
     VALUES
-        (11101, 111, 'Nike','Nike DryFit Classic Tee', 'Timeless classic', 2, 35, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (12301, 123, 'Nike', 'Nike DryFit Classic Sweat Pants', 'Best lounge wear for the streets', 3, 55, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (13201, 132, 'Nike', 'Nike Lunar Run', 'Tread on air', 4, 125, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (14101, 141, 'Seiko', 'Seiko SKX007', 'Perfect entry mechanical watch', 1, 250, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
-        (22201, 222, 'Lululemon', 'Lululemon yoga pants', 'Hugged by air', 3, 150, 1, 1, 1, CURRENT_TIMESTAMP, NULL);
+        (11101, 111, 'Nike','Nike DryFit Classic Tee', 'Timeless classic', 2, 35.85, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (12301, 123, 'Nike', 'Nike DryFit Classic Sweat Pants', 'Best lounge wear for the streets', 3, 55.50, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (13201, 132, 'Nike', 'Nike Lunar Run', 'Tread on air', 4, 129.99, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (14101, 141, 'Seiko', 'Seiko SKX007', 'Perfect entry mechanical watch', 1, 249.99, 1, 1, 1, CURRENT_TIMESTAMP, NULL),
+        (22201, 222, 'Lululemon', 'Lululemon yoga pants', 'Hugged by air', 3, 145.35, 1, 1, 1, CURRENT_TIMESTAMP, NULL);
 
 
 DROP   TABLE IF     EXISTS stocks;
@@ -364,14 +359,14 @@ INSERT INTO stocks
 DROP   TABLE IF     EXISTS product_sales;
 CREATE TABLE IF NOT EXISTS product_sales
 (
-    product_sale_id INT      UNSIGNED           NOT NULL AUTO_INCREMENT,
-    sale_id         INT      UNSIGNED           NOT NULL               ,
-    customer_id     INT      UNSIGNED           NOT NULL               ,
-    product_id      INT      UNSIGNED           NOT NULL               ,
-    sale_qty        INT      UNSIGNED DEFAULT 0 NOT NULL               ,
-    sale_unit_price DEC(9,2) UNSIGNED DEFAULT 0 NOT NULL               ,
-    sale_price      DEC(9,2) UNSIGNED DEFAULT 0 NOT NULL               ,
-    total           DEC(9,2) UNSIGNED DEFAULT 0 NOT NULL               ,
+    product_sale_id INT         UNSIGNED            NOT NULL AUTO_INCREMENT,
+    sale_id         INT         UNSIGNED            NOT NULL               ,
+    customer_id     INT         UNSIGNED            NOT NULL               ,
+    product_id      INT         UNSIGNED            NOT NULL               ,
+    sale_qty        INT         UNSIGNED DEFAULT 0  NOT NULL               ,
+    sale_unit_price DEC(9,2)    UNSIGNED DEFAULT 0  NOT NULL               ,
+    total           DEC(9,2)    UNSIGNED DEFAULT 0  NOT NULL               ,
+    product_size    VARCHAR(16)          DEFAULT '' NOT NULL               ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
     updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
