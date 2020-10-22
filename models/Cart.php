@@ -41,10 +41,10 @@ class Cart
      */
     public function __construct($db)
     {
-        $this->populateCart($db);
 
-        !isset($_POST['remove']) ?: $this->removeItem($db, $_POST['remove']);
-        !isset($_SESSION['remove']) ?: $this->removeItem($db, $_SESSION['remove']);
+        !isset($_POST['remove'])    ?: $this->removeItem($_POST['remove']);
+        !isset($_SESSION['remove']) ?: $this->removeItem($_SESSION['remove']);
+        $this->populateCart($db);
     }
 
     /**
@@ -75,7 +75,7 @@ class Cart
      */
     public function removeItem($id)
     {
-        if (($key = array_search($id, $this->productId)) !== false) {
+        if (($key = array_search($id, $_SESSION['cart']['productId'])) !== false) {
 
             unset($_SESSION['cart']['productId'][$key]);
             unset($_SESSION['cart']['productName'][$key]);
@@ -84,14 +84,13 @@ class Cart
             unset($_SESSION['cart']['productPrice'][$key]);
             unset($_SESSION['cart']['productSubtotal'][$key]);
 
-            unset($this->productId[$key]);
-            unset($this->productName[$key]);
-            unset($this->productSize[$key]);
-            unset($this->productOrderQty[$key]);
-            unset($this->productPrice[$key]);
-            unset($this->productSubtotal[$key]);
-
-            $this->productTotal = $this->calculateTotal($this->productSubtotal);
+            // Rebase index
+            $_SESSION['cart']['productId']       = array_values($_SESSION['cart']['productId']);
+            $_SESSION['cart']['productName']     = array_values($_SESSION['cart']['productName']);
+            $_SESSION['cart']['productSize']     = array_values($_SESSION['cart']['productSize']);
+            $_SESSION['cart']['productOrderQty'] = array_values($_SESSION['cart']['productOrderQty']);
+            $_SESSION['cart']['productPrice']    = array_values($_SESSION['cart']['productPrice']);
+            $_SESSION['cart']['productSubtotal'] = array_values($_SESSION['cart']['productSubtotal']);
 
             // TODO: Remove session
             unset($_POST['remove']);
