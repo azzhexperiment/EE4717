@@ -4,7 +4,7 @@
  * Cart operations.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.1.0
+ * @version 1.4.2
  */
 
 namespace Cart;
@@ -41,9 +41,8 @@ class Cart
      */
     public function __construct($db)
     {
-
         !isset($_POST['remove'])    ?: $this->removeItem($_POST['remove']);
-        !isset($_SESSION['remove']) ?: $this->removeItem($_SESSION['remove']);
+
         $this->populateCart($db);
     }
 
@@ -108,11 +107,8 @@ class Cart
     public function getProductPrices($db)
     {
         for ($i = 0; $i < count($this->productId); $i++) {
-
-            // TODO: MUST CHANGE TO product_id LATER!!!
-
             $getProductPrice = 'SELECT product_price FROM products
-                WHERE product_category = ' . $this->productId[$i];
+                WHERE product_id = ' . $this->productId[$i];
 
             $productPrices[] = $db
                 ->query($getProductPrice)
