@@ -9,12 +9,11 @@
 
 namespace Sales;
 
-use Actions\SalesActions;
-use DB\DB;
+use mysqli;
 
 // TODO: update docs
 
-class Sales extends SalesActions
+class Sales
 {
     public $productId;
     public $productPrice;
@@ -40,11 +39,11 @@ class Sales extends SalesActions
         $productSizes,
         $productNames
     ) {
-        $this->productId       = (int)   $productIds;
-        $this->productOrderQty = (int)   $productPrices;
-        $this->productSize     = (int)   $productOrderQtys;
-        $this->productName     = (int)   $productSizes;
-        $this->productPrice    = (float) $productNames;
+        $this->productId       = (int)    $productIds;
+        $this->productOrderQty = (int)    $productPrices;
+        $this->productSize     = (int)    $productOrderQtys;
+        $this->productName     = (int)    $productSizes;
+        $this->productPrice    = (string) $productNames;
 
         $this->insertSalesRecord(
             $productIds,
@@ -87,7 +86,7 @@ class Sales extends SalesActions
         $productOrderQtys,
         $productSizes
     ) {
-        $db = new DB();
+        $db = new mysqli('localhost', 'f37ee', 'f37ee', 'f37ee');
 
         // TODO: check if need $this
         insertMainSalesEntry(
@@ -107,9 +106,9 @@ class Sales extends SalesActions
         /**
          * Insert main sales entry.
          *
-         * @param DB    $db
-         * @param array $productPrices
-         * @param array $productOrderQtys
+         * @param mysqli $db
+         * @param array  $productPrices
+         * @param array  $productOrderQtys
          *
          * @return void
          */
@@ -126,11 +125,11 @@ class Sales extends SalesActions
         /**
          * Insert product sales entries.
          *
-         * @param DB    $db
-         * @param array $productIds
-         * @param array $productPrices
-         * @param array $productOrderQtys
-         * @param array $productSizes
+         * @param mysqli $db
+         * @param array  $productIds
+         * @param array  $productPrices
+         * @param array  $productOrderQtys
+         * @param array  $productSizes
          *
          * @return void
          */
