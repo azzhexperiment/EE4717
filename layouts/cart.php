@@ -3,25 +3,22 @@
 use Cart\Cart;
 // use Sales\Sales;
 
+// TODO: remove after testing
+$_SESSION = [];
 $_SESSION['cart']['productId']       = [123, 132, 222];
 $_SESSION['cart']['productName']     = ['A', 'B', 'C'];
 $_SESSION['cart']['productSize']     = ['S', 'S', 'US 8'];
 $_SESSION['cart']['productOrderQty'] = [1, 2, 3];
 
-// $_SESSION['cart'] = [
-//     [123, 'A', 'S', 1],
-//     [132, 'B', 'XS', 2],
-//     [222, 'C', 'US 8', 1],
-//     [12123, 'S', 'S', 1],
-// ];
+$_SESSION['remove'] = 132;
 
 // TODO: get cart from DB if logged in, else get from session
 // Init fresh cart at every new page visit
-$cart = new Cart();
+$cart = new Cart($db);
 
-echo 'Printing cart';
+echo 'Printing cart from cart.php';
 echo '<pre>';
-echo print_r($cart);
+echo var_dump($cart);
 echo '</pre>';
 
 // $sales = new Sales();
@@ -67,26 +64,36 @@ echo '</pre>';
             <?php for ($i = 0; $i < count($cart->productId); $i++) { ?>
                 <!-- TODO: padding space etc, refer to docs -->
                 <tr class="cart__item">
-                    <!-- TODO: consider removing -->
-                    <td><input type="checkbox">DO i really need this</td>
-                    <td>__IMG HERE__</td>
+                    <td class="cart__image">
+                        <a href="product.php?id=<?= $cart->productId[$i] ?>">
+                            <img src="assets/img/products/<?= $cart->productId[$i] ?>.jpg">
+                            __IMG HERE__
+                        </a>
+                    </td>
                     <td>
-                        <?= $cart->productName[$i] ?>
+                        <a href="product.php?id=<?= $cart->productId[$i] ?>">
+                            <?= $cart->productName[$i] ?>
+                        </a>
                         <br>
                         <!-- TODO: make dropdown -->
                         <?= $cart->productSize[$i] ?>
                         <br>
                         <?= $cart->productOrderQty[$i] ?>
                     </td>
-                    <td>__SUBTOTAL__</td>
+                    <td>
+                        <?= $cart->productSubtotal[$i] ?>
+                        __SUBTOTAL__
+                    </td>
                 </tr>
             <?php } ?>
             <tr class="cart__total">
-                <td>total</td>
+                <td>total $$$</td>
             </tr>
         </table>
 
+        <!-- EMAIL -->
+
         <!-- TODO: add modal for order confirmation -->
-        <!-- <button class="cart--add" type="submit">Add to Cart</button> -->
+        <input class="cart--add" type="submit" value="Confirm Order">
     </form>
 </section>
