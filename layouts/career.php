@@ -5,7 +5,6 @@
     <div class="career__listings">
 
         <?php for ($i = 0; $i < count($career); $i++) { ?>
-
             <div class="job__opening">
                 <h3><?= $career[$i]['title'] ?></h3>
                 <p><?= $career[$i]['description'] ?></p>
@@ -15,7 +14,6 @@
                     <a class="job--apply" href="mailto:career@cleoandazzh.com?subject=Application for <?= $career[$i]['title'] ?>&cc=hr@cleoandazzh.com">Drop an email</a>
                 </button>
             </div>
-
         <?php } ?>
     </div>
 </section>
