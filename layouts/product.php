@@ -41,27 +41,22 @@ if (isset($_GET['id']) && isset($_GET['productOrderQty'])) {
             </div>
 
             <?php if ($product->productSize !== 'N/A') { ?>
-
                 <div class="product__size">
                     Size:
-
                     <?php foreach ($product->productSize as $size) { ?>
-
                         <label>
                             <input type="radio" name="productSize" value="<?= $size ?>" required>
                             <?= $size ?>
                         </label>
-
                     <?php } ?>
                 </div>
-
             <?php } ?>
 
             <div class="product__qty">
                 Qty:
-                <button id="product__qty--less">-</button>
+                <button type="button" id="product__qty--less">-</button>
                 <input type="number" name="productOrderQty" id="product__qty-input" value="0" min="1" required>
-                <button id="product__qty--more">+</button>
+                <button type="button" id="product__qty--more">+</button>
             </div>
 
             <!-- TODO: add modal for order confirmation -->
