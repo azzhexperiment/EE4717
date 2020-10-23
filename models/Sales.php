@@ -4,67 +4,103 @@
  * Sales operations.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.0.0
+ * @version 1.3.4
  */
 
 namespace Sales;
 
 use mysqli;
 
-// TODO: update docs
-
+/**
+ * Sales object.
+ *
+ * @property array $productId
+ * @property array $productName
+ * @property array $productSize
+ * @property array $productOrderQty
+ * @property array $productPrice
+ * @property array $productSubtotal
+ * @property float $productTotal
+ * @property int   $saleId
+ * @property int   $saleStatus
+ */
 class Sales
 {
+    // TODO: do i really need these or just saleId
     public $productId;
-    public $productPrice;
-    public $productOrderQty;
-    public $productSize;
     public $productName;
+    public $productSize;
+    public $productOrderQty;
+    public $productPrice;
+    public $productSubtotal;
+    public $productTotal;
+    public $saleId;
+    public $saleStatus;
 
     /**
-     * Add item to cart.
+     * Construct sales object.
      *
-     * @param array $productIds
-     * @param array $productPrices
-     * @param array $productOrderQtys
-     * @param array $productSizes
-     * @param array $productNames
+     * @param mysqli $db
+     * @param array  $productId
+     * @param array  $productName
+     * @param array  $productSize
+     * @param array  $productOrderQty
+     * @param array  $productPrice
+     * @param array  $productSubtotal
+     * @param float  $productTotal
+     * @param int    $saleStatus
      *
      * @return void
      */
     public function __construct(
-        $productIds,
-        $productPrices,
-        $productOrderQtys,
-        $productSizes,
-        $productNames
+        $db,
+        $productId,
+        $productName,
+        $productSize,
+        $productOrderQty,
+        $productPrice,
+        $productSubtotal,
+        $productTotal,
+        $saleStatus
     ) {
-        $this->productId       = (int)    $productIds;
-        $this->productOrderQty = (int)    $productPrices;
-        $this->productSize     = (int)    $productOrderQtys;
-        $this->productName     = (int)    $productSizes;
-        $this->productPrice    = (string) $productNames;
+        // TODO: do i really need these
+        $this->productId       = $productId;
+        $this->productName     = $productName;
+        $this->productSize     = $productSize;
+        $this->productOrderQty = $productOrderQty;
+        $this->productPrice    = $productPrice;
+        $this->productSubtotal = $productSubtotal;
+        $this->productTotal    = $productTotal;
 
         $this->insertSalesRecord(
-            $productIds,
-            $productPrices,
-            $productOrderQtys,
-            $productSizes
+            $db,
+            $productId,
+            $productSize,
+            $productOrderQty,
+            $productPrice,
+            $productSubtotal,
+            $productTotal,
+            $saleStatus
         );
 
-        $this->updateCartStatus(
-            $productIds,
-            $productPrices,
-            $productOrderQtys,
-            $productSizes
-        );
+        echo '<pre>';
+        print_r('sales record updated');
+        echo '</pre>';
+
+        // TODO: Set conditions
+        $this->updateSaleStatus($db, $this->saleId, $saleStatus);
+
+        $this->updateInventory($db, $productId, $productOrderQty);
 
         $this->sendConfirmationMail(
-            $productIds,
-            $productPrices,
-            $productOrderQtys,
-            $productSizes,
-            $productNames
+            $db,
+            $productId,
+            $productName,
+            $productSize,
+            $productOrderQty,
+            $productPrice,
+            $productSubtotal,
+            $productTotal
         );
 
         $this->emptyCart();
@@ -73,164 +109,162 @@ class Sales
     /**
      * Record sale entry of selected cart items.
      *
-     * @param array $productIds
-     * @param array $productPrices
-     * @param array $productOrderQtys
-     * @param array $productSizes
+     * @param array $productId
+     * @param array $productPrice
+     * @param array $productOrderQty
+     * @param array $productSize
      *
      * @return void
      */
     public function insertSalesRecord(
-        $productIds,
-        $productPrices,
-        $productOrderQtys,
-        $productSizes
+        $db,
+        $productId,
+        $productSize,
+        $productOrderQty,
+        $productPrice,
+        $productSubtotal,
+        $productTotal,
+        $saleStatus
     ) {
-        $db = new mysqli('localhost', 'f37ee', 'f37ee', 'f37ee');
+        $this->insertMainSalesEntry($db, $saleStatus, $productTotal);
 
-        // TODO: check if need $this
-        insertMainSalesEntry(
+        $this->saleId = $this->getSaleId($db);
+
+        $this->insertProductSalesEntry(
             $db,
-            $productPrices,
-            $productOrderQtys
+            $this->saleId,
+            $productId,
+            $productOrderQty,
+            $productPrice,
+            $productSubtotal,
+            $productSize
         );
+    }
 
-        insertProductSalesEntry(
-            $db,
-            $productIds,
-            $productPrices,
-            $productOrderQtys,
-            $productSizes
-        );
+    /**
+     * Insert main sales entry.
+     *
+     * @param mysqli $db
+     * @param int    $saleStatus
+     * @param float  $productTotal
+     *
+     * @return void
+     */
+    private function insertMainSalesEntry($db, $saleStatus, $productTotal)
+    {
+        $insertSales = 'INSERT INTO sales SET
+            sale_id          = DEFAULT              ,
+            sale_status_id   = ' . $saleStatus   . ',
+            sale_amount      = ' . $productTotal . ',
+            sale_amount_paid = 0                    ,
+            created_at       = CURRENT_TIMESTAMP';
 
-        /**
-         * Insert main sales entry.
-         *
-         * @param mysqli $db
-         * @param array  $productPrices
-         * @param array  $productOrderQtys
-         *
-         * @return void
-         */
-        function insertMainSalesEntry($db, $productPrices, $productOrderQtys)
-        {
-            $totalAmountPayable = calculateTotalAmount($productPrices, $productOrderQtys);
+        $db->query($insertSales);
+    }
 
-            $insertSales = 'INSERT INTO sales
-                VALUES (DEFAULT, 1, ' . $totalAmountPayable . ', 0)';
-
-            $db->query($insertSales);
-        }
-
-        /**
-         * Insert product sales entries.
-         *
-         * @param mysqli $db
-         * @param array  $productIds
-         * @param array  $productPrices
-         * @param array  $productOrderQtys
-         * @param array  $productSizes
-         *
-         * @return void
-         */
-        function insertProductSalesEntry(
-            $db,
-            $productIds,
-            $productPrices,
-            $productOrderQtys,
-            $productSizes
-        ) {
-            $getSaleId = 'SELECT sale_id FROM sales DES LIMIT 1';
-
-            $saleId = $db->query($getSaleId);
-
-            $subtotals = calculateSubtotals($productPrices, $productOrderQtys);
-
-            // TODO: convert sizes to text
-
-            /**
-             * product_sale_id
-             * sale_id
-             * -- customer_id
-             * product_id
-             * product_size
-             * sale_qty
-             * sale_unit_price
-             * sale_price
-             * total
-             */
-            for ($i = 0; $i < count($productIds); $i++) {
-                $insertProductSale = 'INSERT INTO product_sales
-                VALUES (
-                    DEFAULT,
-                    ' . $saleId               . ',
-                    ' . $productIds[$i]       . ',
-                    ' . $productSizes[$i]     . ',
-                    ' . $productOrderQtys[$i] . ',
-                    ' . $productPrices[$i]    . ',
-                    ' . $subtotals[$i]        . '
-                )';
-
-                $db->query($insertProductSale);
-            }
-        }
-
-        /**
-         * Calculate amount payable.
-         *
-         * @param array $productPrices
-         * @param array $productOrderQtys
-         *
-         * @return array
-         */
-        function calculateSubtotals($productPrices, $productOrderQtys)
-        {
-            for ($i = 0; $i < count($productPrices); $i++) {
-                $subtotals[] = $productPrices[$i] * $productOrderQtys[$i];
+    /**
+     * Insert product sales entries.
+     *
+     * @param mysqli $db
+     * @param int    $saleId
+     * @param array  $productId
+     * @param array  $productOrderQty
+     * @param array  $productPrice
+     * @param array  $productSubtotal
+     * @param array  $productSize
+     *
+     * @return void
+     */
+    private function insertProductSalesEntry(
+        $db,
+        $saleId,
+        $productId,
+        $productOrderQty,
+        $productPrice,
+        $productSubtotal,
+        $productSize
+    ) {
+        // TODO: add proper customer_id
+        for ($i = 0; $i < count($productId); $i++) {
+            if (is_null($productSize[$i])) {
+                $productSize[$i] = 'N/A';
             }
 
-            return $subtotals;
+            $insertProductSale = 'INSERT INTO product_sales SET
+                product_sale_id = DEFAULT                       ,
+                sale_id         = '  . $saleId              . ' ,
+                customer_id     = 1                             ,
+                product_id      = '  . $productId[$i]       . ' ,
+                sale_qty        = '  . $productOrderQty[$i] . ' ,
+                sale_unit_price = '  . $productPrice[$i]    . ' ,
+                total           = '  . $productSubtotal[$i] . ' ,
+                product_size    = "' . $productSize[$i]     . '",
+                created_at      = CURRENT_TIMESTAMP';
+
+            echo '<pre>';
+            print_r($insertProductSale);
+            echo '</pre>';
+
+            $db->query($insertProductSale);
         }
+    }
 
-        /**
-         * Calculate amount payable.
-         *
-         * @param array $productPrices
-         * @param array $productOrderQtys
-         *
-         * @return float
-         */
-        function calculateTotalAmount($productPrices, $productOrderQtys)
-        {
-            $total = 0;
+    /**
+     * Get saleId from DB.
+     *
+     * @param mysqli $db
+     *
+     * @return void
+     */
+    public function getSaleId($db)
+    {
+        $getSaleId = 'SELECT sale_id FROM sales DES LIMIT 1';
 
-            for ($i = 0; $i < count($productPrices); $i++) {
-                $total = $total + ($productPrices[$i] * $productOrderQtys[$i]);
-            }
+        return $db->query($getSaleId)->fetch_object()->sale_id;
+    }
 
-            return $total;
+    /**
+     * Update inventory size in DB.
+     *
+     * @param mysqli $db
+     * @param array  $productIds
+     * @param array  $productOrderQtys
+     *
+     * @return void
+     */
+    public function updateInventory($db, $productId, $productOrderQty)
+    {
+        for ($i = 0; $i < count($productId); $i++) {
+            $updateInventory = 'UPDATE stocks
+                SET stock_qty = stock_qty - ' . $productOrderQty[$i] . '
+                WHERE product_id = ' . $productId[$i];
+
+            $db->query($updateInventory);
         }
     }
 
     /**
      * Send confirmation email to customer containing selected cart items.
      *
-     * @param array $productIds
-     * @param array $productPrices
-     * @param array $productOrderQtys
-     * @param array $productSizes
-     * @param array $productNames
+     * @param array $productId
+     * @param array $productPrice
+     * @param array $productOrderQty
+     * @param array $productSize
+     * @param array $productName
      *
      * @return void
      *
      * @todo add recommendations
      */
     public function sendConfirmationMail(
-        $productIds,
-        $productPrices,
-        $productOrderQtys,
-        $productSizes,
-        $productNames
+        $db,
+        $productId,
+        $productName,
+        $productSize,
+        $productOrderQty,
+        $productPrice,
+        $productSubtotal,
+        $productTotal
     ) {
         // TODO: Add method to send mail
     }
@@ -242,9 +276,19 @@ class Sales
      *
      * @return void
      */
-    public function updateCartStatus($productIds)
+    public function updateSaleStatus($db, $saleId, $status)
     {
-        // TODO: Add method to update cart status
+        // 1 Pending confirmation
+        // 2 Pending payment
+        // 3 Payment received
+        // 4 Shipping
+        // 5 Completed
+
+        $updateSaleStatus = 'UPDATE sales
+            SET sale_status_id = ' . $status . '
+            WHERE sale_id = ' . $saleId;
+
+        $db->query($updateSaleStatus);
     }
 
     /**
@@ -254,16 +298,7 @@ class Sales
      */
     public function emptyCart()
     {
+        // TODO: change to unset only selected items
         unset($_SESSION['cart']);
-    }
-
-    /**
-     * Destroy Sales object.
-     *
-     * @return void
-     */
-    public function __destruct()
-    {
-        // TODO: define destruct method
     }
 }
