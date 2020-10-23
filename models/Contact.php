@@ -4,7 +4,7 @@
  * Write user feedback into DB table.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.1.0
+ * @version 1.0.0
  */
 
 if (!empty($_POST)) {

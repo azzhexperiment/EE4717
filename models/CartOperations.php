@@ -13,7 +13,7 @@ use Sales\Sales;
 // echo var_dump($_SESSION);
 // echo '</pre>';
 
-echo 1;
+echo 1 . '<br>';
 
 // TODO: get cart from DB if logged in, else get from session
 $cart = new Cart($db);
@@ -23,14 +23,14 @@ $cart = new Cart($db);
 // echo print_r($cart);
 // echo '</pre>';
 
-echo 2;
+echo 2 . '<br>';
 
 if (
     !empty($_POST['productId']) &&
     !empty($_POST['customerEmail']) &&
     !empty($cart->productId)
 ) {
-    echo 3;
+    echo 3 . '<br>';
 
     $saleStatus = 1;
 
@@ -47,24 +47,27 @@ if (
         $saleStatus
     );
 
-    echo 4;
+    echo 4 . '<br>';
 
     $cart = new Cart($db);
 
-    echo 5;
-} else {
-    echo 'POST is empty';
+    echo 5 . '<br>';
 }
 
-echo 6;
+echo 6 . '<br>';
 
 if (isset($_GET['saleId'])) {
-    echo 'hi';
+    echo 7 . '<br>';
     $saleId = (int) $_GET['saleId'];
 
-    $cart = new Sales($db, $saleId, 0, 0, 0, 0, 0, 0, 0, 0);
+    $sales = new Sales($db, $saleId, 0, 0, 0, 0, 0, 0, 0, 0);
 
-    $cart->retrieveSaleRecord($db, 1);
+    $cart = $sales->retrieveSaleRecord($db, $saleId);
+
+    // echo 'Printing cart from cart.php';
+    // echo '<pre>';
+    // echo print_r($cart);
+    // echo '</pre>';
 }
 
-echo 7;
+echo 8 . '<br>';

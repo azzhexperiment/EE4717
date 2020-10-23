@@ -109,8 +109,7 @@ class Cart
             $getProductPrice = 'SELECT product_price FROM products
                 WHERE product_id = ' . $this->productId[$i];
 
-            $productPrices[] = $db
-                ->query($getProductPrice)
+            $productPrices[] = $db->query($getProductPrice)
                 ->fetch_object()
                 ->product_price;
         }
