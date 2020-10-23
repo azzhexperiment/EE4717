@@ -9,7 +9,7 @@
             <div class="job__opening">
                 <h3><?= $career[$i]['title'] ?></h3>
                 <p><?= $career[$i]['description'] ?></p>
-                <p>Opennings: <?= $career[$i]['openings'] ?></p>
+                <p>Openings: <?= $career[$i]['openings'] ?></p>
 
                 <button disabled>
                     <a class="job--apply" href="mailto:career@cleoandazzh.com?subject=Application for <?= $career[$i]['title'] ?>&cc=hr@cleoandazzh.com">Drop an email</a>
