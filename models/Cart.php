@@ -49,7 +49,7 @@ class Cart
     /**
      * Add items to cart.
      *
-     * Pushes new item into Cart object and $_SESSION alike.
+     * @param mysqli $db
      *
      * @return void
      */
@@ -75,7 +75,6 @@ class Cart
     public function removeItem($id)
     {
         if (($key = array_search($id, $_SESSION['cart']['productId'])) !== false) {
-
             unset($_SESSION['cart']['productId'][$key]);
             unset($_SESSION['cart']['productName'][$key]);
             unset($_SESSION['cart']['productSize'][$key]);
@@ -98,7 +97,7 @@ class Cart
     }
 
     /**
-     * Calculate subtotal cost of item.
+     * Get product prices.
      *
      * @param mysqli $db
      *
@@ -161,8 +160,8 @@ class Cart
      */
     public function emptyCart()
     {
+        // TODO: rebase cart?
         unset($_SESSION['cart']);
-
         unset($_POST['empty']);
     }
 }

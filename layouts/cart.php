@@ -1,58 +1,3 @@
-<?php
-
-use Cart\Cart;
-use Sales\Sales;
-
-// echo 'Printing POST from cart.php';
-// echo '<pre>';
-// echo print_r($_POST);
-// echo '</pre>';
-
-// echo 'Printing SESSION from cart.php';
-// echo '<pre>';
-// echo var_dump($_SESSION);
-// echo '</pre>';
-
-// TODO: get cart from DB if logged in, else get from session
-$cart = new Cart($db);
-
-// echo 'Printing cart from cart.php';
-// echo '<pre>';
-// echo print_r($cart);
-// echo '</pre>';
-
-// TODO: check condition
-if (!empty($_POST['productId']) && !empty($_POST['customerEmail'])) {
-    echo 'Making new Sales object<br><br>';
-
-    $saleStatus = 1;
-
-    $sales = new Sales(
-        $db,
-        $cart->productId,
-        $cart->productName,
-        $cart->productSize,
-        $cart->productOrderQty,
-        $cart->productPrice,
-        $cart->productSubtotal,
-        $cart->productTotal,
-        $saleStatus
-    );
-
-    $cart = new Cart($db);
-
-    echo 'Printing sales';
-    echo '<pre>';
-    echo var_dump($sales);
-    echo '</pre>';
-}
-
-if (isset($_GET['saleId'])) {
-    // $cart = new Sales();
-}
-
-?>
-
 <!-- Featured items -->
 <section class="cart">
     <h1>Your cart</h1>
@@ -69,12 +14,11 @@ if (isset($_GET['saleId'])) {
                     <!-- TODO: padding space etc, refer to docs -->
                     <tr class="cart__item">
                         <td class="cart__images">
-                            <input type="checkbox" name="productId[<?= $cart->productId[$i] ?>]">
+                            <input type="checkbox" name="productId[<?= $cart->productId[$i] ?>]" checked>
                         </td>
                         <td class="cart__images">
                             <a href="product.php?id=<?= $cart->productId[$i] ?>">
                                 <img src="assets/img/products/<?= $cart->productId[$i] ?>.jpg" class="cart__image">
-                                __IMG HERE__
                             </a>
                         </td>
                         <td class="cart__info">
@@ -91,15 +35,17 @@ if (isset($_GET['saleId'])) {
                         </td>
                         <td class="cart__subtotal">
                             <input type="checkbox" name="productSubtotal[<?= $cart->productId[$i] ?>]" hidden>
-                            <?= $cart->productSubtotal[$i] ?>
-                            __SUBTOTAL__
+                            $<?= $cart->productSubtotal[$i] ?>
                         </td>
                     </tr>
 
                 <?php } ?>
 
+                <!-- // TODO: Update on select -->
                 <tr class="cart__total">
-                    <td>total $$$</td>
+                    <td>
+                        $<?= $cart->productTotal ?>
+                    </td>
                 </tr>
             </table>
 
