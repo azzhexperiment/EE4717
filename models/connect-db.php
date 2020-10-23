@@ -7,6 +7,8 @@
  * @version 1.0.0
  */
 
+// TODO: transfer to classes?
+
 $db = new mysqli('localhost', 'f37ee', 'f37ee', 'f37ee');
 
 // Check connection
