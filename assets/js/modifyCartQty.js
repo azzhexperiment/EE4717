@@ -5,38 +5,48 @@
  * @version 1.0.0
  */
 
+'use strict'
+
 const form = document.getElementById('form__confirm-order')
-const qty = document.getElementById('product__qty-input')
-const reduceQtyBtn = document.getElementById('product__qty--less')
-const increaseQtyBtn = document.getElementById('product__qty--more')
 
 form.addEventListener('click', (e) => {
-  if (e.target === reduceQtyBtn) {
+  if (e.target.dataset.type === 'less') {
     e.preventDefault()
-    reduceQty()
+
+    const item = document.getElementById('product__qty-input-' + e.target.dataset.id)
+
+    reduceQty(item)
   }
 
-  if (e.target === increaseQtyBtn) {
+  if (e.target.dataset.type === 'more') {
     e.preventDefault()
-    increaseQty()
+
+    const item = document.getElementById('product__qty-input-' + e.target.dataset.id)
+
+    increaseQty(item)
   }
 })
 
 /**
- * Decrease qty of product for purchase.
+ * Decrease qty of selected cart item.
+ *
+ * @param {String} id
  *
  * @returns {Void}
  */
-function reduceQty () {
-  if (qty.value > 0)
-    qty.value--
+function reduceQty (item) {
+  if (item.value > 1) {
+    item.value--
+  }
 }
 
 /**
- * Increase qty of product for purchase.
+ * Increase qty of selected cart item.
+ *
+ * @param {String} id
  *
  * @returns {Void}
  */
-function increaseQty () {
-  qty.value++
+function increaseQty (item) {
+  item.value++
 }
