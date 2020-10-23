@@ -245,6 +245,9 @@ nav ul li {
   width: 70%;
   margin: auto;
 }
+.form__payment .payment__title {
+  padding-top: 3em;
+}
 .form__payment .payment__item {
   display: grid;
   grid-template-columns: 1fr 4fr;

@@ -7,6 +7,10 @@
     width: 70%;
     margin: auto;
 
+    .payment__title {
+        padding-top: 3em;
+    }
+
     .payment__item {
         display: grid;
         grid-template-columns: 1fr 4fr;

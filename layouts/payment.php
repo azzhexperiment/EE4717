@@ -1,3 +1,12 @@
+<?php if (!empty($_POST)) {
+    $_POST = []; ?>
+    <script type="text/javascript">
+        alert('Payment completed')
+
+        window.location = "http://192.168.56.2/f37ee/project/index.php"
+    </script>
+<?php } ?>
+
 <?php if (empty($_GET['saleId'])) { ?>
     <!-- Payment -->
     <section class="payment">
@@ -55,8 +64,6 @@
                     <span class="error" id="error__cvv"></span>
                 </div>
             </div>
-
-            <br>
 
             <h1 class="payment__title">Shipping Address</h1>
 
