@@ -1,5 +1,5 @@
 /**
- * Modify and submit product qty.
+ * Modify product qty.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
  * @version 1.0.0
@@ -21,17 +21,6 @@ form.addEventListener('click', (e) => {
     increaseQty()
   }
 })
-
-/**
- * Get current qty selected.
- *
- * @param {Element} qty Qty input field
- *
- * @returns {Number}
- */
-function getQty(qty) {
-  return qty.value
-}
 
 /**
  * Decrease qty of product for purchase.
