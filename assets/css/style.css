@@ -148,6 +148,8 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
+}
+nav ul li:not(:last-child) {
   margin-right: 2em;
 }
 
