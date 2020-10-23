@@ -3,10 +3,10 @@
 //============================================================================//
 
 .categories__grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: $gutter;
-	margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gutter;
+    margin: auto;
 }
 
 .category__left {
