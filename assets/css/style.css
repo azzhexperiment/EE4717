@@ -259,6 +259,9 @@ nav ul li:not(:last-child) {
   width: 70%;
   margin: auto;
 }
+.contact .form__contact input {
+  border-color: #333333;
+}
 .contact .form__contact .contact__field-name {
   vertical-align: top;
   padding-top: 1.5em;
@@ -330,10 +333,7 @@ footer .link__col .col__link {
   font-size: small;
   text-transform: capitalize;
 }
-footer .link__col .col__social {
-  text-transform: capitalize;
-}
-footer .link__col .col__social ul li {
+footer .link__col ul.col__social li {
   display: inline-block;
   margin-right: 24px;
 }
