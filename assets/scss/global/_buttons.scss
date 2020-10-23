@@ -12,4 +12,12 @@ input[type=number] {
 	-moz-appearance: textfield;
 }
 
-// TODO: add submit button styles
+button {
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    margin-top: 1.5em;
+    background-color: #ffa07a;
+    border: 0;
+    text-transform: uppercase;
+}
