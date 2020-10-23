@@ -5,6 +5,8 @@
  * @version 1.0.0
  */
 
+'use strict'
+
 const form = document.getElementById('form__product')
 const qty = document.getElementById('product__qty-input')
 const reduceQtyBtn = document.getElementById('product__qty--less')
