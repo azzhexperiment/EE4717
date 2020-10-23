@@ -70,7 +70,7 @@
         <div class="contact__item">
             <div class="contact__field-name">
             </div>
-            <div class="contact__input">
+            <div class="contact__input text--right">
                 <button type="submit" class="contact__button" id="contact__submit">
                     Submit
                 </button>
