@@ -26,7 +26,6 @@ use mysqli;
  */
 class Sales
 {
-    // TODO: do i really need these or just saleId
     public $productId;
     public $productName;
     public $productSize;
@@ -40,7 +39,12 @@ class Sales
     /**
      * Construct sales object.
      *
+     * If a new sales entry is submitted, construct a new sales object and
+     * perform necessary DB operations. Else if the entry is for confirmation
+     * of sales, retrieve sales record for user confirmation and payment.
+     *
      * @param mysqli $db
+     * @param string $saleId
      * @param array  $productId
      * @param array  $productName
      * @param array  $productSize
@@ -54,6 +58,7 @@ class Sales
      */
     public function __construct(
         $db,
+        $saleId,
         $productId,
         $productName,
         $productSize,
@@ -63,56 +68,98 @@ class Sales
         $productTotal,
         $saleStatus
     ) {
-        // TODO: do i really need these
-        $this->productId       = $productId;
-        $this->productName     = $productName;
-        $this->productSize     = $productSize;
-        $this->productOrderQty = $productOrderQty;
-        $this->productPrice    = $productPrice;
-        $this->productSubtotal = $productSubtotal;
-        $this->productTotal    = $productTotal;
+        if ($saleId === 'New') {
+            $this->insertSalesRecord(
+                $db,
+                $productId,
+                $productSize,
+                $productOrderQty,
+                $productPrice,
+                $productSubtotal,
+                $productTotal,
+                $saleStatus
+            );
 
-        $this->insertSalesRecord(
-            $db,
-            $productId,
-            $productSize,
-            $productOrderQty,
-            $productPrice,
-            $productSubtotal,
-            $productTotal,
-            $saleStatus
-        );
+            $this->updateSaleStatus($db, $this->saleId, $saleStatus);
 
-        echo '<pre>';
-        print_r('sales record updated');
-        echo '</pre>';
+            $this->updateInventory($db, $productId, $productOrderQty);
 
-        // TODO: Set conditions
-        $this->updateSaleStatus($db, $this->saleId, $saleStatus);
+            $this->sendConfirmationMail(
+                $productId,
+                $productName,
+                $productSize,
+                $productOrderQty,
+                $productPrice,
+                $productSubtotal,
+                $productTotal
+            );
 
-        $this->updateInventory($db, $productId, $productOrderQty);
+            $this->emptyCart();
+        }
+        // } else {
+        //     // Retrieve sales from DB
+        //     $this->retrieveSaleRecord($db, $saleId);
 
-        $this->sendConfirmationMail(
-            $db,
-            $productId,
-            $productName,
-            $productSize,
-            $productOrderQty,
-            $productPrice,
-            $productSubtotal,
-            $productTotal
-        );
-
-        $this->emptyCart();
+        //     echo 'Sale record retrieved<br>';
+        // }
     }
 
     /**
      * Record sale entry of selected cart items.
      *
-     * @param array $productId
-     * @param array $productPrice
-     * @param array $productOrderQty
-     * @param array $productSize
+     * @param mysqli $db
+     * @param int    $saleId
+     *
+     * @return array
+     */
+    public function retrieveSaleRecord($db, $saleId)
+    {
+        // TODO: add filter for customerId
+        $retrieveSaleRecord = 'SELECT
+            sales.sale_status_id,
+            sales.sale_amount,
+            product_sales.product_id,
+            product_sales.sale_qty,
+            product_sales.sale_unit_price,
+            product_sales.total,
+            product_sales.product_size
+
+            FROM sales
+            INNER JOIN product_sales
+                ON sales.sale_id = product_sales.sale_id
+            WHERE sales.sale_id = ' . $saleId;
+
+        $result = $db->query($retrieveSaleRecord);
+
+        while ($saleRecord = $result->fetch_object()) {
+            $saleRecords[] = $saleRecord;
+        }
+
+        for ($i = 0; $i < count($saleRecords); $i++) {
+            $getProductName = 'SELECT product_name FROM products
+                WHERE product_id = ' . $saleRecords[$i]->product_id;
+
+            $saleRecords[$i]->product_name = $db->query($getProductName)
+                ->fetch_object()
+                ->product_name;
+        }
+
+        return $saleRecords;
+    }
+
+    // TODO: update payment amount
+
+    /**
+     * Record sale entry of selected cart items.
+     *
+     * @param mysqli $db
+     * @param array  $productId
+     * @param array  $productSize
+     * @param array  $productOrderQty
+     * @param array  $productPrice
+     * @param array  $productSubtotal
+     * @param float  $productTotal
+     * @param int    $saleStatus
      *
      * @return void
      */
@@ -128,7 +175,7 @@ class Sales
     ) {
         $this->insertMainSalesEntry($db, $saleStatus, $productTotal);
 
-        $this->saleId = $this->getSaleId($db);
+        $this->saleId = $this->getLatestSaleId($db);
 
         $this->insertProductSalesEntry(
             $db,
@@ -152,12 +199,13 @@ class Sales
      */
     private function insertMainSalesEntry($db, $saleStatus, $productTotal)
     {
-        $insertSales = 'INSERT INTO sales SET
-            sale_id          = DEFAULT              ,
-            sale_status_id   = ' . $saleStatus   . ',
-            sale_amount      = ' . $productTotal . ',
-            sale_amount_paid = 0                    ,
-            created_at       = CURRENT_TIMESTAMP';
+        $insertSales = 'INSERT INTO sales
+            SET
+                sale_id          = DEFAULT              ,
+                sale_status_id   = ' . $saleStatus   . ',
+                sale_amount      = ' . $productTotal . ',
+                sale_amount_paid = 0                    ,
+                created_at       = CURRENT_TIMESTAMP';
 
         $db->query($insertSales);
     }
@@ -190,20 +238,17 @@ class Sales
                 $productSize[$i] = 'N/A';
             }
 
-            $insertProductSale = 'INSERT INTO product_sales SET
-                product_sale_id = DEFAULT                       ,
-                sale_id         = '  . $saleId              . ' ,
-                customer_id     = 1                             ,
-                product_id      = '  . $productId[$i]       . ' ,
-                sale_qty        = '  . $productOrderQty[$i] . ' ,
-                sale_unit_price = '  . $productPrice[$i]    . ' ,
-                total           = '  . $productSubtotal[$i] . ' ,
-                product_size    = "' . $productSize[$i]     . '",
-                created_at      = CURRENT_TIMESTAMP';
-
-            echo '<pre>';
-            print_r($insertProductSale);
-            echo '</pre>';
+            $insertProductSale = 'INSERT INTO product_sales
+                SET
+                    product_sale_id = DEFAULT                       ,
+                    sale_id         = '  . $saleId              . ' ,
+                    customer_id     = 1                             ,
+                    product_id      = '  . $productId[$i]       . ' ,
+                    sale_qty        = '  . $productOrderQty[$i] . ' ,
+                    sale_unit_price = '  . $productPrice[$i]    . ' ,
+                    total           = '  . $productSubtotal[$i] . ' ,
+                    product_size    = "' . $productSize[$i]     . '",
+                    created_at      = CURRENT_TIMESTAMP';
 
             $db->query($insertProductSale);
         }
@@ -216,9 +261,9 @@ class Sales
      *
      * @return void
      */
-    public function getSaleId($db)
+    public function getLatestSaleId($db)
     {
-        $getSaleId = 'SELECT sale_id FROM sales DES LIMIT 1';
+        $getSaleId = 'SELECT sale_id FROM sales ORDER BY sale_id DESC LIMIT 1';
 
         return $db->query($getSaleId)->fetch_object()->sale_id;
     }
@@ -232,11 +277,11 @@ class Sales
      *
      * @return void
      */
-    public function updateInventory($db, $productId, $productOrderQty)
+    private function updateInventory($db, $productId, $productOrderQty)
     {
         for ($i = 0; $i < count($productId); $i++) {
             $updateInventory = 'UPDATE stocks
-                SET stock_qty = stock_qty - ' . $productOrderQty[$i] . '
+                SET   stock_qty  = stock_qty - ' . $productOrderQty[$i] . '
                 WHERE product_id = ' . $productId[$i];
 
             $db->query($updateInventory);
@@ -246,18 +291,17 @@ class Sales
     /**
      * Send confirmation email to customer containing selected cart items.
      *
-     * @param array $productId
-     * @param array $productPrice
-     * @param array $productOrderQty
-     * @param array $productSize
-     * @param array $productName
+     * @param array  $productId
+     * @param array  $productName
+     * @param array  $productSize
+     * @param array  $productOrderQty
+     * @param array  $productPrice
+     * @param array  $productSubtotal
+     * @param array  $productTotal
      *
      * @return void
-     *
-     * @todo add recommendations
      */
     public function sendConfirmationMail(
-        $db,
         $productId,
         $productName,
         $productSize,
@@ -267,12 +311,15 @@ class Sales
         $productTotal
     ) {
         // TODO: Add method to send mail
+        // TODO: add recommendations
     }
 
     /**
      * Update status of selected cart items.
      *
-     * @param array $productIds
+     * @param mysqli $db
+     * @param int    $saleId
+     * @param int    $status
      *
      * @return void
      */
@@ -285,8 +332,8 @@ class Sales
         // 5 Completed
 
         $updateSaleStatus = 'UPDATE sales
-            SET sale_status_id = ' . $status . '
-            WHERE sale_id = ' . $saleId;
+            SET   sale_status_id = ' . $status . '
+            WHERE sale_id        = ' . $saleId;
 
         $db->query($updateSaleStatus);
     }
@@ -299,6 +346,7 @@ class Sales
     public function emptyCart()
     {
         // TODO: change to unset only selected items
+        // TODO: then rebase cart
         unset($_SESSION['cart']);
     }
 }

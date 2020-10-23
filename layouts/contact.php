@@ -1,6 +1,6 @@
 <!-- Featured items -->
 <section class="contact">
-    <!-- TODO: review form classes -->
+    <!-- // TODO: review form classes -->
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__contact" id="form__contact">
 
         <h1 class="contact__title">Contact Us</h1>
@@ -66,13 +66,14 @@
             </div>
         </div>
 
-
-        <!-- TODO: add modal for order confirmation -->
+        <!-- // TODO: add modal for order confirmation -->
         <div class="contact__item">
             <div class="contact__field-name">
             </div>
             <div class="contact__input">
-                <input type="submit" value="Submit" class="contact__button" id="contact__submit">
+                <button type="submit" class="contact__button" id="contact__submit">
+                    Submit
+                </button>
                 <br>
                 <span class="error" id="error__submit"></span>
             </div>

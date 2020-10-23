@@ -1,14 +1,5 @@
 <!-- Featured items -->
 <section class="listings">
-    <aside class="listings__menu">
-        <h1>Categories</h1>
-        <ul class="style--none">
-            <li>nav</li>
-            <li>nav</li>
-            <li>nav</li>
-        </ul>
-    </aside>
-
     <div class="listings__main">
         <div class="listings__grid">
             <?php foreach ($listings as $listing) { ?>

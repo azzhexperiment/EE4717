@@ -1,9 +1,11 @@
 /**
- * Modify and submit product qty.
+ * Modify product qty.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
  * @version 1.0.0
  */
+
+'use strict'
 
 const form = document.getElementById('form__product')
 const qty = document.getElementById('product__qty-input')
@@ -21,17 +23,6 @@ form.addEventListener('click', (e) => {
     increaseQty()
   }
 })
-
-/**
- * Get current qty selected.
- *
- * @param {Element} qty Qty input field
- *
- * @returns {Number}
- */
-function getQty(qty) {
-  return qty.value
-}
 
 /**
  * Decrease qty of product for purchase.
