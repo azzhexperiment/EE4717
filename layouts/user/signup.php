@@ -57,7 +57,7 @@
             <div class="signup__input">
                 <input class="user__input-field" type="password" name="signup__input-password-1" id="signup__input-password-1" minlength="8" required>
                 <br>
-                <span class="error" id="error__password"></span>
+                <span class="error" id="error__password-1"></span>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
             <div class="signup__input">
                 <input class="user__input-field" type="password" name="signup__input-password-2" id="signup__input-password-2" minlength="8" required>
                 <br>
-                <span class="error" id="error__password"></span>
+                <span class="error" id="error__password-2"></span>
             </div>
         </div>
 
@@ -149,4 +149,11 @@
         </div>
 
     </form>
+
+    <div class="text--center">
+        <p>
+            Already have an account?
+            Click <a href="user.php">HERE</a> to login.
+        </p>
+    </div>
 </section>

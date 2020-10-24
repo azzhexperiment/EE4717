@@ -273,6 +273,38 @@ nav ul#nav__main ul.dropdown li {
   margin: auto;
 }
 
+.user__title {
+  padding-top: 3em;
+}
+
+.form__user {
+  width: 70%;
+  margin: auto;
+}
+.form__user input {
+  border-color: #333333;
+}
+.form__user .user__field-name {
+  vertical-align: top;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+}
+.form__user .user__input-field {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding-inline-start: 10px;
+  height: 40px;
+}
+.form__user textarea.user__input-field {
+  height: 200px;
+}
+.form__user .error {
+  color: #ff0000;
+  font-size: 70%;
+}
+
 .listings .listings__title {
   padding-top: 2em;
 }
