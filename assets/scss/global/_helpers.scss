@@ -2,10 +2,7 @@
 // HELPER CLASSES
 //============================================================================//
 
-// Alignment
-.float--left   { float: left !important; }
-.float--right  { float: right !important; }
-
+// Block alignment
 .align--center { margin-left: auto; margin-right: auto; }
 
 // Text alignment
@@ -21,3 +18,10 @@
 // Visibility
 .show { visibility: visible !important; }
 .hide { visibility: hidden !important; }
+
+// Sticks header
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
