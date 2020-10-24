@@ -13,7 +13,7 @@
 
                     <td class="cart__images">
                         <a href="product.php?id=<?= $cart->productId[$i] ?>">
-                            <img src="assets/img/products/<?= $cart->productId[$i] ?>.jpg" class="cart__image">
+                            <img class="image--fit" src="assets/img/products/<?= $cart->productId[$i] ?>.jpg" class="cart__image">
                         </a>
                     </td>
 
