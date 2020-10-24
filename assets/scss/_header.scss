@@ -6,6 +6,7 @@ header {
     background-color: #ffffff;
     width: 100%;
     line-height: 1;
+    font-size: smaller;
 
     .header__wrapper {
         width: 1200px;
@@ -34,6 +35,11 @@ header {
         li:not(:last-child) {
             margin-right: 2em;
         }
+    }
+
+    .member img{
+        padding: 0;
+        width: 20px;
     }
 }
 

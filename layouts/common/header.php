@@ -13,11 +13,18 @@
                             <img src="assets/img/common/logo.png" alt="Cleo & AZZH">
                         </a>
                     </div>
-                    <div class="global__member text--right">
+                    <div class="member text--right">
                         <ul>
-                            <li><a href="login.php">Login</a></li>
-                            <!-- // TODO: replace with cart icon -->
-                            <li><a href="cart.php">Cart</a></li>
+                            <li>
+                                <a href="login.php">
+                                    <img src="assets/img/common/user.png" id="user" alt="Shopping cart">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cart.php">
+                                    <img src="assets/img/common/cart.png" id="cart" alt="Shopping cart">
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
