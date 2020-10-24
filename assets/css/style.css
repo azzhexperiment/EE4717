@@ -230,6 +230,10 @@ nav ul li:not(:last-child) {
   margin-right: 2em;
 }
 
+.index__header {
+  padding-top: 2em;
+}
+
 .splash {
   background: url("../img/index/splash.jpg") center no-repeat;
   height: 500px;
@@ -250,6 +254,9 @@ nav ul li:not(:last-child) {
   margin: auto;
 }
 
+.listings .listings__title {
+  padding-top: 2em;
+}
 .listings__menu {
   height: 100%;
   width: 200px;
