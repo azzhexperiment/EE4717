@@ -157,7 +157,7 @@ ul.style--horizontal li {
 }
 
 .hide {
-  visibility: hidden !important;
+  display: none !important;
 }
 
 .sticky {
@@ -221,14 +221,32 @@ nav ul {
   margin: auto;
   line-height: 1;
   list-style: none;
-  padding-left: 0;
+  padding: 0;
 }
 nav ul li {
-  display: inline-block;
   text-transform: uppercase;
 }
-nav ul li:not(:last-child) {
+nav ul#nav__main li {
+  display: inline-block;
+  position: relative;
+}
+nav ul#nav__main li:not(:last-child) {
   margin-right: 2em;
+}
+nav ul#nav__main ul.dropdown {
+  padding-top: 1em;
+  min-width: 100%;
+  width: 100%;
+  background: #ffffff;
+  display: none;
+  z-index: 999;
+}
+nav ul#nav__main:hover #for-him:hover ul.dropdown__him {
+  display: block;
+  background-clip: padding-box;
+}
+nav ul#nav__main ul.dropdown li {
+  display: block;
 }
 
 .index__header {

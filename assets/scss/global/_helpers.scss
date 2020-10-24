@@ -17,7 +17,7 @@
 
 // Visibility
 .show { visibility: visible !important; }
-.hide { visibility: hidden !important; }
+.hide { display: none !important; }
 
 // Sticks header
 .sticky {

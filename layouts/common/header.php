@@ -30,15 +30,4 @@
                 </div>
             </header>
 
-            <!-- Navigation -->
-            <nav>
-                <div class="nav text--center">
-                    <ul>
-                        <li><a href="listings.php?sex=m">For Him</a></li>
-                        <li><a href="listings.php?sex=f">For Her</a></li>
-                        <li><a href="listings.php?cat=featured">Featured</a></li>
-                        <li><a href="listings.php?cat=new">New Arrival</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+            <?php include_once('nav.php') ?>

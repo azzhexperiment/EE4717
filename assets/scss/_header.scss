@@ -68,16 +68,56 @@ nav {
         margin: auto;
         line-height: 1;
         list-style: none;
-        padding-left: 0;
+        padding: 0;
 
         li {
-            display: inline-block;
             text-transform: uppercase;
         }
 
-        li:not(:last-child) {
-            margin-right: 2em;
+        &#nav__main {
+
+            li {
+                display: inline-block;
+                position: relative;
+            }
+
+            li:not(:last-child) {
+                margin-right: 2em;
+            }
+
+            ul.dropdown {
+                padding-top: 1em;
+                min-width: 100%;
+                width: 100%;
+                background: #ffffff;
+                display: none;
+                // position: absolute;
+                z-index: 999;
+            }
+
+            // &:hover #for-him:hover ul.dropdown__him,
+            &:hover #for-him:hover ul.dropdown__him {
+            // &:hover ul.dropdown__her {
+                display: block;
+                background-clip: padding-box;
+            }
+
+            ul.dropdown li {
+                display: block;
+            }
+
         }
     }
+
+    // #for-him__expanded,
+    // #for-her__expanded {
+    //     max-width: 90%;
+    //     width: 800px;
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-gap: $gutter;
+    //     margin: auto;
+    //     padding: 10px 0;
+    // }
 
 }
