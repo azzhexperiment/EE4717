@@ -1,2 +1,1 @@
-<!-- Scripts -->
-<script type="text/javascript" src="assets/js/validateContact.js" defer></script>
+<script defer type="text/javascript" src="assets/js/validateContact.js"></script>

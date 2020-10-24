@@ -3,6 +3,11 @@
 //============================================================================//
 
 .listings {
+
+    .listings__title {
+        padding-top: 2em;
+    }
+
 	&__menu {
 		height: 100%;
 		width: $side-nav-width;

@@ -1,43 +1,43 @@
-<?php
-
 //============================================================================//
-// MODELS
+// COMMON
 //============================================================================//
 
-include_once('models/Session.php');
-include_once('models/Auth.php');
-include_once('models/connect-db.php');
-include_once('models/Cart.php');
-include_once('models/Sales.php');
-include_once('models/Payment.php');
+.index__header {
+    padding-top: 2em;
+}
 
 
 //============================================================================//
-// VARIABLES
+// SPLASH
 //============================================================================//
 
-$title = 'Payment - CLEO & AZZH Collection: Neue Urban Fashion';
-
-include_once('lang/payment.php');
-
-
-//============================================================================//
-// LAYOUTS
-//============================================================================//
-
-include_once('layouts/common/head.php');
-include_once('layouts/js/payment.php');
-include_once('layouts/common/header.php');
-
-echo '<main>';
-include_once('layouts/payment.php');
-echo '</main>';
-
-include_once('layouts/common/footer.php');
+// TODO: redefine for all page headers
+.splash {
+    background: url('../img/index/splash.jpg') center no-repeat;
+    height: 500px;
+    width: 100%;
+}
 
 
 //============================================================================//
-// TERMINATOR
+// CATEGORIES
 //============================================================================//
 
-include_once('models/disconnect-db.php');
+.categories__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gutter;
+    margin: auto;
+}
+
+
+//============================================================================//
+// FEATURED
+//============================================================================//
+
+.featured__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $gutter;
+    margin: auto;
+}

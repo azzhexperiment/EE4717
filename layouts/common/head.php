@@ -9,3 +9,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Scripts -->
+    <script defer type="text/javascript" src="assets/js/navbar.js"></script>

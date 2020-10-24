@@ -35,10 +35,8 @@ footer {
         }
 
         // Social media icons
-        .col__social {
-            text-transform: capitalize;
-
-            ul li {
+        ul.col__social {
+            li {
                 display: inline-block;
                 margin-right: $gutter;
             }

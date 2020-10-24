@@ -162,7 +162,6 @@ function isValidQueryType (value) {
   return (value === 'general' || value === 'complain' || value === 'customerservice')
 }
 
-
 /**
  * Validates user 'message' field.
  *

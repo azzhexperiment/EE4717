@@ -1,6 +1,9 @@
 <!-- Featured items -->
 <section class="listings">
     <div class="listings__main">
+
+        <h1 class="listings__title">Payment Info</h1>
+
         <div class="listings__grid">
             <?php foreach ($listings as $listing) { ?>
                 <div class="card listing__item">

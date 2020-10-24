@@ -6,22 +6,24 @@ a {
     text-decoration: none;
 }
 
-nav {
+header, nav {
     $link-colour: #000000;
 
-    a {
-        color: $link-colour;
-    }
-
-    a:hover {
-        color: $link-colour;
-    }
-
-    a:active {
+    a:link {
         color: $link-colour;
     }
 
     a:visited {
+        color: $link-colour;
+    }
+
+    a:hover {
+        font-weight: 700;
+        color: $link-colour;
+    }
+
+    a:active {
+        font-weight: 700;
         color: $link-colour;
     }
 }
@@ -29,23 +31,24 @@ nav {
 footer {
     $link-colour: #afafaf;
 
-    a {
-        color: $link-colour;
-    }
-
-    a:hover {
-        color: $link-colour;
-    }
-
-    a:active {
+    a:link {
         color: $link-colour;
     }
 
     a:visited {
         color: $link-colour;
     }
-}
 
+    a:hover {
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    a:active {
+        font-weight: 700;
+        color: #ffffff;
+    }
+}
 
 ul {
 	&.style--none {

@@ -1,8 +1,9 @@
 <!-- Categores -->
 <section class="categories">
+
     <div class="categories__grid">
         <div class="category__left">
-            <h1>For Him</h1>
+            <h1 class="index__header">For Him</h1>
 
             <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
 
@@ -10,7 +11,7 @@
         </div>
 
         <div class="category__right">
-            <h1>For Her</h1>
+            <h1 class="index__header">For Her</h1>
 
             <img class="img--fit" src="assets/img/index/featured-2.jpg" alt="">
 
