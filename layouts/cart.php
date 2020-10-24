@@ -5,9 +5,9 @@
     <?php
 
     if (!isset($_GET['saleId'])) {
-        include_once('cart-new.php');
+        include_once('cart/cart-new.php');
     } else {
-        include_once('cart-confirm.php');
+        include_once('cart/cart-confirm.php');
     }
 
     ?>
