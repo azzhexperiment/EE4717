@@ -1,0 +1,42 @@
+//============================================================================//
+// LOGIN
+//============================================================================//
+
+.user__title {
+    padding-top: 3em;
+}
+
+.form__user {
+
+    width: 70%;
+    margin: auto;
+
+    input {
+        border-color: #333333;
+    }
+
+    .user__field-name {
+        vertical-align: top;
+        padding-top: 1.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .user__input-field {
+        border-radius: 10px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        padding-inline-start: 10px;
+        height: 40px;
+    }
+
+    textarea.user__input-field {
+        height: 200px;
+    }
+
+    .error {
+        color: #ff0000;
+        font-size: 70%;
+    }
+
+}

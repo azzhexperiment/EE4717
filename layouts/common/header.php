@@ -16,7 +16,7 @@
                     <div class="member text--right">
                         <ul>
                             <li>
-                                <a href="login.php">
+                                <a href="user.php">
                                     <img src="assets/img/common/user.png" id="user" alt="Shopping cart">
                                 </a>
                             </li>
@@ -31,3 +31,5 @@
             </header>
 
             <?php include_once('nav.php') ?>
+        </div>
+    </div>
