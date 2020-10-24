@@ -173,6 +173,7 @@ header {
   font-size: smaller;
 }
 header .header__wrapper {
+  max-width: 90%;
   width: 1200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
