@@ -30,8 +30,7 @@ form.addEventListener('click', (e) => {
  * @returns {Void}
  */
 function reduceQty () {
-  if (qty.value > 0)
-    qty.value--
+  if (qty.value > 0) { qty.value-- }
 }
 
 /**
