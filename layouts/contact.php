@@ -7,6 +7,7 @@
 
         <p class="contact__description">Got a question? Reach out to us via the form below!</p>
 
+        <!-- Name -->
         <div class="contact__item">
             <div class="contact__field-name">
                 <label for="contact__input-name">
