@@ -6,9 +6,9 @@
 
 include_once('models/Session.php');
 include_once('models/Auth.php');
-// include_once('models/connect-db.php');
-// include_once('models/Cart.php');
-// include_once('models/Sales.php');
+include_once('models/connect-db.php');
+include_once('models/Cart.php');
+include_once('models/Sales.php');
 include_once('models/Payment.php');
 
 
@@ -40,4 +40,4 @@ include_once('layouts/common/footer.php');
 // TERMINATOR
 //============================================================================//
 
-// include_once('models/disconnect-db.php');
+include_once('models/disconnect-db.php');
