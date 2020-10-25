@@ -5,6 +5,8 @@
 
         <h1 class="login__title">Login</h1>
 
+        <input type="text" name="type" value="login" hidden required>
+
         <!-- Email -->
         <div class="login__item">
             <div class="user__field-name">
