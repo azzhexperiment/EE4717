@@ -379,6 +379,10 @@ nav ul#nav__main ul.dropdown li {
   font-size: 70%;
 }
 
+.cart .cart__title {
+  padding-top: 2em;
+}
+
 .form__payment {
   width: 70%;
   margin: auto;
