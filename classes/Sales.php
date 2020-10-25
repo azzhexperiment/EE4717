@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Sales operations.
- *
- * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.3.4
- */
-
 namespace Sales;
 
 use mysqli;
@@ -23,6 +16,9 @@ use mysqli;
  * @property float $productTotal
  * @property int   $saleId
  * @property int   $saleStatus
+ *
+ * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
+ * @version 1.3.4
  */
 class Sales
 {
@@ -43,7 +39,6 @@ class Sales
      * perform necessary DB operations. Else if the entry is for confirmation
      * of sales, retrieve sales record for user confirmation and payment.
      *
-     * @param mysqli $db
      * @param string $saleId
      * @param array  $productId
      * @param array  $productName
@@ -57,7 +52,6 @@ class Sales
      * @return void
      */
     public function __construct(
-        $db,
         $saleId,
         $productId,
         $productName,
@@ -68,6 +62,14 @@ class Sales
         $productTotal,
         $saleStatus
     ) {
+        $db = new mysqli('localhost', 'f37ee', 'f37ee', 'f37ee');
+
+        // Check connection
+        if ($db->connect_errno) {
+            echo 'Connection failed: ' . $db->connect_error;
+            exit();
+        }
+
         if ($saleId === 'New') {
             $this->insertSalesRecord(
                 $db,
@@ -96,12 +98,6 @@ class Sales
 
             $this->emptyCart();
         }
-        // } else {
-        //     // Retrieve sales from DB
-        //     $this->retrieveSaleRecord($db, $saleId);
-
-        //     echo 'Sale record retrieved<br>';
-        // }
     }
 
     /**
