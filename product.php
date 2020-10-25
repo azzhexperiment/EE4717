@@ -19,14 +19,7 @@ include_once('models/connect-db.php');
 include_once('models/Session.php');
 include_once('models/Product.php');
 
-
-//============================================================================//
-// VARIABLES
-//============================================================================//
-
 $title = 'Shop product - CLEO & AZZH Collection';
-
-include_once('lang/listings.php');
 
 
 //============================================================================//
