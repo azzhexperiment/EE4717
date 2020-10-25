@@ -4,9 +4,9 @@
 // MODELS
 //============================================================================//
 
+include_once('models/connect-db.php');
 include_once('models/Session.php');
 include_once('models/Auth.php');
-include_once('models/connect-db.php');
 include_once('models/Listings.php');
 
 
