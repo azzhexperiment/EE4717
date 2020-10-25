@@ -1,20 +1,3 @@
-<?php
-
-use Product\Product;
-
-$productId = $_GET['id'];
-
-$product = new Product($db, $productId);
-
-if (isset($_GET['id']) && isset($_GET['productOrderQty'])) {
-    $_SESSION['cart']['productId'][]       = $productId;
-    $_SESSION['cart']['productName'][]     = $product->productName;
-    $_SESSION['cart']['productSize'][]     = $_GET['productSize'];
-    $_SESSION['cart']['productOrderQty'][] = $_GET['productOrderQty'];
-}
-
-?>
-
 <!-- Featured items -->
 <section class="product">
     <aside class="product__gallery">
@@ -51,6 +34,8 @@ if (isset($_GET['id']) && isset($_GET['productOrderQty'])) {
                     <?php } ?>
                 </div>
             <?php } ?>
+
+            <!-- // TODO: add stock qty  -->
 
             <div class="product__qty">
                 Qty:

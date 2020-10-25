@@ -57,7 +57,7 @@
         <div class="contact__item">
             <div class="contact__field-name">
                 <label for="contact__input-message">
-                    <h3>Experience</h3>
+                    <h3>Messsage</h3>
                 </label>
             </div>
             <div class="contact__input">

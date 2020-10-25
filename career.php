@@ -1,6 +1,17 @@
 <?php
 
 //============================================================================//
+// CLASSES
+//============================================================================//
+
+include_once('classes/Auth.php');
+include_once('classes/Customer.php');
+include_once('classes/Cart.php');
+include_once('classes/Product.php');
+include_once('classes/Sales.php');
+
+
+//============================================================================//
 // MODELS
 //============================================================================//
 
@@ -25,14 +36,8 @@ include_once('layouts/common/head.php');
 include_once('layouts/js/career.php');
 include_once('layouts/common/header.php');
 
-// START OF MAIN CONTENT
-
 echo '<main>';
-
 include_once('layouts/career.php');
-
 echo '</main>';
-
-// START OF MAIN CONTENT
 
 include_once('layouts/common/footer.php');

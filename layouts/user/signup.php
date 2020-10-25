@@ -1,9 +1,12 @@
 <!-- Sign up -->
 <section class="signup">
+
     <!-- // TODO: review form classes -->
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user">
 
         <h1 class="signup__title">Sign up</h1>
+
+        <input type="text" name="type" value="signup" hidden required>
 
         <!-- First Name -->
         <div class="signup__item">

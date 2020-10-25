@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS admins
 -- Default admin accounts
 INSERT INTO admins
     VALUES
-        (DEFAULT, 'Admin', 'AZZH', 'zhuz0010@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 'Admin', 'Cleo', 'cleo0002@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL);
+        (DEFAULT, 'Zihao',    'Zhu', 'zhuz0010@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL),
+        (DEFAULT, 'Cleonice', 'Lee', 'cleo0002@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL);
 
 
 DROP   TABLE IF     EXISTS auth_admin;
@@ -44,9 +44,24 @@ CREATE TABLE IF NOT EXISTS auth_admin
 INSERT INTO auth_admin
     VALUES
         -- zhuz0010@e.ntu.edu.sg || password1
-        (DEFAULT, 1, 'a8bca5419b2a21ba18a8233019c170ec', '7c6a180b36896a0a8c02787eeafb0e4c', CURRENT_TIMESTAMP, NULL),
+        (
+            DEFAULT,
+            1,
+            'a8bca5419b2a21ba18a8233019c170ec',
+            '7c6a180b36896a0a8c02787eeafb0e4c',
+            CURRENT_TIMESTAMP,
+            NULL
+        ),
+
         -- cleo0002@e.ntu.edu.sg || password2
-        (DEFAULT, 2, 'ef4a3460902f386f89050450493bebcf', '6cb75f652a9b52798eb6cf2201057c73', CURRENT_TIMESTAMP, NULL);
+        (
+            DEFAULT,
+            2,
+            'ef4a3460902f386f89050450493bebcf',
+            '6cb75f652a9b52798eb6cf2201057c73',
+            CURRENT_TIMESTAMP,
+            NULL
+        );
 
 
 
@@ -63,8 +78,8 @@ CREATE TABLE IF NOT EXISTS customers
     customer_email      VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_address_1  VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_address_2  VARCHAR(256) DEFAULT '' NOT NULL               ,
-    customer_city       VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_country    VARCHAR(256) DEFAULT '' NOT NULL               ,
+    customer_city       VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_postal     INT UNSIGNED DEFAULT 0  NOT NULL               ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
@@ -76,7 +91,19 @@ CREATE TABLE IF NOT EXISTS customers
 -- Test customer
 INSERT INTO customers
     VALUES
-        (DEFAULT, 'Customer', 'Test', 'customer@test.com', 'Address 1', 'Address 2', 'SG', 'SG', 111111, CURRENT_TIMESTAMP, NULL);
+        (
+            DEFAULT            ,
+            'Customer'         ,
+            'Test'             ,
+            'customer@test.com',
+            'Address 1'        ,
+            'Address 2'        ,
+            'SG'               ,
+            'SG'               ,
+            111111             ,
+            CURRENT_TIMESTAMP  ,
+            NULL
+        );
 
 
 DROP   TABLE IF     EXISTS auth_customers;
@@ -97,7 +124,14 @@ CREATE TABLE IF NOT EXISTS auth_customers
 -- Test customer auth
 INSERT INTO auth_customers
     VALUES
-        (DEFAULT, 1, '5b27f0c7078f0861d364ccb34094ba44', '5f4dcc3b5aa765d61d8327deb882cf99', CURRENT_TIMESTAMP, NULL);
+        (
+            DEFAULT,
+            1,
+            '5b27f0c7078f0861d364ccb34094ba44',
+            '5f4dcc3b5aa765d61d8327deb882cf99',
+            CURRENT_TIMESTAMP,
+            NULL
+        );
 
 
 
