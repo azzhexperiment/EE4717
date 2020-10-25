@@ -4,11 +4,10 @@
 // MODELS
 //============================================================================//
 
+include_once('models/connect-db.php');
 include_once('models/Session.php');
 include_once('models/Auth.php');
-// include_once('models/connect-db.php');
-// include_once('models/User.php');
-// include_once('models/disconnect-db.php');
+include_once('models/User.php');
 
 
 //============================================================================//
@@ -33,3 +32,10 @@ include_once('layouts/user.php');
 echo '</main>';
 
 include_once('layouts/common/footer.php');
+
+
+//============================================================================//
+// TERMINATOR
+//============================================================================//
+
+include_once('models/disconnect-db.php');
