@@ -63,8 +63,8 @@ CREATE TABLE IF NOT EXISTS customers
     customer_email      VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_address_1  VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_address_2  VARCHAR(256) DEFAULT '' NOT NULL               ,
-    customer_city       VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_country    VARCHAR(256) DEFAULT '' NOT NULL               ,
+    customer_city       VARCHAR(256) DEFAULT '' NOT NULL               ,
     customer_postal     INT UNSIGNED DEFAULT 0  NOT NULL               ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
