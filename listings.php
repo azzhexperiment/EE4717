@@ -1,12 +1,22 @@
 <?php
 
 //============================================================================//
+// CLASSES
+//============================================================================//
+
+include_once('classes/Auth.php');
+include_once('classes/Customer.php');
+include_once('classes/Cart.php');
+include_once('classes/Product.php');
+include_once('classes/Sales.php');
+
+
+//============================================================================//
 // MODELS
 //============================================================================//
 
 include_once('models/connect-db.php');
 include_once('models/Session.php');
-include_once('models/Auth.php');
 include_once('models/Listings.php');
 
 
@@ -14,7 +24,7 @@ include_once('models/Listings.php');
 // VARIABLES
 //============================================================================//
 
-$title = 'Shop category - CLEO & AZZH Collection: Neue Urban Fashion';
+$title = 'Catalogue - CLEO & AZZH Collection: Neue Urban Fashion';
 
 include_once('lang/listings.php');
 
