@@ -2,18 +2,18 @@
 <section class="listings">
     <div class="listings__main">
 
-        <h1 class="listings__title">Payment Info</h1>
+        <h1 class="listings__title">Catalogue</h1>
 
         <div class="listings__grid">
             <?php foreach ($listings as $listing) { ?>
-                <div class="card listing__item">
+                <div class="listing__item">
                     <a href="product.php?id=<?= $listing->product_id ?>">
-                        <!-- TODO: generate URLs from DB -->
+                        <!-- // TODO: generate URLs from DB -->
                         <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
 
                         <div class="listing__name"><?= $listing->product_name ?></div>
 
-                        <!-- TODO: consider removing this since cannot choose details -->
+                        <!-- // TODO: consider removing this since cannot choose details -->
                         <!-- <button class="cart--add">Add to Cart</button> -->
                     </a>
                 </div>
