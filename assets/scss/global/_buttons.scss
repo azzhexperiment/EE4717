@@ -20,4 +20,11 @@ button {
     background-color: #ffa07a;
     border: 0;
     text-transform: uppercase;
+
+    &.qty__selector {
+        border-radius: 5px;
+        width: 30px;
+        height: 20px;
+        background-color: #aff089;
+    }
 }

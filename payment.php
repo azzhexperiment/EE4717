@@ -18,14 +18,7 @@ include_once('classes/Sales.php');
 include_once('models/connect-db.php');
 include_once('models/Session.php');
 
-
-//============================================================================//
-// VARIABLES
-//============================================================================//
-
 $title = 'Payment - CLEO & AZZH Collection: Neue Urban Fashion';
-
-include_once('lang/payment.php');
 
 
 //============================================================================//

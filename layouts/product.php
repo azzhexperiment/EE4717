@@ -39,9 +39,9 @@
 
             <div class="product__qty">
                 Qty:
-                <button type="button" id="product__qty--less">-</button>
+                <button type="button" id="product__qty--less" class="qty__selector">-</button>
                 <input type="number" name="productOrderQty" id="product__qty-input" value="0" min="1" required>
-                <button type="button" id="product__qty--more">+</button>
+                <button type="button" id="product__qty--more" class="qty__selector">+</button>
             </div>
 
             <!-- TODO: add modal for order confirmation -->

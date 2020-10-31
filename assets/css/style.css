@@ -80,6 +80,12 @@ button {
   border: 0;
   text-transform: uppercase;
 }
+button.qty__selector {
+  border-radius: 5px;
+  width: 30px;
+  height: 20px;
+  background-color: #aff089;
+}
 
 a {
   text-decoration: none;
@@ -377,6 +383,10 @@ nav ul#nav__main ul.dropdown li {
 .contact .form__contact .error {
   color: #ff0000;
   font-size: 70%;
+}
+
+.cart .cart__title {
+  padding-top: 2em;
 }
 
 .form__payment {

@@ -19,14 +19,7 @@ include_once('models/connect-db.php');
 include_once('models/Session.php');
 include_once('models/Cart.php');
 
-
-//============================================================================//
-// VARIABLES
-//============================================================================//
-
 $title = 'Your Cart - CLEO & AZZH Collection: Neue Urban Fashion';
-
-include_once('lang/cart.php');
 
 
 //============================================================================//

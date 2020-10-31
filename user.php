@@ -15,16 +15,10 @@ include_once('classes/Sales.php');
 // MODELS
 //============================================================================//
 
+// include_once('models/connect-db.php');
 include_once('models/Session.php');
 
-
-//============================================================================//
-// VARIABLES
-//============================================================================//
-
 $title = 'Customer - CLEO & AZZH Collection: Neue Urban Fashion';
-
-include_once('lang/user.php');
 
 
 //============================================================================//
@@ -46,4 +40,4 @@ include_once('layouts/common/footer.php');
 // TERMINATOR
 //============================================================================//
 
-include_once('models/disconnect-db.php');
+// include_once('models/disconnect-db.php');

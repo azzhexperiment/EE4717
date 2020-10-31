@@ -1,6 +1,6 @@
 <!-- Featured items -->
 <section class="cart">
-    <h1>Your cart</h1>
+    <h1 class="cart__title">Your cart</h1>
 
     <?php
 
