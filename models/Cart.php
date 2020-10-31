@@ -1,37 +1,19 @@
 <?php
 
 use Cart\Cart;
-use Sales\Sales;
 
 $cart = new Cart();
 
-if (
-    !empty($_POST['productId']) &&
-    !empty($_POST['customerEmail']) &&
-    !empty($cart->productId)
-) {
-    $saleStatus = 1;
+// TODO: think about how to handle item removal
+// if (isset($_POST['remove__item'])) {
+//     // Reset session to update confirmed cart
+//     $_SESSION['productId']       = [];
+//     $_SESSION['productSize']     = [];
+//     $_SESSION['productOrderQty'] = [];
 
-    $sales = new Sales(
-        'New',
-        $cart->productId,
-        $cart->productName,
-        $cart->productSize,
-        $cart->productOrderQty,
-        $cart->productPrice,
-        $cart->productSubtotal,
-        $cart->productTotal,
-        $saleStatus
-    );
-
-    $cart = new Cart();
-}
-
-if (isset($_GET['saleId'])) {
-    $saleId = (int) $_GET['saleId'];
-
-    $sales = new Sales($saleId, 0, 0, 0, 0, 0, 0, 0, 0);
-
-    // TODO: add db
-    $cart = $sales->retrieveSaleRecord($db, $saleId);
-}
+//     // TODO: validate for checked items only
+//     // Repopulate items to buy
+//     $_SESSION['productId']       = $_POST['productId'];
+//     $_SESSION['productSize']     = $_POST['productSize'];
+//     $_SESSION['productOrderQty'] = $_POST['productOrderQty'];
+// }
