@@ -160,39 +160,16 @@ CREATE TABLE IF NOT EXISTS feedbacks
     SALES
 \******************************************************************************/
 
-DROP   TABLE IF     EXISTS sale_statuses;
-CREATE TABLE IF NOT EXISTS sale_statuses
-(
-    sale_status_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    sale_status    VARCHAR(64)      NOT NULL               ,
-
-    PRIMARY KEY (sale_status_id)
-);
-
--- Sales statuses
-INSERT INTO sale_statuses (sale_status)
-    VALUES
-        ('Pending confirmation'),
-        ('Pending payment')     ,
-        ('Payment received')    ,
-        ('Shipping')            ,
-        ('Completed')           ;
-
-
 DROP   TABLE IF     EXISTS sales;
 CREATE TABLE IF NOT EXISTS sales
 (
     sale_id          INT      UNSIGNED NOT NULL AUTO_INCREMENT,
-    sale_status_id   TINYINT  UNSIGNED NOT NULL               ,
     sale_amount      DEC(9,2) UNSIGNED NOT NULL               ,
-    sale_amount_paid DEC(9,2) UNSIGNED                        ,
 
     created_at TIMESTAMP DEFAULT   '0000-00-00 00:00:00',
     updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    ,
-    paid_at    TIMESTAMP                                ,
 
-    PRIMARY KEY (sale_id),
-    FOREIGN KEY (sale_status_id) REFERENCES sale_statuses(sale_status_id)
+    PRIMARY KEY (sale_id)
 );
 
 
@@ -409,29 +386,6 @@ CREATE TABLE IF NOT EXISTS product_sales
     FOREIGN KEY (sale_id)    REFERENCES sales(sale_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
-
-
--- -- Maybe should remove colours
--- DROP   TABLE IF     EXISTS colours;
--- CREATE TABLE IF NOT EXISTS colours
--- (
--- 	colour_id   INT         UNSIGNED   NOT NULL AUTO_INCREMENT,
--- 	product_id  INT         UNSIGNED   NOT NULL               ,
--- 	colour_name VARCHAR(64) DEFAULT '' NOT NULL               ,
-
--- 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
--- 	PRIMARY KEY (colour_id),
--- 	FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
--- );
-
--- -- Sales statuses
--- INSERT INTO products
--- 	VALUES
--- 		(DEFAULT, 'Nike DryFit Tee Black', 'Lorem ipsum', 1, 200, 1, CURRENT_TIMESTAMP, NULL),
--- 		(DEFAULT, 'Nike DryFit Classic Sweat Pants Black', 'Lorem ipsum', 1, 200, 1, CURRENT_TIMESTAMP, NULL),
--- 		(DEFAULT, 'Adidas Ultraboost 20', 'Lorem ipsum', 1, 200, 1, CURRENT_TIMESTAMP, NULL),
--- 		(DEFAULT, 'Adidas Ultraboost 20', 'Lorem ipsum', 1, 200, 1, CURRENT_TIMESTAMP, NULL);
 
 
 
