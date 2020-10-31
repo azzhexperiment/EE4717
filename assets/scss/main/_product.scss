@@ -3,23 +3,18 @@
 //============================================================================//
 
 .product {
-	&__gallery {
-		width: $product-img-width;
-		position: fixed;
-	}
 
-	&__main {
-		margin-left: $product-img-width + $gutter;
-	}
+    padding-top: 1em;
 
-	&__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: $gutter;
-		margin: auto;
-	}
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $gutter;
+        margin: auto;
+    }
 
-	&__img {
-		// TODO: style product images
-	}
+    &__img {
+        // TODO: style product images
+    }
+
 }

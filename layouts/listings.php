@@ -9,7 +9,7 @@
                 <div class="listing__item">
                     <a href="product.php?id=<?= $listing->product_id ?>">
                         <!-- // TODO: generate URLs from DB -->
-                        <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
+                        <img class="img--fit" src="assets/img/products/<?= $listing->product_id ?>.jpg" alt="">
 
                         <div class="listing__name"><?= $listing->product_name ?></div>
 
