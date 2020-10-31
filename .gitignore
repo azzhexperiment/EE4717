@@ -2,4 +2,5 @@ node_modules
 .history
 *.code-workspace
 assets/raw
+assets/img/products
 vendor
