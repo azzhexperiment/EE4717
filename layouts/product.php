@@ -4,7 +4,7 @@
         <div class="product__grid">
             <div class="product__img">
                 <!-- TODO: generate images from DB -->
-                <img class="img--fit" src="assets/img/index/<?= $productId ?>.jpg" alt="">
+                <img class="img--fit" src="assets/img/products/<?= $productId ?>.jpg" alt="">
             </div>
         </div>
     </aside>
