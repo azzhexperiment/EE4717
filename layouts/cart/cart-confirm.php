@@ -28,13 +28,13 @@
 
                     <div class="product__qty">
                         Qty:
-                        <button type="button" data-type="less" data-id="<?= $i ?>" class="product__qty--less">
+                        <button type="button" data-type="less" data-id="<?= $i ?>" class="qty__selector">
                             -
                         </button>
 
                         <input type="number" name="productOrderQty[<?= $cart[$i]->product_id ?>]" value="<?= $cart[$i]->sale_qty ?>" min="1" required>
 
-                        <button type="button" data-type="more" data-id="<?= $i ?>" class="product__qty--more">
+                        <button type="button" data-type="more" data-id="<?= $i ?>" class="qty__selector">
                             +
                         </button>
                     </div>
