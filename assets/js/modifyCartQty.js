@@ -30,7 +30,7 @@ form.addEventListener('click', (e) => {
 /**
  * Decrease qty of selected cart item.
  *
- * @param {String} id
+ * @param {String} item
  *
  * @returns {Void}
  */
@@ -43,7 +43,7 @@ function reduceQty (item) {
 /**
  * Increase qty of selected cart item.
  *
- * @param {String} id
+ * @param {String} item
  *
  * @returns {Void}
  */
