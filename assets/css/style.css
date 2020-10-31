@@ -330,12 +330,8 @@ nav ul#nav__main ul.dropdown li {
   margin: auto;
 }
 
-.product__gallery {
-  width: 600px;
-  position: fixed;
-}
-.product__main {
-  margin-left: 624px;
+.product {
+  padding-top: 3em;
 }
 .product__grid {
   display: grid;
