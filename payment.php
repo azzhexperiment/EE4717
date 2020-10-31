@@ -17,8 +17,9 @@ include_once('classes/Sales.php');
 
 include_once('models/connect-db.php');
 include_once('models/Session.php');
+include_once('models/Payment.php');
 
-$title = 'Payment - CLEO & AZZH Collection: Neue Urban Fashion';
+$title = 'Checkout - CLEO & AZZH Collection: Neue Urban Fashion';
 
 
 //============================================================================//
