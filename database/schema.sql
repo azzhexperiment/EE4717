@@ -21,8 +21,7 @@ CREATE TABLE IF NOT EXISTS admins
 -- Default admin accounts
 INSERT INTO admins
     VALUES
-        (DEFAULT, 'Zihao',    'Zhu', 'zhuz0010@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL),
-        (DEFAULT, 'Cleonice', 'Lee', 'cleo0002@e.ntu.edu.sg', CURRENT_TIMESTAMP, NULL);
+        (DEFAULT, 'admin', 'test', 'admin@cleoandazzh.com', CURRENT_TIMESTAMP, NULL);
 
 
 DROP   TABLE IF     EXISTS auth_admin;
@@ -43,22 +42,12 @@ CREATE TABLE IF NOT EXISTS auth_admin
 -- Default admin auth
 INSERT INTO auth_admin
     VALUES
-        -- zhuz0010@e.ntu.edu.sg || password1
+        -- admin | admin
         (
             DEFAULT,
             1,
-            'a8bca5419b2a21ba18a8233019c170ec',
-            '7c6a180b36896a0a8c02787eeafb0e4c',
-            CURRENT_TIMESTAMP,
-            NULL
-        ),
-
-        -- cleo0002@e.ntu.edu.sg || password2
-        (
-            DEFAULT,
-            2,
-            'ef4a3460902f386f89050450493bebcf',
-            '6cb75f652a9b52798eb6cf2201057c73',
+            '21232f297a57a5a743894a0e4a801fc3',
+            '21232f297a57a5a743894a0e4a801fc3',
             CURRENT_TIMESTAMP,
             NULL
         );
@@ -93,14 +82,14 @@ INSERT INTO customers
     VALUES
         (
             DEFAULT            ,
-            'Customer'         ,
-            'Test'             ,
+            'John'             ,
+            'Doe'              ,
             'customer@test.com',
-            'Address 1'        ,
-            'Address 2'        ,
-            'SG'               ,
-            'SG'               ,
-            111111             ,
+            '123 Apple Street' ,
+            '#18-3-474'        ,
+            'Chiang Mai'       ,
+            'Thailand'         ,
+            123456             ,
             CURRENT_TIMESTAMP  ,
             NULL
         );
