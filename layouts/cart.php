@@ -21,7 +21,6 @@
                 <table class="cart__content">
 
                     <thead>
-                        <th></th>
                         <th>Image</th>
                         <th>Details</th>
                         <th>Price</th>
