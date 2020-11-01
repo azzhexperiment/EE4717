@@ -134,6 +134,11 @@ ul.style--horizontal li {
   margin-right: auto;
 }
 
+.align--right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 .text--left {
   text-align: left !important;
 }
@@ -383,6 +388,10 @@ nav ul#nav__main ul.dropdown li {
 
 .cart .cart__title {
   padding-top: 2em;
+}
+.cart .cart__images {
+  max-width: 200px;
+  width: 20%;
 }
 
 .form__payment {

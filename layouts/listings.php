@@ -12,9 +12,6 @@
                         <img class="img--fit" src="assets/img/products/<?= $listing->product_id ?>.jpg" alt="">
 
                         <div class="listing__name"><?= $listing->product_name ?></div>
-
-                        <!-- // TODO: consider removing this since cannot choose details -->
-                        <!-- <button class="cart--add">Add to Cart</button> -->
                     </a>
                 </div>
             <?php } ?>

@@ -9,6 +9,7 @@ include_once('classes/Customer.php');
 include_once('classes/Cart.php');
 include_once('classes/Product.php');
 include_once('classes/Sales.php');
+include_once('classes/Mail.php');
 
 
 //============================================================================//
@@ -17,8 +18,9 @@ include_once('classes/Sales.php');
 
 include_once('models/connect-db.php');
 include_once('models/Session.php');
+include_once('models/Payment.php');
 
-$title = 'Payment - CLEO & AZZH Collection: Neue Urban Fashion';
+$title = 'Checkout - CLEO & AZZH Collection: Neue Urban Fashion';
 
 
 //============================================================================//

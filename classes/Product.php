@@ -23,6 +23,7 @@ class Product
     public $productDescription;
     public $productSize;
     public $productPrice;
+    public $productInventory;
 
     /**
      * Construct product object.
@@ -46,6 +47,7 @@ class Product
         $this->productDescription = $this->productDescription($db);
         $this->productSize        = $this->getProductSize($db);
         $this->productPrice       = $this->getProductPrices($db);
+        $this->productInventory   = $this->getInventory($db);
     }
 
     /**
@@ -55,13 +57,12 @@ class Product
      *
      * @return string
      */
-    public function getProductName($db)
+    private function getProductName($db)
     {
         $getProductName = 'SELECT product_name FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productName = $db
-            ->query($getProductName)
+        $productName = $db->query($getProductName)
             ->fetch_object()
             ->product_name;
 
@@ -75,13 +76,12 @@ class Product
      *
      * @return string
      */
-    public function productDescription($db)
+    private function productDescription($db)
     {
         $productDescription = 'SELECT product_description FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productDescription = $db
-            ->query($productDescription)
+        $productDescription = $db->query($productDescription)
             ->fetch_object()
             ->product_description;
 
@@ -95,13 +95,12 @@ class Product
      *
      * @return array
      */
-    public function getProductSize($db)
+    private function getProductSize($db)
     {
         $getSizingTypeId = 'SELECT sizing_type FROM products
             WHERE product_id = ' . $this->productId;
 
-        $sizingTypeId = (int) $db
-            ->query($getSizingTypeId)
+        $sizingTypeId = (int) $db->query($getSizingTypeId)
             ->fetch_object()
             ->sizing_type;
 
@@ -109,8 +108,7 @@ class Product
             $getProductSizeTable = 'SELECT sizing_type FROM sizing_types
                 WHERE sizing_type_id = ' . $sizingTypeId;
 
-            $productSizeTable = $db
-                ->query($getProductSizeTable)
+            $productSizeTable = $db->query($getProductSizeTable)
                 ->fetch_object()
                 ->sizing_type;
 
@@ -135,13 +133,12 @@ class Product
      *
      * @return float
      */
-    public function getProductPrices($db)
+    private function getProductPrices($db)
     {
         $getProductPrice = 'SELECT product_price FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productPrice = $db
-            ->query($getProductPrice)
+        $productPrice = $db->query($getProductPrice)
             ->fetch_object()
             ->product_price;
 
@@ -156,16 +153,15 @@ class Product
      *
      * @return float
      */
-    public function getInventory($db)
+    private function getInventory($db)
     {
-        $getProductPrice = 'SELECT product_price FROM products
+        $getInventory = 'SELECT stock_qty FROM stocks
             WHERE product_id = ' . $this->productId;
 
-        $productPrice = $db
-            ->query($getProductPrice)
+        $productInventory = $db->query($getInventory)
             ->fetch_object()
-            ->product_price;
+            ->stock_qty;
 
-        return $productPrice;
+        return $productInventory;
     }
 }

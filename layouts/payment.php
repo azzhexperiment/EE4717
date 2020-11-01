@@ -1,16 +1,6 @@
-<?php if (!empty($_POST)) {
-    $_POST = []; ?>
-    <script type="text/javascript">
-        alert('Payment completed')
-
-        window.location = "http://192.168.56.2/f37ee/project/index.php"
-    </script>
-<?php } ?>
-
 <?php if (empty($_GET['saleId'])) { ?>
     <!-- Payment -->
     <section class="payment">
-        <!-- // TODO: review form classes -->
         <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__payment" id="form__payment">
 
             <h1 class="payment__title">Payment Info</h1>
@@ -139,7 +129,6 @@
                 </div>
             </div>
 
-            <!-- // TODO: add modal for order confirmation -->
             <div class="payment__item">
                 <div class="payment__field-name">
                 </div>
@@ -151,6 +140,8 @@
                     <span class="error" id="error__submit"></span>
                 </div>
             </div>
+
+            <input type="text" name="confirm" value="confirm" hidden required>
 
         </form>
     </section>

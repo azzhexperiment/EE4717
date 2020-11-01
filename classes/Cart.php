@@ -15,11 +15,7 @@ use mysqli;
  * @property array $productSubtotal
  * @property float $productTotal
  *
- * @method void  populateCart()
- * @method void  removeItem()
- * @method array getProductPrices()
- * @method array calculateSubtotals()
- * @method float calculateTotal()
+ * @method void removeItem()
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
  * @version 1.4.2
@@ -55,25 +51,6 @@ class Cart
     }
 
     /**
-     * Add items to cart.
-     *
-     * @param mysqli $db
-     *
-     * @return void
-     */
-    public function populateCart($db)
-    {
-        $this->productId       = $_SESSION['cart']['productId'];
-        $this->productName     = $_SESSION['cart']['productName'];
-        $this->productSize     = $_SESSION['cart']['productSize'];
-        $this->productOrderQty = $_SESSION['cart']['productOrderQty'];
-
-        $this->productPrice    = $this->getProductPrices($db);
-        $this->productSubtotal = $this->calculateSubtotals($this->productPrice);
-        $this->productTotal    = $this->calculateTotal($this->productSubtotal);
-    }
-
-    /**
      * Remove designated item from cart.
      *
      * @param int $id
@@ -105,13 +82,32 @@ class Cart
     }
 
     /**
+     * Add items to cart.
+     *
+     * @param mysqli $db
+     *
+     * @return void
+     */
+    private function populateCart($db)
+    {
+        $this->productId       = $_SESSION['cart']['productId'];
+        $this->productName     = $_SESSION['cart']['productName'];
+        $this->productSize     = $_SESSION['cart']['productSize'];
+        $this->productOrderQty = $_SESSION['cart']['productOrderQty'];
+
+        $this->productPrice    = $this->getProductPrices($db);
+        $this->productSubtotal = $this->calculateSubtotals($this->productPrice);
+        $this->productTotal    = $this->calculateTotal($this->productSubtotal);
+    }
+
+    /**
      * Get product prices.
      *
      * @param mysqli $db
      *
      * @return array
      */
-    public function getProductPrices($db)
+    private function getProductPrices($db)
     {
         for ($i = 0; $i < count($this->productId); $i++) {
             $getProductPrice = 'SELECT product_price FROM products
@@ -132,7 +128,7 @@ class Cart
      *
      * @return array
      */
-    public function calculateSubtotals($prices)
+    private function calculateSubtotals($prices)
     {
         for ($i = 0; $i < count($this->productId); $i++) {
             $subtotals[] = $prices[$i] * $this->productOrderQty[$i];
@@ -148,7 +144,7 @@ class Cart
      *
      * @return float
      */
-    public function calculateTotal($subtotals)
+    private function calculateTotal($subtotals)
     {
         $total = 0;
 
@@ -165,7 +161,7 @@ class Cart
      *
      * @return void
      */
-    public function emptyCart()
+    private function emptyCart()
     {
         // TODO: rebase cart?
         unset($_SESSION['cart']);

@@ -146,8 +146,8 @@ class Customer
      */
     public function retrieveCustomerInfo($db, $customerId)
     {
-        $retrieveCustomerInfo = 'SELECT * FROM customers
-            WHERE customer_id = ' . $customerId;
+        $retrieveCustomerInfo = "SELECT * FROM customers
+            WHERE customer_id = $customerId";
 
         $customerInfo = $db->query($retrieveCustomerInfo)->fetch_object();
 
