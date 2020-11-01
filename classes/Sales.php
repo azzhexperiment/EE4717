@@ -3,6 +3,7 @@
 namespace Sales;
 
 use mysqli;
+use Mail\Mail;
 
 /**
  * Sales object.
@@ -68,7 +69,7 @@ class Sales
 
         $this->updateInventory($db);
 
-        // $this->sendConfirmationMail();
+        $this->sendConfirmationMail();
 
         $this->emptyCart();
     }
@@ -162,7 +163,6 @@ class Sales
     private function insertProductSaleEntry($db)
     {
         for ($i = 0; $i < count($this->productId); $i++) {
-            echo 1;
             $insertProductSale = 'INSERT INTO product_sales
                 SET
                     product_sale_id = DEFAULT,
@@ -274,20 +274,11 @@ class Sales
     /**
      * Send confirmation email to customer containing selected cart items.
      *
-     * @param array  $productId
-     * @param array  $productName
-     * @param array  $productSize
-     * @param array  $productOrderQty
-     * @param array  $productPrice
-     * @param array  $productSubtotal
-     * @param array  $productTotal
-     *
      * @return void
      */
     private function sendConfirmationMail()
     {
-        // TODO: Add method to send mail
-        // TODO: add recommendations
+        (new Mail($this));
     }
 
     /**
