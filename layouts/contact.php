@@ -1,6 +1,5 @@
 <!-- Featured items -->
 <section class="contact">
-    <!-- // TODO: review form classes -->
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__contact" id="form__contact">
 
         <h1 class="contact__title">Contact Us</h1>
@@ -67,7 +66,6 @@
             </div>
         </div>
 
-        <!-- // TODO: add modal for order confirmation -->
         <div class="contact__item">
             <div class="contact__field-name">
             </div>

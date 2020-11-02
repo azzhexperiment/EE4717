@@ -154,17 +154,4 @@ class Cart
 
         return $total;
     }
-
-    // TODO: remove method after rewriting to PHP file
-    /**
-     * Remove all items in cart.
-     *
-     * @return void
-     */
-    private function emptyCart()
-    {
-        // TODO: rebase cart?
-        unset($_SESSION['cart']);
-        unset($_POST['empty']);
-    }
 }

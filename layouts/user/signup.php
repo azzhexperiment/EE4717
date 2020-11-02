@@ -136,7 +136,6 @@
             </div>
         </div>
 
-        <!-- // TODO: add modal for order confirmation -->
         <div class="signup__item">
             <div class="user__field-name">
             </div>

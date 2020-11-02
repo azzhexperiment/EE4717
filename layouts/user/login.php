@@ -34,7 +34,6 @@
             </div>
         </div>
 
-        <!-- // TODO: add modal for order confirmation -->
         <div class="login__item">
             <div class="user__field-name">
             </div>

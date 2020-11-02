@@ -12,7 +12,6 @@
 
             <p class="product__description"><?= $product->productDescription ?></p>
 
-            <!-- TODO: review form classes -->
             <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="get" class="form" id="form__product">
 
                 <input type="number" name="id" value="<?= $productId ?>" hidden required>
@@ -42,7 +41,6 @@
                     <button type="button" id="product__qty--more" class="qty__selector">+</button>
                 </div>
 
-                <!-- TODO: add modal for order confirmation -->
                 <button class="cart--add" form="form__product" type="submit">Add to Cart</button>
             </form>
         </div>

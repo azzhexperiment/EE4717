@@ -94,7 +94,6 @@
 
                 <input type="text" name="buy" value="buy" required hidden>
 
-                <!-- TODO: add modal for order confirmation -->
                 <button class="cart--confirm align--right" form="form__confirm-order" value="confirmOrder" type="submit">
                     Confirm Order
                 </button>
