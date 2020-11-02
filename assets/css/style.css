@@ -285,7 +285,7 @@ nav ul#nav__main ul.dropdown li {
 }
 
 .user__title {
-  padding-top: 3em;
+  padding-top: 2em;
 }
 
 .form__user {
@@ -336,7 +336,7 @@ nav ul#nav__main ul.dropdown li {
 }
 
 .product {
-  padding-top: 1em;
+  padding-top: 2em;
 }
 .product__grid {
   display: grid;
@@ -349,6 +349,9 @@ nav ul#nav__main ul.dropdown li {
   width: 100%;
 }
 
+.career {
+  padding-top: 2em;
+}
 .career .career__listings {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
