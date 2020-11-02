@@ -18,8 +18,6 @@ $loggedOut = '<script>
     window.location = "http://192.168.56.2/f37ee/project/index.php"
 </script>';
 
-// TODO: Check in session
-
 if (empty($_SESSION['customerId'])) {
     // Redirect user after logging in
     if ($_POST['type'] === 'login') {

@@ -18,35 +18,39 @@
 
             <form action="payment.php" method="POST" class="form form__cart" name="confirmOrder" id="form__confirm-order">
 
+                <input type="text" name="buy" value="buy" required hidden>
+                <input type="number" name="productId[]" value="<?= $cart->productId[$i] ?>" required hidden>
+
                 <table class="cart__content">
 
                     <thead>
-                        <th>Image</th>
-                        <th>Details</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <tr>
+                            <th>Product Image</th>
+                            <th>Details</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
 
                     <tbody>
                         <?php for ($i = 0; $i < count($cart->productId); $i++) { ?>
-                            <!-- TODO: padding space etc, refer to docs -->
                             <tr class="cart__item">
-                                <input type="number" name="productId[]" value="<?= $cart->productId[$i] ?>" required hidden>
 
                                 <td class="cart__images">
                                     <a href="product.php?id=<?= $cart->productId[$i] ?>">
-                                        <img class="img--fit" src="assets/img/products/<?= $cart->productId[$i] ?>.jpg" class="cart__image">
+                                        <img class="img--fit cart__image" src="assets/img/products/<?= $cart->productId[$i] ?>.jpg">
                                     </a>
                                 </td>
 
                                 <td class="cart__info">
                                     <a href="product.php?id=<?= $cart->productId[$i] ?>">
-                                        <?= $cart->productName[$i] ?>
+                                        <span class="text--uppercase">
+                                            <?= $cart->productName[$i] ?>
+                                        </span>
                                     </a>
 
                                     <br>
 
-                                    <!-- TODO: make dropdown from list of sizes -->
                                     <input type="text" name="productSize[]" value="<?= $cart->productSize[$i] ?>" required hidden>
                                     <?php if ($cart->productSize[$i]) { ?>
                                         Size:
@@ -74,9 +78,8 @@
                                 </td>
 
                                 <td class="cart__remove">
-                                    <!-- // TODO: think how to make remove work -->
-                                    <!-- // TOOD: probably need inline PHP code -->
-
+                                    <input type="radio" name="remove[]" id="button__remove-<?= $i ?>" value="<?= $cart->productId[$i] ?>" hidden>
+                                    <img src="assets/img/common/bin.png" data-type="remove" data-id="<?= $i ?>" class="bin">
                                 </td>
                             </tr>
                         <?php } ?>
@@ -85,19 +88,19 @@
                     <!-- // TODO: Update on select -->
                     <tfoot>
                         <tr class="cart__total align--right">
-                            <td>
-                                $<?= $cart->productTotal ?>
+                            <td colspan="4" class="text--right">
+                                <b>Total: </b>$<?= $cart->productTotal ?>
+                            </td>
+                        </tr>
+                        <tr class="cart__total align--right">
+                            <td colspan="4" class="text--right">
+                                <button class="cart--confirm" form="form__confirm-order" value="confirmOrder" type="submit">
+                                    Confirm Order
+                                </button>
                             </td>
                         </tr>
                     </tfoot>
                 </table>
-
-                <input type="text" name="buy" value="buy" required hidden>
-
-                <!-- TODO: add modal for order confirmation -->
-                <button class="cart--confirm align--right" form="form__confirm-order" value="confirmOrder" type="submit">
-                    Confirm Order
-                </button>
             </form>
 
         <?php } else { ?>

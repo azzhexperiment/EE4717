@@ -13,4 +13,12 @@
         width: 20%;
     }
 
+    th, td {
+        padding: $gutter / 2;
+    }
+
+    .bin {
+        width: 24px;
+        height: auto;
+    }
 }

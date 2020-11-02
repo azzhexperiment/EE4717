@@ -3,7 +3,6 @@
     <table class="cart__content">
 
         <?php for ($i = 0; $i < count($cart); $i++) { ?>
-            <!-- TODO: padding space etc, refer to docs -->
             <tr class="cart__item">
 
                 <td class="cart__images">
@@ -53,7 +52,6 @@
         </tr>
     </table>
 
-    <!-- TODO: add modal for order confirmation -->
     <button class="cart--confirm" form="form__confirm-order" value="confirmOrder" type="submit">
         Buy
     </button>

@@ -75,9 +75,7 @@ class Cart
             $_SESSION['cart']['productPrice']    = array_values($_SESSION['cart']['productPrice']);
             $_SESSION['cart']['productSubtotal'] = array_values($_SESSION['cart']['productSubtotal']);
 
-            // TODO: Remove session
             unset($_POST['remove']);
-            unset($_SESSION['remove']);
         }
     }
 
@@ -153,18 +151,5 @@ class Cart
         }
 
         return $total;
-    }
-
-    // TODO: remove method after rewriting to PHP file
-    /**
-     * Remove all items in cart.
-     *
-     * @return void
-     */
-    private function emptyCart()
-    {
-        // TODO: rebase cart?
-        unset($_SESSION['cart']);
-        unset($_POST['empty']);
     }
 }

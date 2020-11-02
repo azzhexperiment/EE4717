@@ -1,11 +1,9 @@
 <?php if (count($cart->productId)) { ?>
-    <!-- TODO: review form classes -->
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="form form__cart" name="confirmOrder" id="form__confirm-order">
 
         <table class="cart__content">
 
             <?php for ($i = 0; $i < count($cart->productId); $i++) { ?>
-                <!-- TODO: padding space etc, refer to docs -->
                 <tr class="cart__item">
                     <td class="cart__select">
                         <input type="checkbox" name="productId[<?= $cart->productId[$i] ?>]" checked>
@@ -66,7 +64,6 @@
             <input type="email" name="customerEmail" class="form__email" id="form__email">
         </div>
 
-        <!-- TODO: add modal for order confirmation -->
         <button class="cart--confirm" form="form__confirm-order" value="confirmOrder" type="submit">
             Confirm Order
         </button>

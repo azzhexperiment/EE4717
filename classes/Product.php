@@ -42,12 +42,12 @@ class Product
             exit();
         }
 
-        $this->productId          = $productId;
-        $this->productName        = $this->getProductName($db);
-        $this->productDescription = $this->productDescription($db);
-        $this->productSize        = $this->getProductSize($db);
-        $this->productPrice       = $this->getProductPrices($db);
-        $this->productInventory   = $this->getInventory($db);
+        $this->productId   = $productId;
+        $this->productSize = $this->getProductSizes($db);
+        $this->getProductName($db);
+        $this->productDescription($db);
+        $this->getProductPrices($db);
+        $this->getInventory($db);
     }
 
     /**
@@ -55,18 +55,16 @@ class Product
      *
      * @param mysqli $db
      *
-     * @return string
+     * @return void
      */
     private function getProductName($db)
     {
         $getProductName = 'SELECT product_name FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productName = $db->query($getProductName)
+        $this->productName = $db->query($getProductName)
             ->fetch_object()
             ->product_name;
-
-        return $productName;
     }
 
     /**
@@ -74,18 +72,16 @@ class Product
      *
      * @param mysqli $db
      *
-     * @return string
+     * @return void
      */
     private function productDescription($db)
     {
         $productDescription = 'SELECT product_description FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productDescription = $db->query($productDescription)
+        $this->productDescription = $db->query($productDescription)
             ->fetch_object()
             ->product_description;
-
-        return $productDescription;
     }
 
     /**
@@ -95,7 +91,7 @@ class Product
      *
      * @return array
      */
-    private function getProductSize($db)
+    private function getProductSizes($db)
     {
         $getSizingTypeId = 'SELECT sizing_type FROM products
             WHERE product_id = ' . $this->productId;
@@ -131,37 +127,32 @@ class Product
      *
      * @param mysqli $db
      *
-     * @return float
+     * @return void
      */
     private function getProductPrices($db)
     {
         $getProductPrice = 'SELECT product_price FROM products
             WHERE product_id = ' . $this->productId;
 
-        $productPrice = $db->query($getProductPrice)
+        $this->productPrice = $db->query($getProductPrice)
             ->fetch_object()
             ->product_price;
-
-        return $productPrice;
     }
 
-    // TODO: get inventory size from DB
     /**
      * Get inventory from DB.
      *
      * @param mysqli $db
      *
-     * @return float
+     * @return void
      */
     private function getInventory($db)
     {
         $getInventory = 'SELECT stock_qty FROM stocks
             WHERE product_id = ' . $this->productId;
 
-        $productInventory = $db->query($getInventory)
+        $this->productInventory = $db->query($getInventory)
             ->fetch_object()
             ->stock_qty;
-
-        return $productInventory;
     }
 }

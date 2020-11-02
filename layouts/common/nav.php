@@ -3,33 +3,33 @@
     <div class="nav text--center">
         <ul id="nav__main">
             <li>
-                <a href="listings.php?sex=m" id="for-him">For Him</a>
+                <a href="listings.php?cat=male" id="for-him">For Him</a>
 
                 <ul class="dropdown dropdown__him">
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                 </ul>
             </li>
 
             <li>
-                <a href="listings.php?sex=f" id="for-her">For Her</a>
+                <a href="listings.php?cat=female" id="for-her">For Her</a>
 
                 <ul class="dropdown dropdown__her">
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                     <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
+                        <a href="listings.php?cat=male">For Him</a>
                     </li>
                 </ul>
             </li>
@@ -41,98 +41,4 @@
             </li>
         </ul>
     </div>
-
-    <!-- <div class="nav__expanded" id="nav__expanded">
-        <div id="for-him__expanded">
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Him</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="for-her__expanded">
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="class1">
-                <ul>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                    <li id="for-him">
-                        <a href="listings.php?sex=m">For Her</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
 </nav>
