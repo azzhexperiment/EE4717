@@ -1,8 +1,6 @@
 <!-- Sign up -->
 <section class="signup">
-
-    <!-- // TODO: review form classes -->
-    <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user">
+    <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user" data-id="signup">
 
         <h1 class="signup__title">Sign up</h1>
 

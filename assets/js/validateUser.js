@@ -2,242 +2,229 @@
  * Validate user login/signup for CLEO & AZZH.
  *
  * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
- * @version 1.1.0
+ * @version 1.2.1
  */
 
 'use strict'
 
-// General form elements
 const form = document.getElementById('form__user')
 
-// Login form elements
-const loginEmail = document.getElementById('login__input-email')
-const loginSubmitButton = document.getElementById('login__submit')
+if (form.dataset.id === 'login') {
+  const loginEmail = document.getElementById('login__input-email')
+  const loginPassword = document.getElementById('login__input-password')
+  const loginSubmitButton = document.getElementById('login__submit')
 
-// Sign up form elements
-const signupFirstName = document.getElementById('signup__input-first-name')
-const signupLastName = document.getElementById('signup__input-last-name')
-const signupEmail = document.getElementById('signup__input-email')
-const signupPassword1 = document.getElementById('signup__input-password-1')
-const signupPassword2 = document.getElementById('signup__input-password-2')
-const signupAddress1 = document.getElementById('signup__input-address-1')
-const signupAddress2 = document.getElementById('signup__input-address-2')
-const signupCountry = document.getElementById('signup__input-country')
-const signupCity = document.getElementById('signup__input-city')
-const signupPostal = document.getElementById('signup__input-postal')
-const signupSubmitButton = document.getElementById('signup__submit')
+  const errorPassword = document.getElementById('error__password')
+  const errorEmail = document.getElementById('error__email')
+  const errorSubmit = document.getElementById('error__submit')
 
-// Error messages
-const errorFirstName = document.getElementById('error__first-name')
-const errorLastName = document.getElementById('error__last-name')
-const errorEmail = document.getElementById('error__email')
-const errorPassword1 = document.getElementById('error__password-1')
-const errorPassword2 = document.getElementById('error__password-2')
-const errorAddress1 = document.getElementById('error__address-1')
-const errorAddress2 = document.getElementById('error__address-2')
-const errorCountry = document.getElementById('error__country')
-const errorCity = document.getElementById('error__city')
-const errorPostal = document.getElementById('error__postal')
-const errorSubmit = document.getElementById('error__submit')
+  // Error control for <login.email> field.
+  loginEmail.addEventListener('blur', () => {
+    if (loginEmail.value === '') {
+      errorEmail.textContent = 'This field is compulsory!'
+    } else if (isValidEmail(loginEmail.value)) {
+      errorEmail.textContent = ''
+    } else {
+      errorEmail.textContent = 'Your email contains invalid symbols!'
+    }
+  })
 
-window.onclick = (e) => {
-  console.log('Click')
-  console.log(e.target)
-  console.log('Desired')
-  console.log(signupFirstName)
+  // Error control for <login.password> field.
+  loginPassword.addEventListener('blur', () => {
+    if (loginPassword.value === '') {
+      errorPassword.textContent = 'This field is compulsory!'
+    }
+  })
+
+  // Validate everything before submission to double check.
+  loginSubmitButton.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    if (!isValidEmail(loginEmail.value)) {
+      errorSubmit.textContent = 'Invalid email format!'
+    } else {
+      loginEmail.value = loginEmail.value.trim()
+
+      form.submit()
+    }
+  })
 }
 
-/**
- * Error control for <login.email> field.
- */
-loginEmail.addEventListener('blur', () => {
-  if (loginEmail.value === '') {
-    errorEmail.textContent = 'This field is compulsory!'
-  } else if (isValidEmail(loginEmail.value)) {
-    errorEmail.textContent = ''
-  } else {
-    errorEmail.textContent = 'Your email contains invalid symbols!'
-  }
-})
+if (form.dataset.id === 'signup') {
+  const signupFirstName = document.getElementById('signup__input-first-name')
+  const signupLastName = document.getElementById('signup__input-last-name')
+  const signupEmail = document.getElementById('signup__input-email')
+  const signupPassword1 = document.getElementById('signup__input-password-1')
+  const signupPassword2 = document.getElementById('signup__input-password-2')
+  const signupAddress1 = document.getElementById('signup__input-address-1')
+  const signupAddress2 = document.getElementById('signup__input-address-2')
+  const signupCountry = document.getElementById('signup__input-country')
+  const signupCity = document.getElementById('signup__input-city')
+  const signupPostal = document.getElementById('signup__input-postal')
+  const signupSubmitButton = document.getElementById('signup__submit')
 
-/**
- * Error control for <signup.firstname> field.
- */
-signupFirstName.addEventListener('blur', () => {
-  if (signupFirstName.value === '') {
-    errorFirstName.textContent = 'This field is compulsory!'
-  } else if (isValidText(signupFirstName.value)) {
-    errorFirstName.textContent = ''
-  } else {
-    errorFirstName.textContent = 'Enter characters and whitespaces only!'
-  }
-})
+  const errorFirstName = document.getElementById('error__first-name')
+  const errorLastName = document.getElementById('error__last-name')
+  const errorEmail = document.getElementById('error__email')
+  const errorPassword1 = document.getElementById('error__password-1')
+  const errorPassword2 = document.getElementById('error__password-2')
+  const errorAddress1 = document.getElementById('error__address-1')
+  const errorAddress2 = document.getElementById('error__address-2')
+  const errorCountry = document.getElementById('error__country')
+  const errorCity = document.getElementById('error__city')
+  const errorPostal = document.getElementById('error__postal')
+  const errorSubmit = document.getElementById('error__submit')
 
-/**
- * Error control for <signup.lastname> field.
- */
-signupLastName.addEventListener('blur', () => {
-  if (signupLastName.value === '') {
-    errorLastName.textContent = 'This field is compulsory!'
-  } else if (isValidText(signupLastName.value)) {
-    errorLastName.textContent = ''
-  } else {
-    errorLastName.textContent = 'Enter characters and whitespaces only!'
-  }
-})
+  // Error control for <signup.firstname> field.
+  signupFirstName.addEventListener('blur', () => {
+    if (signupFirstName.value === '') {
+      errorFirstName.textContent = 'This field is compulsory!'
+    } else if (isValidText(signupFirstName.value)) {
+      errorFirstName.textContent = ''
+    } else {
+      errorFirstName.textContent = 'Enter characters and whitespaces only!'
+    }
+  })
 
-/**
- * Error control for <signup.email> field.
- */
-signupEmail.addEventListener('blur', () => {
-  if (signupEmail.value === '') {
-    errorEmail.textContent = 'This field is compulsory!'
-  } else if (isValidEmail(signupEmail.value)) {
-    errorEmail.textContent = ''
-  } else {
-    errorEmail.textContent = 'Your email contains invalid symbols!'
-  }
-})
+  // Error control for <signup.lastname> field.
+  signupLastName.addEventListener('blur', () => {
+    if (signupLastName.value === '') {
+      errorLastName.textContent = 'This field is compulsory!'
+    } else if (isValidText(signupLastName.value)) {
+      errorLastName.textContent = ''
+    } else {
+      errorLastName.textContent = 'Enter characters and whitespaces only!'
+    }
+  })
 
-/**
- * Error control for <signup.password> field.
- */
-signupPassword1.addEventListener('blur', () => {
-  if (signupPassword1.value === '') {
-    errorPassword1.textContent = 'This field is compulsory!'
-  } else if (isMatch(signupPassword1.value, signupPassword2.value)) {
-    errorPassword1.textContent = ''
-    errorPassword2.textContent = ''
-  } else {
-    errorPassword1.textContent = 'Your passwords do not match!'
-    errorPassword2.textContent = 'Your passwords do not match!'
-  }
-})
+  // Error control for <signup.email> field.
+  signupEmail.addEventListener('blur', () => {
+    if (signupEmail.value === '') {
+      errorEmail.textContent = 'This field is compulsory!'
+    } else if (isValidEmail(signupEmail.value)) {
+      errorEmail.textContent = ''
+    } else {
+      errorEmail.textContent = 'Your email contains invalid symbols!'
+    }
+  })
 
-/**
- * Error control for <signup.password> field.
- */
-signupPassword2.addEventListener('blur', () => {
-  if (signupPassword2.value === '') {
-    errorPassword1.textContent = 'This field is compulsory!'
-  } else if (isMatch(signupPassword1.value, signupPassword2.value)) {
-    errorPassword1.textContent = ''
-    errorPassword2.textContent = ''
-  } else {
-    errorPassword1.textContent = 'Your passwords do not match!'
-    errorPassword2.textContent = 'Your passwords do not match!'
-  }
-})
+  // Error control for <signup.password1> field.
+  signupPassword1.addEventListener('blur', () => {
+    if (isMatch(signupPassword1.value, signupPassword2.value)) {
+      errorPassword1.textContent = ''
+      errorPassword2.textContent = ''
+    } else {
+      errorPassword1.textContent = 'Your passwords do not match!'
+      errorPassword2.textContent = 'Your passwords do not match!'
+    }
 
-/**
- * Error control for <signup.address1> field.
- */
-signupAddress1.addEventListener('blur', () => {
-  if (signupAddress1.value === '') {
-    errorAddress1.textContent = 'This field is compulsory!'
-  } else if (isValidAddress(signupAddress1.value)) {
-    errorAddress1.textContent = ''
-  } else {
-    errorAddress1.textContent = 'Your address contains invalid symbols!'
-  }
-})
+    if (!isValidPassword(signupPassword1.value)) {
+      errorPassword1.textContent = 'Your passwords must contain min 8 values!'
+      errorPassword2.textContent = 'Your passwords must contain min 8 values!'
+    }
+  })
 
-/**
- * Error control for <signup.address2> field.
- */
-signupAddress2.addEventListener('blur', () => {
-  if (signupAddress2.value === '') {
-    errorAddress2.textContent = 'This field is compulsory!'
-  } else if (isValidAddress(signupAddress2.value)) {
-    errorAddress2.textContent = ''
-  } else {
-    errorAddress2.textContent = 'Your address contains invalid symbols!'
-  }
-})
+  // Error control for <signup.password2> field.
+  signupPassword2.addEventListener('blur', () => {
+    if (isMatch(signupPassword1.value, signupPassword2.value)) {
+      errorPassword1.textContent = ''
+      errorPassword2.textContent = ''
+    } else {
+      errorPassword1.textContent = 'Your passwords do not match!'
+      errorPassword2.textContent = 'Your passwords do not match!'
+    }
 
-/**
- * Error control for <signup.country> field.
- */
-signupCountry.addEventListener('blur', () => {
-  if (signupCountry.value === '') {
-    errorCountry.textContent = 'This field is compulsory!'
-  } else if (isValidText(signupCountry.value)) {
-    errorCountry.textContent = ''
-  } else {
-    errorCountry.textContent = 'Enter characters and whitespaces only!'
-  }
-})
+    if (!isValidPassword(signupPassword2.value)) {
+      errorPassword1.textContent = 'Your passwords must contain min 8 values!'
+      errorPassword2.textContent = 'Your passwords must contain min 8 values!'
+    }
+  })
 
-/**
- * Error control for <signup.city> field.
- */
-signupCity.addEventListener('blur', () => {
-  if (signupCity.value === '') {
-    errorCity.textContent = 'This field is compulsory!'
-  } else if (isValidText(signupCity.value)) {
-    errorCity.textContent = ''
-  } else {
-    errorCity.textContent = 'Enter characters and whitespaces only!'
-  }
-})
+  // Error control for <signup.address1> field.
+  signupAddress1.addEventListener('blur', () => {
+    if (signupAddress1.value === '') {
+      errorAddress1.textContent = 'This field is compulsory!'
+    } else if (isValidAddress(signupAddress1.value)) {
+      errorAddress1.textContent = ''
+    } else {
+      errorAddress1.textContent = 'Enter characters, numbers and whitespaces only!'
+    }
+  })
 
-/**
- * Error control for <signup.postal> field.
- */
-signupPostal.addEventListener('blur', () => {
-  if (signupPostal.value === '') {
-    errorPostal.textContent = 'This field is compulsory!'
-  } else if (isValidPostal(signupPostal.value)) {
-    errorPostal.textContent = ''
-  } else {
-    errorPostal.textContent = 'Enter characters and whitespaces only!'
-  }
-})
+  // Error control for <signup.address2> field.
+  signupAddress2.addEventListener('blur', () => {
+    if (signupAddress2.value === '') {
+      errorAddress2.textContent = 'This field is compulsory!'
+    } else if (isValidAddress(signupAddress2.value)) {
+      errorAddress2.textContent = ''
+    } else {
+      errorAddress2.textContent = 'Enter characters, numbers and whitespaces only!'
+    }
+  })
 
-/**
- * Validate everything before submission to double check.
- */
-loginSubmitButton.addEventListener('click', (event) => {
-  event.preventDefault()
+  // Error control for <signup.country> field.
+  signupCountry.addEventListener('blur', () => {
+    if (signupCountry.value === '') {
+      errorCountry.textContent = 'This field is compulsory!'
+    } else if (isValidText(signupCountry.value)) {
+      errorCountry.textContent = ''
+    } else {
+      errorCountry.textContent = 'Enter characters and whitespaces only!'
+    }
+  })
 
-  if (!isValidEmail(loginEmail.value)) {
-    errorSubmit.textContent = 'Invalid email format!'
-  } else {
-    loginEmail.value = loginEmail.value.trim()
+  // Error control for <signup.city> field.
+  signupCity.addEventListener('blur', () => {
+    if (signupCity.value === '') {
+      errorCity.textContent = 'This field is compulsory!'
+    } else if (isValidText(signupCity.value)) {
+      errorCity.textContent = ''
+    } else {
+      errorCity.textContent = 'Enter characters and whitespaces only!'
+    }
+  })
 
-    form.submit()
-  }
-})
+  // Error control for <signup.postal> field.
+  signupPostal.addEventListener('blur', () => {
+    if (signupPostal.value === '') {
+      errorPostal.textContent = 'This field is compulsory!'
+    } else if (isValidPostal(signupPostal.value)) {
+      errorPostal.textContent = ''
+    } else {
+      errorPostal.textContent = 'Enter 5 or 6 digits only!'
+    }
+  })
 
-/**
- * Validate everything before submission to double check.
- */
-signupSubmitButton.addEventListener('click', (event) => {
-  event.preventDefault()
+  // Validate everything before submission to double check.
+  signupSubmitButton.addEventListener('click', (event) => {
+    event.preventDefault()
 
-  if (!isValidText(signupFirstName.value) ||
+    if (!isValidText(signupFirstName.value) ||
     !isValidText(signupLastName.value) ||
     !isValidEmail(signupEmail.value) ||
     !isMatch(signupPassword1.value, signupPassword2.value) ||
+    !isValidPassword(signupPassword1.value) ||
+    !isValidPassword(signupPassword2.value) ||
     !isValidAddress(signupAddress1.value) ||
     !isValidAddress(signupAddress2.value) ||
     !isValidText(signupCountry.value) ||
     !isValidText(signupCity.value) ||
     !isValidPostal(signupPostal.value)) {
-    errorSubmit.textContent = 'Fields contain invalid data!'
-  } else {
-    signupFirstName.value = signupFirstName.value.trim()
-    signupLastName.value = signupLastName.value.trim()
-    signupEmail.value = signupEmail.value.trim()
-    signupAddress1.value = signupAddress1.value.trim()
-    signupAddress2.value = signupAddress2.value.trim()
-    signupCountry.value = signupCountry.value.trim()
-    signupCity.value = signupCity.value.trim()
-    signupPostal.value = signupPostal.value.trim()
+      errorSubmit.textContent = 'Fields contain invalid data!'
+    } else {
+      signupFirstName.value = signupFirstName.value.trim()
+      signupLastName.value = signupLastName.value.trim()
+      signupEmail.value = signupEmail.value.trim()
+      signupAddress1.value = signupAddress1.value.trim()
+      signupAddress2.value = signupAddress2.value.trim()
+      signupCountry.value = signupCountry.value.trim()
+      signupCity.value = signupCity.value.trim()
+      signupPostal.value = signupPostal.value.trim()
 
-    form.submit()
-  }
-})
+      form.submit()
+    }
+  })
+}
 
 /**
  * Validates a text.
@@ -262,7 +249,7 @@ function isValidText (value) {
 }
 
 /**
- * Validates a potsal code.
+ * Validates a postal code.
  *
  * A postal code contains 5 or 6 digit integers.
  *
@@ -277,6 +264,28 @@ function isValidText (value) {
  */
 function isValidPostal (value) {
   const rule = /^[0-9]{5,6}$/
+
+  value.trim()
+
+  return (rule.test(value))
+}
+
+/**
+ * Validates a password.
+ *
+ * Passwords must contain min 8 values of any type.
+ *
+ * The rule required above is first constructed. User input is trimmed for
+ * preceding and trailing whitespaces before being validated against the rule.
+ *
+ * @param {String} value
+ *
+ * @constant {RegExp} rule Regex rule for postal validation
+ *
+ * @returns {Boolean}
+ */
+function isValidPassword (value) {
+  const rule = /^.{8,}$/
 
   value.trim()
 

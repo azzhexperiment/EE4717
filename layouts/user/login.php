@@ -1,7 +1,6 @@
 <!-- Login -->
 <section class="login">
-    <!-- // TODO: review form classes -->
-    <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user">
+    <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user" data-id="login">
 
         <h1 class="login__title">Login</h1>
 
