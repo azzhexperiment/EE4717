@@ -1,4 +1,4 @@
-<?php if (empty($_GET['saleId'])) { ?>
+<?php if (isset($_POST['buy'])) { ?>
     <!-- Payment -->
     <section class="payment">
         <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__payment" id="form__payment">

@@ -18,10 +18,9 @@
 
             <form action="payment.php" method="POST" class="form form__cart" name="confirmOrder" id="form__confirm-order">
 
-                <input type="text" name="buy" value="buy" required hidden>
-                <input type="number" name="productId[]" value="<?= $cart->productId[$i] ?>" required hidden>
-
                 <table class="cart__content">
+
+                    <input type="text" name="buy" value="buy" required hidden>
 
                     <thead>
                         <tr>
@@ -34,6 +33,9 @@
 
                     <tbody>
                         <?php for ($i = 0; $i < count($cart->productId); $i++) { ?>
+
+                            <input type="number" name="productId[]" value="<?= $cart->productId[$i] ?>" required hidden>
+
                             <tr class="cart__item">
 
                                 <td class="cart__images">
@@ -104,6 +106,7 @@
             </form>
 
         <?php } else { ?>
+            <h1 class="cart__title">Your cart</h1>
             <div class="text-center">
                 <p>Your cart is empty.</p>
                 <p>Go check out our featured listings!</p>

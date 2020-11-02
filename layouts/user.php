@@ -60,7 +60,7 @@ if ($_GET['action'] === 'logout') {
 }
 
 if (!empty($_SESSION['customerId'])) {
-    echo '<h1>Welcome, ', $customer->customerName, '</h1>';
+    echo '<h1 class="user__title">Welcome, ', $customer->firstName, '</h1>';
     echo '<p>You are already logged in.</p>';
     echo '<p>Click <a href="user.php?action=logout">HERE</a> to log out.</p>';
 }
