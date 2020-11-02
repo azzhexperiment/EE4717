@@ -2,7 +2,7 @@
 <section class="login">
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user" data-id="login">
 
-        <h1 class="login__title">Login</h1>
+        <h1 class="user__title">Login</h1>
 
         <input type="text" name="type" value="login" hidden required>
 
