@@ -72,7 +72,7 @@ input[type=number] {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 0px;
   width: 200px;
   height: 40px;
   margin-top: 1.5em;
@@ -81,7 +81,7 @@ button {
   text-transform: uppercase;
 }
 button.qty__selector {
-  border-radius: 5px;
+  border-radius: 0px;
   width: 30px;
   height: 20px;
   background-color: #aff089;
@@ -346,6 +346,7 @@ nav ul#nav__main ul.dropdown li {
 }
 .product__img {
   max-width: 100%;
+  width: 100%;
 }
 
 .career .career__listings {
@@ -396,6 +397,13 @@ nav ul#nav__main ul.dropdown li {
 .cart .cart__images {
   max-width: 200px;
   width: 20%;
+}
+.cart th, .cart td {
+  padding: 12px;
+}
+.cart .bin {
+  width: 24px;
+  height: auto;
 }
 
 .form__payment {

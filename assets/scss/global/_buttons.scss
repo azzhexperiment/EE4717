@@ -13,7 +13,7 @@ input[type=number] {
 }
 
 button {
-    border-radius: 10px;
+    border-radius: 0px;
     width: 200px;
     height: 40px;
     margin-top: 1.5em;
@@ -22,7 +22,7 @@ button {
     text-transform: uppercase;
 
     &.qty__selector {
-        border-radius: 5px;
+        border-radius: 0px;
         width: 30px;
         height: 20px;
         background-color: #aff089;
