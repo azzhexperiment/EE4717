@@ -7,23 +7,19 @@
  * @version 1.0.0
  */
 
-// Retrieve filters
-$productSexFilter   = (int) $_GET['sex']   ? $_GET['sex']   : 0;
-$productClassFilter = (int) $_GET['class'] ? $_GET['class'] : 0;
-$productTypeFilter  = (int) $_GET['type']  ? $_GET['type']  : 0;
+$filter = '';
 
-// Calculate product category
-$categoryId = (int) $productSexFilter + $productClassFilter + $productTypeFilter;
-
-if ($categoryId > 0) {
-    // Get filtered listings
-    $filters = 'product_category = ' . $categoryId;
-
-    $getListings = 'SELECT * FROM products WHERE' . $filters;
-} else {
-    // Get all listings
-    $getListings = 'SELECT * FROM products';
+if ($_GET['cat'] === 'male') {
+    $filter = 'WHERE product_category < 200';
+} elseif ($_GET['cat'] === 'female') {
+    $filter = 'WHERE product_category > 200';
+} elseif ($_GET['cat'] === 'featured') {
+    $filter = 'WHERE is_featured = TRUE';
+} elseif ($_GET['cat'] === 'new') {
+    $filter = 'WHERE is_new = TRUE';
 }
+
+$getListings = 'SELECT * FROM products ' . $filter;
 
 $result = $db->query($getListings);
 
