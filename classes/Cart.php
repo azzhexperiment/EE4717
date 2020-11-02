@@ -75,9 +75,7 @@ class Cart
             $_SESSION['cart']['productPrice']    = array_values($_SESSION['cart']['productPrice']);
             $_SESSION['cart']['productSubtotal'] = array_values($_SESSION['cart']['productSubtotal']);
 
-            // TODO: Remove session
             unset($_POST['remove']);
-            unset($_SESSION['remove']);
         }
     }
 
