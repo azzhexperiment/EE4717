@@ -25,25 +25,12 @@ form.addEventListener('click', (e) => {
 
     increaseQty(item)
   }
-
-  if (e.target.dataset.type === 'remove') {
-    document.getElementById('button__remove-' + e.target.dataset.id).checked = true
-
-    form.action = ''
-    form.submit()
-  }
-
-  // if (e.target.type === 'submit') {
-  //   e.preventDefault()
-
-  //   form.submit()
-  // }
 })
 
 /**
  * Decrease qty of selected cart item.
  *
- * @param {Element} item
+ * @param {String} item
  *
  * @returns {Void}
  */
@@ -56,7 +43,7 @@ function reduceQty (item) {
 /**
  * Increase qty of selected cart item.
  *
- * @param {Element} item
+ * @param {String} item
  *
  * @returns {Void}
  */
