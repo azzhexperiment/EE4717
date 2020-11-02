@@ -344,6 +344,10 @@ nav ul#nav__main ul.dropdown li {
   grid-gap: 24px;
   margin: auto;
 }
+.product__img {
+  max-width: 100%;
+}
+
 .career .career__listings {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
