@@ -23,7 +23,7 @@
                     <span>Credit Card no.</span>
                 </div>
                 <div class="payment__input">
-                    <input class="payment__input-field" type="number" name="payment__input-cc" id="payment__input-cc" pattern="[0-9]{16}" minlength="16" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+                    <input class="payment__input-field" name="payment__input-cc" id="payment__input-cc" placeholder="XXXX XXXX XXXX XXXX" required>
                     <br>
                     <span class="error" id="error__cc"></span>
                 </div>
@@ -35,11 +35,11 @@
                     <span>Validity</span>
                 </div>
                 <div class="payment__input">
-                    <input class="payment__input-field" type="number" name="payment__input-validity-mm" id="payment__input-validity-mm" pattern="[0-9]{2}" min="1" max="12" maxlength="2" placeholder="MM" title="Please enter 2 digits and max 12" required>
-                    <span class="error" id="error__validity-mm"></span>
+                    <input class="payment__input-field" name="payment__input-validity-mm" id="payment__input-validity-mm" min="1" max="12" placeholder="MM" required>
                     /
-                    <input class="payment__input-field" type="number" name="payment__input-validity-yy" id="payment__input-validity-yy" pattern="[0-9]{2}" min="0" max="99" maxlength="2" placeholder="YY" title="Please enter 2 digits" required>
+                    <input class="payment__input-field" name="payment__input-validity-yy" id="payment__input-validity-yy" min="0" max="99" placeholder="YY" required>
                     <br>
+                    <span class="error" id="error__validity-mm"></span>
                     <span class="error" id="error__validity-yy"></span>
                 </div>
             </div>
@@ -50,22 +50,23 @@
                     <span>CVV</span>
                 </div>
                 <div class="payment__input">
-                    <input class="payment__input-field" type="number" name="payment__input-cvv" id="payment__input-cvv" pattern="[0-9]{3,4}" minlength="3" maxlength="4" title="Please enter max 4 digits" required>
+                    <input class="payment__input-field" name="payment__input-cvv" id="payment__input-cvv" required>
+                    <br>
                     <span class="error" id="error__cvv"></span>
                 </div>
             </div>
 
             <h1 class="payment__title">Shipping Address</h1>
 
-            <!-- Receipient -->
+            <!-- Recipient -->
             <div class="payment__item">
                 <div class="payment__field-name">
-                    <span>Receipient</span>
+                    <span>Recipient</span>
                 </div>
                 <div class="payment__input">
-                    <input class="payment__input-field" type="text" name="payment__input-receipient" id="payment__input-receipient" required>
+                    <input class="payment__input-field" type="text" name="payment__input-recipient" id="payment__input-recipient" required>
                     <br>
-                    <span class="error" id="error__receipient"></span>
+                    <span class="error" id="error__recipient"></span>
                 </div>
             </div>
 
@@ -123,7 +124,7 @@
                     <span>Postal</span>
                 </div>
                 <div class="payment__input">
-                    <input class="payment__input-field" type="number" minlength="5" maxlength="6" name="payment__input-postal" id="payment__input-postal" required>
+                    <input class="payment__input-field" name="payment__input-postal" id="payment__input-postal" required>
                     <br>
                     <span class="error" id="error__postal"></span>
                 </div>
