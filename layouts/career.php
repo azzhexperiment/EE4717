@@ -1,3 +1,7 @@
+<!-- Header splash img -->
+<section class="splash career">
+</section>
+
 <!-- Featured items -->
 <section class="career">
     <h1>Explore a career</h1>
