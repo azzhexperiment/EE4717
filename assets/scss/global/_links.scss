@@ -3,7 +3,27 @@
 //============================================================================//
 
 a {
+    $link-colour: #000000;
+
     text-decoration: none;
+
+    &:link {
+        color: $link-colour;
+    }
+
+    &:visited {
+        color: $link-colour;
+    }
+
+    &:hover {
+        font-weight: 700;
+        color: $link-colour;
+    }
+
+    &:active {
+        font-weight: 700;
+        color: $link-colour;
+    }
 }
 
 header, nav {

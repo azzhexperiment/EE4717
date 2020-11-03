@@ -90,6 +90,20 @@ button.qty__selector {
 a {
   text-decoration: none;
 }
+a:link {
+  color: #000000;
+}
+a:visited {
+  color: #000000;
+}
+a:hover {
+  font-weight: 700;
+  color: #000000;
+}
+a:active {
+  font-weight: 700;
+  color: #000000;
+}
 
 header a:link, nav a:link {
   color: #000000;
@@ -314,6 +328,14 @@ nav ul#nav__main ul.dropdown li {
 .form__user .error {
   color: #ff0000;
   font-size: 70%;
+}
+
+.title {
+  padding-top: 2em;
+}
+
+.dashboard th, .dashboard td {
+  padding-right: 1em;
 }
 
 .listings .listings__title {
