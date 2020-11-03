@@ -489,6 +489,10 @@ nav ul#nav__main ul.dropdown li {
 .form__payment input#payment__input-validity-mm, .form__payment input#payment__input-validity-yy, .form__payment input#payment__input-cvv, .form__payment input#payment__input-city, .form__payment input#payment__input-postal {
   width: 40%;
 }
+.form__payment .error {
+  color: #ff0000;
+  font-size: 70%;
+}
 
 footer {
   background-color: #343434;
