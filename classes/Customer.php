@@ -55,10 +55,9 @@ class Customer
 
         if ($customerId === 'New') {
             $this->createNewCustomer($db);
-            $this->autoLogin($db);
+            $this->autoLogin();
         } else {
             $this->retrieveCustomerInfo($db, $customerId);
-            $this->autoLogin($db);
         }
     }
 
@@ -164,15 +163,15 @@ class Customer
     /**
      * Auto login customer after account creation.
      *
-     * @param mysqli $db
-     *
      * @return void
      */
-    public function autoLogin($db)
+    public function autoLogin()
     {
         $email    = md5($this->email);
         $password = md5($_POST['signup__input-password-1']);
 
-        new Auth($db, 'Customer', $email, $password);
+        new Auth('Customer', $email, $password);
+
+        $_POST = [];
     }
 }
