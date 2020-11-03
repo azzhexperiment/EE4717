@@ -6,7 +6,7 @@
             <h1 class="index__header">For Him</h1>
 
             <a href="listings.php?cat=male">
-                <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
+                <img class="img--fit" src="assets/img/index/male.PNG">
 
                 <button>Shop</button>
             </a>
@@ -16,7 +16,7 @@
             <h1 class="index__header">For Her</h1>
 
             <a href="listings.php?cat=female">
-                <img class="img--fit" src="assets/img/index/featured-1.jpg" alt="">
+                <img class="img--fit" src="assets/img/index/female.PNG">
 
                 <button>Shop</button>
             </a>
