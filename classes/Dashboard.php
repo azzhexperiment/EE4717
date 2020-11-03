@@ -12,6 +12,7 @@ use mysqli;
  */
 class Dashboard
 {
+    public $today;
     public $allTime;
     public $lastSevenDays;
     public $lastMonth;
@@ -34,6 +35,7 @@ class Dashboard
             exit();
         }
 
+        $this->getSalesToday($db);
         $this->getSalesAllTime($db);
         $this->getSalesLastSevenDays($db);
         $this->getSalesLastMonth($db);
@@ -54,6 +56,21 @@ class Dashboard
         $getSales = 'SELECT SUM(sale_amount) AS amt FROM sales';
 
         $this->allTime = $db->query($getSales)->fetch_object();
+    }
+
+    /**
+     * Get sales amount from today.
+     *
+     * @param mysqli $db
+     *
+     * @return void
+     */
+    public function getSalesToday($db)
+    {
+        $getSales = 'SELECT SUM(sale_amount) AS amt FROM sales
+            WHERE created_at >= CURDATE()';
+
+        $this->today = $db->query($getSales)->fetch_object();
     }
 
     /**
