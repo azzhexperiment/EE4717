@@ -9,12 +9,9 @@
 
 use Customer\Customer;
 
-// not in use
 Session_start();
-// not in use
 $sessionId = session_id();
 
-// TODO: fix conditions
 if (!empty($_SESSION['customerId'])) {
     $customer = new Customer($_SESSION['customerId']);
 }
