@@ -19,6 +19,11 @@ $warning = '<script>
     window.location = "http://192.168.56.2/f37ee/project/index.php"
 </script>';
 
+$updateSuccess = '<script>
+    alert("Inventory updated.")
+    window.location = "http://192.168.56.2/f37ee/project/dashboard.php"
+</script>';
+
 $dashboard = new Dashboard();
 
 if (!empty($_SESSION['adminId'])) {
@@ -31,6 +36,7 @@ if (!empty($_SESSION['adminId'])) {
         }
 
         unset($_POST);
+        echo $updateSuccess;
     }
 
     if ($_GET['action'] === 'logout') {
