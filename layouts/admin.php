@@ -19,6 +19,11 @@ $loggedOut = '<script>
     window.location = "http://192.168.56.2/f37ee/project/index.php"
 </script>';
 
+$retry = '<script>
+    alert("You are not logged in.")
+    window.location = "http://192.168.56.2/f37ee/project/admin.php"
+</script>';
+
 if (empty($_SESSION['adminId'])) {
     // Redirect admin after logging in
     if ($_POST['type'] === 'login') {
@@ -35,7 +40,6 @@ if (empty($_SESSION['adminId'])) {
 
 // Log admin out from session
 if ($_GET['action'] === 'logout') {
-    // TODO: add log out session commands
     $oldAdmin = $_SESSION['adminId'];
     unset($_SESSION['adminId']);
     session_destroy();
@@ -43,8 +47,7 @@ if ($_GET['action'] === 'logout') {
     if (!empty($oldAdmin)) {
         echo $loggedOut;
     } else {
-        echo '<p>You are not logged in.</p>';
-        echo '<p>Click <a href="admin.php">HERE</a> to login.</p>';
+        echo $retry;
     }
 }
 

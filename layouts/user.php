@@ -18,6 +18,11 @@ $loggedOut = '<script>
     window.location = "http://192.168.56.2/f37ee/project/index.php"
 </script>';
 
+$retry = '<script>
+    alert("You are not logged in.")
+    window.location = "http://192.168.56.2/f37ee/project/user.php"
+</script>';
+
 if (empty($_SESSION['customerId'])) {
     // Redirect user after logging in
     if ($_POST['type'] === 'login') {
@@ -54,8 +59,7 @@ if ($_GET['action'] === 'logout') {
     if (!empty($oldUser)) {
         echo $loggedOut;
     } else {
-        echo '<p>You are not logged in.</p>';
-        echo '<p>Click <a href="user.php">HERE</a> to login.</p>';
+        echo $retry;
     }
 }
 

@@ -65,7 +65,10 @@ class Auth
         if ($customerId > 0) {
             $_SESSION['customerId'] = $customerId->customer_id;
         } else {
-            echo 'Account not found!';
+            echo '<script>
+                alert("Account not found.")
+                window.location = "http://192.168.56.2/f37ee/project/user.php"
+            </script>';
             exit;
         }
     }
@@ -92,7 +95,10 @@ class Auth
         if ($adminId > 0) {
             $_SESSION['adminId'] = $adminId->admin_id;
         } else {
-            echo 'Back off!! Illegal access attempt logged!!';
+            echo '<script>
+                alert("Back off!! Illegal access attempt logged!!")
+                window.location = "http://192.168.56.2/f37ee/project/admin.php"
+            </script>';
             exit;
         }
     }
