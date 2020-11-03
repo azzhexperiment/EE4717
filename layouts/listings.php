@@ -1,3 +1,17 @@
+<?php
+
+if ($_GET['cat'] === 'male') {
+    echo '<section class="splash male"></section>';
+} elseif ($_GET['cat'] === 'female') {
+    echo '<section class="splash female"></section>';
+} elseif ($_GET['cat'] === 'featured') {
+    echo '<section class="splash featured"></section>';
+} elseif ($_GET['cat'] === 'new') {
+    echo '<section class="splash new"></section>';
+}
+
+?>
+
 <!-- Featured items -->
 <section class="listings">
     <div class="listings__main">

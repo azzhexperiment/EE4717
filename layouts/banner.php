@@ -1,4 +1,3 @@
 <!-- Header splash img -->
-<section class="splash">
-    hi
+<section class="splash index">
 </section>

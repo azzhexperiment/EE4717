@@ -278,12 +278,6 @@ nav ul#nav__main ul.dropdown li {
   padding-top: 2em;
 }
 
-.splash {
-  background: url("../img/index/splash.jpg") center no-repeat;
-  height: 500px;
-  width: 100%;
-}
-
 .categories__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -334,6 +328,45 @@ nav ul#nav__main ul.dropdown li {
 
 .dashboard th, .dashboard td {
   padding-right: 1em;
+}
+
+.splash {
+  background-size: contain;
+  width: 100%;
+}
+.splash.index {
+  background: url("../img/banners/new.png") center no-repeat;
+  height: 380px;
+}
+.splash.male {
+  background: url("../img/banners/male.png") center no-repeat;
+  height: 380px;
+}
+.splash.female {
+  background: url("../img/banners/female.png") center no-repeat;
+  height: 380px;
+}
+.splash.featured {
+  background: url("../img/banners/featured.PNG") center no-repeat;
+  background-size: contain;
+  height: 380px;
+}
+.splash.new {
+  background: url("../img/banners/new.png") center no-repeat;
+  height: 380px;
+}
+.splash.career {
+  background: url("../img/banners/career.PNG") center no-repeat;
+  height: 380px;
+}
+.splash.contact {
+  background: url("../img/banners/contact.png") center no-repeat;
+  height: 380px;
+}
+.splash.member {
+  background: url("../img/banners/member.PNG") center top no-repeat;
+  background-size: contain;
+  height: 320px;
 }
 
 .listings .listings__title {

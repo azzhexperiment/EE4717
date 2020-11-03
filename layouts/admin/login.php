@@ -1,3 +1,7 @@
+<!-- Header splash img -->
+<section class="splash member">
+</section>
+
 <!-- Login -->
 <section class="login">
     <form action="<?= htmlentities($_SERVER['PHP_SELF']) ?>" method="post" class="form form__user" id="form__user" data-id="login">
