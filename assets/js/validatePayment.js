@@ -324,7 +324,8 @@ function isValidPostal (value) {
 /**
  * Validates an address.
  *
- * An address contains alphabet characters, integers and character spaces only.
+ * An address contains alphabet characters, integers, character spaces,
+ * '#' and '-' symbols only.
  *
  * The rule required above is first constructed. User input is trimmed for
  * preceding and trailing whitespaces before being validated against the rule.
@@ -336,7 +337,7 @@ function isValidPostal (value) {
  * @returns {Boolean}
  */
 function isValidAddress (value) {
-  const rule = /^[a-zA-Z0-9 ]+$/
+  const rule = /^[a-zA-Z0-9-# ]+$/
 
   value.trim()
 
