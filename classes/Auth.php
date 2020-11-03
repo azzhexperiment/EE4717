@@ -34,8 +34,6 @@ class Auth
             exit();
         }
 
-        // TODO: Check against session for current login status
-
         if ($type === 'Customer') {
             $this->matchCustomer($db, $email, $password);
         } elseif ($type === 'Admin') {
@@ -65,6 +63,7 @@ class Auth
         if ($customerId > 0) {
             $_SESSION['customerId'] = $customerId->customer_id;
         } else {
+            unset($_SESSION['customerId']);
             echo '<script>
                 alert("Account not found.")
                 window.location = "http://192.168.56.2/f37ee/project/user.php"
@@ -95,6 +94,7 @@ class Auth
         if ($adminId > 0) {
             $_SESSION['adminId'] = $adminId->admin_id;
         } else {
+            unset($_SESSION['adminId']);
             echo '<script>
                 alert("Back off!! Illegal access attempt logged!!")
                 window.location = "http://192.168.56.2/f37ee/project/admin.php"
