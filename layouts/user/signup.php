@@ -134,7 +134,7 @@
                 <span>Postal</span>
             </div>
             <div class="signup__input">
-                <input class="user__input-field" type="number" name="signup__input-postal" id="signup__input-postal" required>
+                <input class="user__input-field" name="signup__input-postal" id="signup__input-postal" required>
                 <br>
                 <span class="error" id="error__postal"></span>
             </div>
