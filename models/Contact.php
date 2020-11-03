@@ -15,13 +15,15 @@ if (!empty($_POST)) {
     $message   = $db->real_escape_string($_POST['contact__input-message']);
 
     $newFeedback = 'INSERT INTO feedbacks
-        (feedback_name, feedback_email, feedback_type, feedback_message)
         VALUES
             (
-                "' . $name      . '" ,
-                "' . $email     . '" ,
-                "' . $queryType . '" ,
-                "' . $message   . '"
+                DEFAULT,
+                "' . $name      . '",
+                "' . $email     . '",
+                "' . $queryType . '",
+                "' . $message   . '",
+                CURRENT_TIMESTAMP,
+                NULL
             )';
 
     if (!$result = $db->query($newFeedback)) {
@@ -29,4 +31,9 @@ if (!empty($_POST)) {
     }
 
     $_POST = [];
+
+    echo '<script>
+        alert("Your feedback has been submitted.")
+        window.location = "http://192.168.56.2/f37ee/project/contact.php"
+    </script>';
 }
