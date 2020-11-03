@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Create Sales entry from cart submission.
+ *
+ * @author Zhu Zihao <zhuz0010@e.ntu.edu.sg>
+ * @version 1.0.0
+ */
+
 use Sales\Sales;
 
 $directHome = '<script type="text/javascript">

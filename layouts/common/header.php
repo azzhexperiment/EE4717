@@ -15,16 +15,24 @@
                     </div>
                     <div class="member text--right">
                         <ul>
-                            <li>
-                                <a href="user.php">
-                                    <img src="assets/img/common/user.png" id="user" alt="Shopping cart">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="cart.php">
-                                    <img src="assets/img/common/cart.png" id="cart" alt="Shopping cart">
-                                </a>
-                            </li>
+                            <?php if (empty($_SESSION['adminId'])) { ?>
+                                <li>
+                                    <a href="user.php">
+                                        <img src="assets/img/common/user.png" id="user">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="cart.php">
+                                        <img src="assets/img/common/cart.png" id="cart">
+                                    </a>
+                                </li>
+                            <?php } else { ?>
+                                <li>
+                                    <a href="dashboard.php">
+                                        <img src="assets/img/common/user.png" id="user">
+                                    </a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
