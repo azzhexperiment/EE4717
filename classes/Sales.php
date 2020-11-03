@@ -190,8 +190,10 @@ class Sales
     {
         for ($i = 0; $i < count($this->productId); $i++) {
             $updateInventory = 'UPDATE stocks
-                SET   stock_qty  = stock_qty - ' . $this->productOrderQty[$i] . '
-                WHERE product_id = $this->productId[$i]';
+                SET
+                    stock_qty = stock_qty - ' . $this->productOrderQty[$i] . ',
+                    sold_qty  = sold_qty  + ' . $this->productOrderQty[$i] . '
+                WHERE product_id = ' . $this->productId[$i];
 
             $db->query($updateInventory);
         }
