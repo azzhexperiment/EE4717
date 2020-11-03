@@ -167,11 +167,11 @@ INSERT INTO sales
         (DEFAULT, 18.75,    '2020-02-23 06:38:24', NULL),
         (DEFAULT, 218.80,   '2020-03-13 06:38:24', NULL),
         (DEFAULT, 3218.70,  '2020-07-13 06:38:24', NULL),
-        (DEFAULT, 2018.35,  '2020-10-13 06:38:24', NULL),
-        (DEFAULT, 12018.77, '2020-10-13 06:38:24', NULL),
-        (DEFAULT, 2217.32,  '2020-11-01 06:38:38', NULL),
-        (DEFAULT, 1217.13,  '2020-11-02 06:38:38', NULL),
-        (DEFAULT, 7230.44,  '2020-11-03 06:24:37', NULL);
+        (DEFAULT, 2018.35,  '2020-06-13 06:38:24', NULL),
+        (DEFAULT, 12018.77, '2020-08-13 06:38:24', NULL),
+        (DEFAULT, 2217.32,  '2020-09-01 06:38:38', NULL),
+        (DEFAULT, 1217.13,  '2020-10-02 06:38:38', NULL),
+        (DEFAULT, 7230.44,  '2020-11-02 06:24:37', NULL);
 
 
 
@@ -482,7 +482,7 @@ INSERT INTO stocks
         (12301, 200, 0,   CURRENT_TIMESTAMP, NULL),
         (12201, 200, 34,  CURRENT_TIMESTAMP, NULL),
         (12101, 200, 0,   CURRENT_TIMESTAMP, NULL),
-        (12202, 200, 345, CURRENT_TIMESTAMP, NULL),
+        (12202, 200, 145, CURRENT_TIMESTAMP, NULL),
         (12402, 200, 0,   CURRENT_TIMESTAMP, NULL),
         (12401, 200, 0,   CURRENT_TIMESTAMP, NULL),
         (23101, 200, 0,   CURRENT_TIMESTAMP, NULL),
@@ -549,32 +549,6 @@ CREATE TABLE IF NOT EXISTS product_sales
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-
-
-/******************************************************************************\
-    USER TRACKING
-\******************************************************************************/
-
--- DROP   TABLE IF     EXISTS trackings;
--- CREATE TABLE IF NOT EXISTS trackings
--- (
--- 	tracking_id         INT UNSIGNED NOT NULL AUTO_INCREMENT,
--- 	customer_id         INT UNSIGNED NOT NULL,
--- 	tracking_session_id INT UNSIGNED NOT NULL,
--- 	-- tracking_stats
-
--- 	PRIMARY KEY (tracking_id),
--- 	FOREIGN KEY (customer_id)
--- );
-
--- DROP   TABLE IF     EXISTS recommendations;
--- CREATE TABLE IF NOT EXISTS recommendations
--- (
--- 	customer_id INT      UNSIGNED           NOT NULL,
--- 	weight_1    FLOAT(5) UNSIGNED DEFAULT 0 NOT NULL,
-
--- 	PRIMARY KEY (customer_id)
--- );
 
 
 SET FOREIGN_KEY_CHECKS=1;
