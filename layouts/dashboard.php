@@ -16,6 +16,10 @@
 
         <tbody>
             <tr>
+                <td>Revenue from today</td>
+                <td>$<?= $dashboard->today->amt ?></td>
+            </tr>
+            <tr>
                 <td>Revenue from past 7 days</td>
                 <td>$<?= $dashboard->lastSevenDays->amt ?></td>
             </tr>
