@@ -41,14 +41,18 @@
                     <br>
                 </div>
 
-                <div class="product__qty">
-                    <b>Qty:</b>
-                    <button type="button" id="product__qty--less" class="qty__selector">-</button>
-                    <input type="number" name="productOrderQty" id="product__qty-input" value="0" min="1" required>
-                    <button type="button" id="product__qty--more" class="qty__selector">+</button>
-                </div>
+                <?php if ($product->productInventory != 0) { ?>
+                    <div class="product__qty">
+                        <b>Qty:</b>
+                        <button type="button" id="product__qty--less" class="qty__selector">-</button>
+                        <input type="number" name="productOrderQty" id="product__qty-input" value="0" min="1" max="<?= $product->productInventory ?>" required>
+                        <button type="button" id="product__qty--more" class="qty__selector">+</button>
+                    </div>
 
-                <button class="cart--add" form="form__product" type="submit">Add to Cart</button>
+                    <button class="cart--add" form="form__product" type="submit">Add to Cart</button>
+                <?php } else { ?>
+                    <h1 class="title">Sold out</h1>
+                <?php } ?>
             </form>
         </div>
     </div>
