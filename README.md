@@ -12,3 +12,9 @@ Reason for sharing this project is really because I find most of this project a 
 Lastly, the final examination of this module promotes KISS and brainless regurgitation of the lecture content. Best practices and industry standards are non-existent. The PHP version used is so obsolete, you can't even find hosted documentation for it.
 
 So, yeah. I don't feel bad at all spreading my answers for this module. Check out the tutorial exercise answers at https://github.com/azzhexperiment/EE4717-course-work
+
+---
+
+### Note
+
+Install your own dependencies. I use standardjs, webpack and sass in this project.
